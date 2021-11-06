@@ -5,9 +5,9 @@ Created on Mon Nov  1 18:28:00 2021
 @author: chenm
 """
 import os
-# from dotenv import load_dotenv
-# load_dotenv()
-# load_dotenv(".env")
+from dotenv import load_dotenv
+load_dotenv()
+load_dotenv(".env")
 
 os.getcwd()
 
@@ -22,15 +22,13 @@ import demoji
 import tweepy
 from tweepy import OAuthHandler
 
-# consumer_key = os.getenv("CONSUMER_KEY")
-# consumer_secret = os.getenv("CONSUMER_SECRET")
-# access_token = os.getenv("ACCESS_TOKEN")
-# access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
+consumer_key = os.getenv("CONSUMER_KEY")
+consumer_secret = os.getenv("CONSUMER_SECRET")
+access_token = os.getenv("ACCESS_TOKEN")
+access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
-# auth = OAuthHandler(consumer_key, consumer_secret)
-# auth.set_access_token(access_token, access_token_secret)
-auth = OAuthHandler('qVkFmymiSQhyyQDGsjZoovPHu', 'yR1E39wKW39Z034p76GFZZMWSbiRXwjDdcwJ9cYcycMOgTkUl2')
-auth.set_access_token('1338240711754440708-0uPDghwW4vWE8YWFxkCSvLZdHEFORs', '70iybeRC6UGmHYVxBcM2o7IYdQN7IAoV4RMLHV0Z1vWef')
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 search_words = "#AnimalCrossing"
@@ -152,7 +150,7 @@ df_tweets_original = df_tweets[~df_tweets.tweet_text.str.contains("RT")].reset_i
 #df_tweets_original.drop(["tweet_entities", "tweet_user"], axis=1, inplace=True)
 
 df_tweets_original.shape
-df_tweets_original.to_csv("data/animal_crossing_tweets_original2_{}.csv".format(today), index=False)
+df_tweets_original.to_csv("data/animal_crossing_tweets_original_{}.csv".format(today), index=False)
 
 #test demoji
 #demoji.findall(df_tweets_original["tweet_text"][38])
