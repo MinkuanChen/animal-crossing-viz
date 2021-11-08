@@ -33,10 +33,23 @@ warnings.filterwarnings("ignore")
 
 from collections import Counter
 
+import demoji
+
 df_tweets = pd.read_csv("../datasets/animal_crossing_tweets_original_20211030_to_20211105.csv")
 df_tweets.shape
 df_tweets_original = df_tweets[~df_tweets.tweet_text.str.contains("RT")].reset_index(drop=True)
 df_tweets_original.shape
+
+### count frequency for each emoji in the corpus 
+tweet_emojis = []
+tweet_emojis.append(df_tweets_original["tweet_text"].apply(lambda x: demoji.findall(x)))
+df_tweet_emojis = pd.DataFrame(tweet_emojis)
+df_tweet_emojis_transposed = df_tweet_emojis.T
+df_tweet_emojis_transposed = df_tweet_emojis_transposed[df_tweet_emojis_transposed["tweet_text"]!={}]
+
+df_tweet_emojis_transposed.rename(columns={"tweet_text":"tweet_emojis"}, inplace=True)
+
+df_tweet_emojis_transposed.to_csv("../datasets/tweet_emojis.csv")
 
 #Remove urls
 df_tweets_original.tweet_text = df_tweets_original.tweet_text.apply(lambda x: re.sub(r"http\S+", "", x))
@@ -127,3 +140,21 @@ json.dump(unique_word_freq_dict, unique_word_freq_file)
 unique_word_freq_file.close()
 
 ### count frequency for each hashtag in the corpus
+
+
+
+### sentiment analysis
+tweet_texts = df_tweets.tweet_text.values
+
+all_polarity = [TextBlob(blobs).sentiment.polarity for blobs in tweet_texts]
+df_tweets["polarity"]=all_polarity
+
+df_tweets["sentiment"] = np.where(df_tweets["polarity"]>=0.,"Positive","Negative")
+
+df_tweets_sentiments = df_tweets.drop(columns=['tweet_entities',
+       'tweet_source', 'tweet_source_url', 'tweet_in_reply_to_tweet_id',
+       'tweet_in_reply_to_user_id', 'tweet_in_reply_to_screen_name', 'tweet_geo', 'tweet_coordinates', 'tweet_place', 'tweet_is_quote'], axis=1)
+
+df_tweets_sentiments = df_tweets.drop(columns=['tweet_geo', 'tweet_coordinates', 'tweet_place', 'tweet_is_quote'], axis=1)
+
+df_tweets_sentiments.to_csv("../datasets/tweet_sentiments.csv", index=False)
