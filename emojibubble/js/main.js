@@ -1,6 +1,6 @@
 Promise.all([
     d3.csv("data/tweet_emojis.csv"),
-    d3.csv("data/emojiWIP2.csv")
+    d3.csv("data/emojiWIP3.csv")
 ]).then(function(data) {
     initEmoji(data);
 }).catch(function(err) {
