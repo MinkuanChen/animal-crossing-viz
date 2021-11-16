@@ -33,7 +33,8 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 
 search_words = "#AnimalCrossing"
 number_of_tweets = 30000
-tweets = tweepy.Cursor(api.search_tweets, q=search_words, lang="en", include_entities=True, since_id=1456281131863740000, max_id=1456739836514020000, count=100).items(number_of_tweets)
+# tweets = tweepy.Cursor(api.search_tweets, q=search_words, lang="en", include_entities=True, since_id=1456281131863740000, max_id=1456739836514020000, count=100).items(number_of_tweets)
+tweets = tweepy.Cursor(api.search_tweets, q=search_words, lang="en", include_entities=True, since_id=1456281131863740000, max_id=1456529322420867073, count=100).items(number_of_tweets)
 
 """
 for tweet in tweets:
@@ -149,7 +150,7 @@ df_tweets_original = df_tweets[~df_tweets.tweet_text.str.contains("RT")].reset_i
 #df_tweets_original.drop(["tweet_entities", "tweet_user"], axis=1, inplace=True)
 
 df_tweets_original.shape
-df_tweets_original.to_csv("data/animal_crossing_tweets_original_{}.csv".format(today), index=False)
+df_tweets_original.to_csv("data/animal_crossing_tweets_original2_{}.csv".format(today), index=False)
 
 #test demoji
 #demoji.findall(df_tweets_original["tweet_text"][38])
