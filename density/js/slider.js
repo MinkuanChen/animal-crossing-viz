@@ -6,10 +6,10 @@ class Slider {
 		this.dateExtent = dateExtent
 		this.displayData = data
 		this.parentElement = parentElement
-		this.initSlider()
+		this.initVis()
 	}
 
-	initSlider(){
+	initVis(){
 		let vis = this
 		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
@@ -25,7 +25,7 @@ class Slider {
 		vis.slider = d3.select(vis.parentElement)
 				.append("svg")
 				.attr("width", vis.width + vis.margin.left + vis.margin.right)
-				.attr("height", vis.height);
+				.attr("height", 300);
 				
 		vis.x = d3.scaleTime()
 				.domain([vis.startDate, vis.endDate])
@@ -76,32 +76,60 @@ class Slider {
 				.attr("r", 9);
 
 
-		// !! Now instantiate the plot
+		// !!Now instantiate the plot
 		vis.svg = d3.select("#densityDiv").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+			.attr("height", 200)
 			.append("g")
-			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 
 		vis.parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 
-		// vis.extent = d3.extent(vis.displayData, function(d){
-		// 	return d.tweet_id
-		// })
-		// vis.xScale = d3.scaleLinear()
-		// 	.domain(vis.extent)
-		// 	.range([vis.margin.left, vis.width])
+		let tmpData = vis.displayData.filter(function (d) {
+			vis.newDateObj = new Date(vis.displayData[0].tweet_created_at.getTime() + 5*60000)
+			return d.tweet_created_at >= vis.displayData[0].tweet_created_at && d.tweet_created_at <= vis.newDateObj;
+		});
+
+		vis.extent = d3.extent(tmpData, function(d){
+			return d.tweet_id
+		})
+		vis.xScale = d3.scaleLinear()
+			.domain(vis.extent)
+			.range([vis.margin.left, vis.width])
 	
-		// vis.circles = vis.svg.selectAll("circle")
-		// 	.data(vis.displayData.slice(0,100))
+		vis.circles = vis.svg.selectAll("circle")
+			.data(vis.displayData)
 		
-		// vis.circles = vis.circles.enter()
-		// 	.append("circle")
-		// 	.attr("fill", "blue")
-		// 	.attr("r", 10)
-		// 	.attr("cx", function(d) { return vis.xScale(d.tweet_id) })
-		// 	.attr("cy", function(d) { return 150 })
-		// 	.style("stroke", "black")
+		vis.circles = vis.circles.enter()
+			.append("circle")
+			.attr("fill", "blue")
+			.attr("r", 10)
+			.attr("cx", function(d) { return vis.xScale(d.tweet_id) })
+			.attr("cy", function(d) { return 150 })
+			.style("stroke", "black")
+
+		// !!Now instantiate the bar graph
+		vis.bar = d3.select("#bar").append("svg")
+			.attr("width", vis.width + vis.margin.left + vis.margin.right)
+			.attr("height", 100)
+			.append("g")
+			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
+			
+		vis.barExtent = [0, 200]
+		vis.barScale = d3.scaleLinear()
+			.domain(vis.barExtent)
+			.range([vis.margin.left, vis.width])
+		
+		vis.barfluc = vis.bar.selectAll("rect")
+			.data(vis.displayData)
+
+		vis.barfluc = vis.barfluc.enter()
+			.append("rect")
+			.attr("fill", "blue")
+			.attr("width", vis.width/2)
+            .attr("height", 10)
+            .attr("x", 50)
+            .attr("y", 50)
 
 	}
 	wrangleData(start_time){
@@ -116,14 +144,14 @@ class Slider {
 
 	updateVis(){
 		let vis = this
-
+		// !! Update circles
 		vis.extent = d3.extent(vis.filteredData, function(d){
 			return d.tweet_id
 		})
 
 		vis.xScale = d3.scaleLinear()
-			.domain([vis.extent[0], vis.extent[1]])
-			.range([0,1000])
+			.domain(vis.extent)
+			.range([vis.margin.left,vis.width])
 		
 	
 		vis.circles = vis.svg.selectAll("circle")
@@ -140,5 +168,25 @@ class Slider {
 				return vis.xScale(d.tweet_id) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
+
+		// !!Update bar
+		vis.barfluc = vis.bar.selectAll("rect")
+			.data(vis.filteredData)
+		
+		vis.barfluc.exit().remove()
+
+		vis.barfluc = vis.barfluc.enter()
+			.append("rect")
+			.merge(vis.barfluc)
+			.attr("fill", function(){
+				if (vis.barScale(vis.filteredData.length) < 500){
+					return "blue"
+				}
+				return "red"
+			})
+			.attr("width", vis.barScale(vis.filteredData.length))
+            .attr("height", 10)
+            .attr("x", 50)
+            .attr("y", 50)
 	}
 }
