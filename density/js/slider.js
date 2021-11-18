@@ -43,6 +43,7 @@ class Slider {
 			.select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
 			.attr("class", "track-inset")
 			.select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+			.attr("class", "track-overlay")
 			.call(d3.drag()
 				.on("start.interrupt", function() { vis.slider.interrupt(); })
 				.on("start drag", function(event) { 
@@ -121,15 +122,18 @@ class Slider {
 			.range([vis.margin.left, vis.width])
 		
 		vis.barfluc = vis.bar.selectAll("rect")
-			.data(vis.displayData)
+			.data(tmpData)
 
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
-			.attr("fill", "blue")
+			.attr("fill", "red")
 			.attr("width", vis.width/2)
             .attr("height", 10)
             .attr("x", 50)
             .attr("y", 50)
+
+		// !! Instantiate Count
+		document.getElementById('count').innerText = "Number of tweets in 5 minute time block: " + tmpData.length
 
 	}
 	wrangleData(start_time){
@@ -174,7 +178,7 @@ class Slider {
 			.data(vis.filteredData)
 		
 		vis.barfluc.exit().remove()
-
+		
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
 			.merge(vis.barfluc)
@@ -188,5 +192,7 @@ class Slider {
             .attr("height", 10)
             .attr("x", 50)
             .attr("y", 50)
+		// !! Update Count
+		document.getElementById('count').innerText = "Number of tweets in 5 minute time block: " + vis.filteredData.length
 	}
 }
