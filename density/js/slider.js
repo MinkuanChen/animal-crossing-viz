@@ -87,25 +87,35 @@ class Slider {
 		vis.parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 
 		let tmpData = vis.displayData.filter(function (d) {
-			vis.newDateObj = new Date(vis.displayData[0].tweet_created_at.getTime() + 5*60000)
+			vis.newDateObj = new Date(vis.displayData[0].tweet_created_at.getTime() + 1*60000)
 			return d.tweet_created_at >= vis.displayData[0].tweet_created_at && d.tweet_created_at <= vis.newDateObj;
 		});
 
 		vis.extent = d3.extent(tmpData, function(d){
-			return d.tweet_id
+			return d.tweet_created_at
 		})
 		vis.xScale = d3.scaleLinear()
 			.domain(vis.extent)
 			.range([vis.margin.left, vis.width])
-	
+
+		vis.sourceExtent = d3.extent(vis.displayData, function(d){
+			return d.tweet_source
+		})
+		
+		vis.colorScale = d3.scaleOrdinal()
+			.domain(vis.sourceExtent)
+			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);	
+			 
 		vis.circles = vis.svg.selectAll("circle")
 			.data(vis.displayData)
 		
 		vis.circles = vis.circles.enter()
 			.append("circle")
-			.attr("fill", "blue")
+			.attr("fill", function(d){
+				return vis.colorScale(d.tweet_source)
+			})
 			.attr("r", 10)
-			.attr("cx", function(d) { return vis.xScale(d.tweet_id) })
+			.attr("cx", function(d) { return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
 
@@ -116,7 +126,7 @@ class Slider {
 			.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 			
-		vis.barExtent = [0, 200]
+		vis.barExtent = [0, 30]
 		vis.barScale = d3.scaleLinear()
 			.domain(vis.barExtent)
 			.range([vis.margin.left, vis.width])
@@ -140,7 +150,7 @@ class Slider {
 		let vis = this
 		vis.filteredData = vis.displayData
 		vis.filteredData = vis.displayData.filter(function (d) {
-			vis.newDateObj = new Date(start_time.getTime() + 5*60000)
+			vis.newDateObj = new Date(start_time.getTime() + 1*60000)
 			return d.tweet_created_at >= start_time && d.tweet_created_at <= vis.newDateObj;
 		});
 		vis.updateVis()
@@ -150,13 +160,16 @@ class Slider {
 		let vis = this
 		// !! Update circles
 		vis.extent = d3.extent(vis.filteredData, function(d){
-			return d.tweet_id
+			return d.tweet_created_at
 		})
 
 		vis.xScale = d3.scaleLinear()
 			.domain(vis.extent)
 			.range([vis.margin.left,vis.width])
-		
+
+		// vis.colorScale = d3.scaleLinear()
+		// 	.domain(vis.extent)
+		// 	.range(d3.schemeSet3);
 	
 		vis.circles = vis.svg.selectAll("circle")
 			.data(vis.filteredData)
@@ -166,10 +179,15 @@ class Slider {
 		vis.circles = vis.circles.enter()
 			.append("circle")
 			.merge(vis.circles)
-			.attr("fill", "blue")
+			// .transition()
+			// .duration(50)
+			.attr("fill", function(d){
+				// console.log(d.tweet_source, vis.colorScale(d.tweet_source))
+				return vis.colorScale(d.tweet_source)
+			})
 			.attr("r", 10)
 			.attr("cx", function(d) { 
-				return vis.xScale(d.tweet_id) })
+				return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
 
@@ -178,12 +196,11 @@ class Slider {
 			.data(vis.filteredData)
 		
 		vis.barfluc.exit().remove()
-		
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
 			.merge(vis.barfluc)
 			.attr("fill", function(){
-				if (vis.barScale(vis.filteredData.length) < 500){
+				if (vis.barScale(vis.filteredData.length) < 20){
 					return "blue"
 				}
 				return "red"
