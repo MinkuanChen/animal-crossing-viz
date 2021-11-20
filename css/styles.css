@@ -1,0 +1,160 @@
+body {
+    letter-spacing: 0.0625em;
+}
+
+#mainNav {
+    min-height: 3.5rem;
+    background-color: #fff;
+}
+
+#mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.75rem;
+    color: #64a19d;
+    border: 1px solid #64a19d;
+}
+
+#mainNav .navbar-toggler:focus {
+    outline: none;
+}
+
+#mainNav .navbar-brand {
+    color: #000;
+    font-weight: 700;
+    padding: 0.9rem 0;
+}
+
+#mainNav .navbar-nav .nav-item:hover {
+    color: fade(#fff, 80%);
+    outline: none;
+    background-color: transparent;
+}
+
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+
+.btn {
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1)
+    padding: 1.25rem 2rem;
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    border: 0;
+}
+
+.masthead {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(142, 207, 202, 0) 0%, rgba(142, 207, 202, .25) 75%, rgba(142, 207, 202, .75) 100%), url("../img/poster/animal-crossing-new-horizons-switch-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+.masthead h1, .masthead .h1 {
+    font:Helvetica;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background-clip: text;
+}
+.masthead h2, .masthead .h2 {
+    max-width: 20rem;
+    font-size: 2rem;
+}
+
+.about-section {
+    padding-top: 5rem;
+    background: linear-gradient(to bottom, rgba(142, 207, 202, 1.0) 100%, rgba(142, 207, 202, .50) 75%, rgba(142, 207, 202, .0) 25%);
+}
+.about-section p {
+    margin-bottom: 5rem;
+}
+
+.visualizations-section {
+    padding: 5rem 0;
+    background: rgb(248, 238, 188);
+}
+.visualizations-section .featured-text {
+    padding: 2rem;
+}
+
+.credit-section {
+    padding: 5rem 0;
+    background-color: #8ECFCAFF;
+    background-size: cover;
+}
+
+.info-section {
+    padding-top: 5rem;
+    background-color: #FCEA64FF;
+   }
+
+.footer {
+    padding: 5rem 0;
+    background-color: 	#fffffa;
+}
+
+button {
+    border-radius: 0;
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+
+button,
+select {
+    text-transform: none;
+}
+
+[role=button] {
+    cursor: pointer;
+}
+
+select {
+    word-wrap: normal;
+}
+select:disabled {
+    opacity: 1;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.row-cols-auto > * {
+    flex: 0 0 auto;
+    width: auto;
+}
