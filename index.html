@@ -107,7 +107,10 @@
                     <div class="col">
                         <div class="text-center">
                             <div class="project-text text-center text-lg-left">
-                                <h4 class="text-black">Word Popularity</h4>
+                                <h4 class="text-black">What were the most frequently used emojis by AC Twitter?</h4>
+                                <button id="categorize">Categorize</button>
+                                <button id="merge">Merge</button>
+                                <div id="emojibubble" style="height: 90vh; width: 100%;"></div>
                                 <p class="text-black">Here we can state top words.</p>
                             </div>
                         </div>
@@ -253,10 +256,13 @@
 
         <!-- d3 -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.skypack.dev/d3-force@3"></script>
+        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
         <!-- own js files -->
         <script src="js/main.js"></script>
         <script src="js/words.js"></script>
+        <script src="js/emojibubble.js"></script>
 
     </body>
 </html>
