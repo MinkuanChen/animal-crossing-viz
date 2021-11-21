@@ -11,5 +11,5 @@ Promise.all([
 })
 
 function initVisualizations(allDataArray) {
-    myBubbleChart = new EmojiBubble("emojibubble", allDataArray[0], allDataArray[1]);
+    myBubbleChart = new EmojiBubble("emojiGraph", allDataArray[0], allDataArray[1]);
 }
