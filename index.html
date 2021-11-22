@@ -91,13 +91,15 @@
                     </div>
                 </div>
                 <!--word graph goes here, ID is word (or change to liking)-->
-                <div class="row" id="word-frequency-bubble-chart">
-                    <div class="col">
-                        <div class="text-center">
-                            <div class="project-text text-center text-lg-left">
-                                <h4 class="text-black">Word Popularity</h4>
-                                <p class="text-black">Here we can state top words.</p>
-                            </div>
+                <div class="container-fluid" style="border: thin solid grey; border-radius: 5px">
+                    <div class="row justify-content-center" style="height: 8vh">
+                        <div class="align-self-center">
+                            <h1>Top 100 Words Seen in the Tweets</h1>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 100%">
+                        <div class="align-self-center" style="height: 100vh">
+                            <div id="word-frequency-bubble-chart" style="height: 100%"></div>
                         </div>
                     </div>
                 </div>
@@ -154,7 +156,11 @@
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
                 <div class="container px-4 px-lg-5">
-
+                    <div class="row justify-content-center" style="height: 12vh">
+                        <div class="align-self-center">
+                            <h1>Top 1000 Retweeted Tweets By Date and Keyword</h1>
+                        </div>
+                    </div>
                 <div class="row">
 
                     <div class="align-self-center">
@@ -278,7 +284,6 @@
         <!-- own js files -->
         <script src="js/main.js"></script>
         <script src="js/density.js"></script>
-        <script src="js/words.js"></script>
         <script src="js/emojibubble.js"></script>
         <script src="js/stackedAreaChart.js"></script>
         <script src="js/wordFreqVis.js"></script>
