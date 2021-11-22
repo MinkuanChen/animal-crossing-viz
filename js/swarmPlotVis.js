@@ -11,7 +11,7 @@ class SwarmPlotVis {
     initVis() {
         let vis = this;
         vis.width = 1800;
-        vis.height = 1000;
+        vis.height = 500;
         vis.svg = d3
             .select("#" + vis.parentElement)
             .append("svg")
@@ -27,7 +27,7 @@ class SwarmPlotVis {
 
         vis.yScale = d3
             .scaleLinear()
-            .domain(d3.extent(vis.data.map((d) => +d["tweet_retweet_count"])))
+            .domain(d3.extent(vis.data.map((d) => Math.sqrt(+d["tweet_retweet_count"]))))
             .range([vis.height - 100, 100]);
 
         vis.color = d3.scaleOrdinal().domain(tweetCreatedDate).range(['#a4d4a2', '#ff7c69', '#f1bdc3', '#7cc9c3', '#f5c24c', '#68b893', '#ef758a']);
