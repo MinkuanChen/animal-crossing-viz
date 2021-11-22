@@ -68,14 +68,14 @@ class WordFreqVis {
                 .attr('x', d => d.x)
                 .attr('y', d => d.y)
         }
-        vis.updateVis($('#' + vis.parentElement), vis.data);
+        vis.updateVis(vis.parentElement, vis.data);
     }
 
     updateVis (selector, rawData) {
         let vis = this;
         vis.nodes = vis.createNodes(rawData);
 
-        vis.svg = d3.select(selector)
+        vis.svg = d3.select("#word-frequency-bubble-chart")
             .append('svg')
             .attr('width', vis.width)
             .attr('height', vis.height)
