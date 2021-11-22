@@ -3,6 +3,12 @@ let myAreaChart;
 let myWordFreqVis;
 let mySwarmPlotVis;
 let myDensityVis;
+let mytweetsource = [];
+let myBargraph = [];
+let config = [
+    {key: "tweet_source", title: "Tweet Source"},
+];
+
 
 // let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 let userInputVal = document.getElementById("user-input-keyword").value;
@@ -37,6 +43,10 @@ function initVisualizations(allDataArray) {
     myBubbleChart = new EmojiBubble("emojibubble", allDataArray[0], allDataArray[1]);
     myAreaChart = new StackedAreaChart("stacked-area-chart", allDataArray[2].hashtags);
     myWordFreqVis = new WordFreqVis("word-frequency-bubble-chart", allDataArray[3]);
+    for (i = 0; i < config.length; i++) {
+        mytweetsource = new TweetSource("tweetsource", allDataArray[4], config[i]);
+    }
+    myBargraph = new Bargraph("#bargraph", allDataArray[4])
     mySwarmPlotVis = new SwarmPlotVis("swarm-plot", allDataArray[4]);
 }
 

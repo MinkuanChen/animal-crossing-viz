@@ -47,10 +47,11 @@
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">What are we looking at?</h2>
                         <p class="text-white" style="font-size:25px;">
-                            It has been reported that <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's seventh
-                            highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units. (taken from Wikipedia)... talking about how
-                            because of the pandemic, the game not only was popular in terms of sales, it also had a very interactive twitter community that helped each other out in building
-                            great islands.
+                            Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
+                            seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
+                            Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
+                            community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
+
                         </p>
                         <p style="font-size:25px;">
                             With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
@@ -129,13 +130,18 @@
                 </div>
 
                 <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
-                <div class="row mb-4 mb-lg-5 align-items-center" id="bargraph">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/basic-bar-graph.jpg" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>bargraph</h4>
-                            <p class="text-black-50 mb-0">plan to pair this with another viz!</p>
-                        </div>
+                <div class="row mb-4 mb-lg-5 align-items-top">
+                    <div class="col" style="vertical-align: top" id="tweetsources"> <h2>Top 10 Tweet Platform Sources</h2></div>
+                    <div class="col" style="vertical-align: top" id="bargraph"> <h2>Top 10</h2>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="ranking-type">Filter by</label>
+                                <select class="form-control" id="ranking-type" onchange="updateVisualization()" style="width:200px">
+                                    <option value="retweets">Retweeted</option>
+                                    <option value="favorites">Favorited</option>
+                                </select>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -287,6 +293,8 @@
         <script src="js/emojibubble.js"></script>
         <script src="js/stackedAreaChart.js"></script>
         <script src="js/wordFreqVis.js"></script>
+        <script src="js/tweetSource.js"></script>
+        <script src="js/bargraph.js"></script>
         <script src="js/swarmPlotVis.js"></script>
 
     </body>
