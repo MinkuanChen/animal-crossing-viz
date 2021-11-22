@@ -10,8 +10,17 @@ class SwarmPlotVis {
 
     initVis() {
         let vis = this;
+        /*
         vis.width = 1800;
         vis.height = 500;
+
+         */
+
+        vis.margin = {top: 40, right: 40, bottom: 40, left: 40};
+
+        vis.width = $('#' + vis.parentElement).width() - vis.margin.left - vis.margin.right;
+        vis.height = $('#' + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
+
         vis.svg = d3
             .select("#" + vis.parentElement)
             .append("svg")
@@ -22,7 +31,7 @@ class SwarmPlotVis {
         tweetCreatedDate.sort();
         console.log(tweetCreatedDate);
 
-        vis.xCoords = tweetCreatedDate.map((d, i) => 100 + i * 200);
+        vis.xCoords = tweetCreatedDate.map((d, i) => 100 + i * vis.width/7);
         vis.xScale = d3.scaleOrdinal().domain(tweetCreatedDate).range(vis.xCoords);
 
         vis.yScale = d3
