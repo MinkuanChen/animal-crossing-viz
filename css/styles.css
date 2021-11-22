@@ -175,3 +175,12 @@ select:disabled {
     flex: 0 0 auto;
     width: auto;
 }
+
+#stacked-area-chart {
+    height: 100%;
+    width: 100%;
+}
+
+#area-chart-wrapper {
+    height: 70vh;
+}

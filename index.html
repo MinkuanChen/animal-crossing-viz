@@ -75,20 +75,17 @@
                 </div>
 
                 <!--hashtag graph goes here, ID is hashtags (or change to liking)-->
-                <div class="row mb-4 mb-lg-5 align-items-center" id="hashtags">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Hashtag stacked area chart</h4>
-                            <p class="text-black-50 mb-0">Hashtag stacked chart legend</p>
-                        </div>
+                <div class="row mb-4 mb-lg-5 align-items-center">
+                    <div class="align-self-center featured-text text-center text-lg-left" >
+                        <h1>Top 10 Hashtags In the Animal Crossing Tweets from 10/30 to 11/05</h1>
+                    </div>
+                </div>
+                <div class="row mb-4 mb-lg-5 align-items-center" id="area-chart-wrapper">
+                    <div class="col-xl-4 col-lg-5" id="stacked-area-chart">
                     </div>
                 </div>
                 <!--word graph goes here, ID is word (or change to liking)-->
-                <div class="row" id="word">
-                    <div class="col">
-                        <img src="img/placeholders/bubblechart.jpg" alt="..." />
-                    </div>
+                <div class="row" id="word-frequency-bubble-chart">
                     <div class="col">
                         <div class="text-center">
                             <div class="project-text text-center text-lg-left">
@@ -149,11 +146,25 @@
                     </div>
                 </div>
 
-                <!--beeswarm graph goes here, ID is beeswarm (or change to liking)-->
-                <div class="container px-4 px-lg-5" id="beeswarm">
-                    <div class="row mb-4 mb-lg-5 align-items-center">
-                        <div class="col"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/beeswarm.jpg" alt="..." /></div>
+                <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
+                <div class="container px-4 px-lg-5">
+
+                <div class="row">
+
+                    <div class="align-self-center">
+                        <label for="keyword">Search for keywords and phrases in tweet texts (type in any keyword and hit enter - to return to all results, clear the input and hit enter):</label>
+                        <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
+                        <input type="button" value="Search" id="search-btn" onclick="inputChange()">
+                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
                     </div>
+                </div>
+                    <div class="row">
+
+                        <div class="align-self-center">
+                            <div id="swarm-plot"></div>
+                        </div>
+                    </div>
+
                 </div>
 
             <!--  break to explain more-->
@@ -262,6 +273,9 @@
         <script src="js/main.js"></script>
         <script src="js/words.js"></script>
         <script src="js/emojibubble.js"></script>
+        <script src="js/stackedAreaChart.js"></script>
+        <script src="js/wordFreqVis.js"></script>
+        <script src="js/swarmPlotVis.js"></script>
 
     </body>
 </html>
