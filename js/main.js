@@ -2,7 +2,9 @@ let myBubbleChart;
 let myAreaChart;
 let myWordFreqVis;
 let mySwarmPlotVis;
+let myDensityVis;
 
+// let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 let userInputVal = document.getElementById("user-input-keyword").value;
 
 // load data
@@ -11,14 +13,27 @@ Promise.all([
     d3.csv("data/emojiWIP4.csv"),
     d3.json("data/hashtags_frequency_by_date.json"),
     d3.csv("data/tweet_text_word_frequency_not_stemmed_top100.csv"),
-    d3.csv("data/animal_crossing_tweets_original_20211030_to_20211105_top1000.csv")
+    d3.csv("data/animal_crossing_tweets_original_20211030_to_20211105_top1000.csv"),
+    d3.csv("data/animal_crossing_tweets_original2_20211107.csv", (row) => {
+        let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
+		row.tweet_id = +row.tweet_id
+		row.tweet_created_at = parseDate(row.tweet_created_at)
+		return row
+	})
 ]).then(function(data) {
+    data[5].sort(function(a, b){
+        return a.tweet_created_at - b.tweet_created_at
+    })
     initVisualizations(data);
 }).catch(function(err) {
     console.log(err);
 })
 
 function initVisualizations(allDataArray) {
+    let dateExtent = d3.extent(allDataArray[5], function(d){
+        return d.tweet_created_at
+    });
+    myDensityVis = new Slider("#slider", allDataArray[5], dateExtent);
     myBubbleChart = new EmojiBubble("emojibubble", allDataArray[0], allDataArray[1]);
     myAreaChart = new StackedAreaChart("stacked-area-chart", allDataArray[2].hashtags);
     myWordFreqVis = new WordFreqVis("word-frequency-bubble-chart", allDataArray[3]);
@@ -35,3 +50,57 @@ function inputReset(){
     userInputVal = "";
     mySwarmPlotVis.wrangleData();
 }
+
+
+// let myBubbleChart;
+// let myAreaChart;
+// let myWordFreqVis;
+// let mySwarmPlotVis;
+// let myDensityVis;
+
+// let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
+// let userInputVal = document.getElementById("user-input-keyword").value;
+
+// // load data
+// Promise.all([
+//     d3.csv("data/tweet_emojis.csv"),
+//     d3.csv("data/emojiWIP4.csv"),
+//     d3.json("data/hashtags_frequency_by_date.json"),
+//     d3.csv("data/tweet_text_word_frequency_not_stemmed_top100.csv"),
+//     d3.csv("data/animal_crossing_tweets_original_20211030_to_20211105_top1000.csv"),
+//     d3.csv("data/animal_crossing_tweets_original2_20211107.csv", (row) => {
+// 		row.tweet_id = +row.tweet_id
+// 		row.tweet_created_at = parseDate(row.tweet_created_at)
+// 		return row
+// 	})
+// ]).then(function(data) {
+//     // data[5].sort(function(a, b){
+//     //     return a.tweet_created_at - b.tweet_created_at
+//     // })
+//     initVisualizations(data);
+// }).catch(function(err) {
+//     console.log(err);
+// })
+
+// function initVisualizations(allDataArray) {
+//     let dateExtent = d3.extent(allDataArray[5], function(d){
+//         return d.tweet_created_at
+//     });
+//     console.log(dateExtent);
+//     myBubbleChart = new EmojiBubble("emojibubble", allDataArray[0], allDataArray[1]);
+//     myAreaChart = new StackedAreaChart("stacked-area-chart", allDataArray[2].hashtags);
+//     myWordFreqVis = new WordFreqVis("word-frequency-bubble-chart", allDataArray[3]);
+//     mySwarmPlotVis = new SwarmPlotVis("swarm-plot", allDataArray[4]);
+//     myDensityVis = new Slider("#slider", allDataArray[5], dateExtent);
+// }
+
+// // take user input of keyword or phrase searches in the swarm plot
+// function inputChange() {
+//     userInputVal = document.getElementById("user-input-keyword").value;
+//     mySwarmPlotVis.wrangleData();
+// }
+
+// function inputReset(){
+//     userInputVal = "";
+//     mySwarmPlotVis.wrangleData();
+// }

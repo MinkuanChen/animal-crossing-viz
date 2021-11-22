@@ -104,7 +104,13 @@ class Slider {
 		
 		vis.colorScale = d3.scaleOrdinal()
 			.domain(vis.sourceExtent)
-			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);	
+			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);
+
+		vis.barExtent = [0, 30]
+
+		vis.barColorScale = d3.scaleLinear()
+			.domain(vis.barExtent)
+			.range(["blue", "red"])
 			 
 		vis.circles = vis.svg.selectAll("circle")
 			.data(vis.displayData)
@@ -126,7 +132,6 @@ class Slider {
 			.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 			
-		vis.barExtent = [0, 30]
 		vis.barScale = d3.scaleLinear()
 			.domain(vis.barExtent)
 			.range([vis.margin.left, vis.width])
@@ -136,7 +141,9 @@ class Slider {
 
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
-			.attr("fill", "red")
+			.attr("fill", function(d){
+				return vis.barColorScale(tmpData.length)
+			})
 			.attr("width", vis.width/2)
             .attr("height", 10)
             .attr("x", 50)
@@ -199,11 +206,8 @@ class Slider {
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
 			.merge(vis.barfluc)
-			.attr("fill", function(){
-				if (vis.barScale(vis.filteredData.length) < 20){
-					return "blue"
-				}
-				return "red"
+			.attr("fill", function(d){
+				return vis.barColorScale(vis.filteredData.length)
 			})
 			.attr("width", vis.barScale(vis.filteredData.length))
             .attr("height", 10)
