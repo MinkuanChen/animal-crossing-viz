@@ -31,7 +31,7 @@ class SwarmPlotVis {
         tweetCreatedDate.sort();
         console.log(tweetCreatedDate);
 
-        vis.xCoords = tweetCreatedDate.map((d, i) => 100 + i * vis.width/7);
+        vis.xCoords = tweetCreatedDate.map((d, i) => 50 + i * vis.width/7);
         vis.xScale = d3.scaleOrdinal().domain(tweetCreatedDate).range(vis.xCoords);
 
         vis.yScale = d3
