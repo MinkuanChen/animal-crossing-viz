@@ -54,6 +54,7 @@ constructor(parentElement, data) {
 
 		vis.xAxis = d3.axisBottom()
 			.scale(vis.x)
+			.ticks(7)
 			.tickFormat(formatDate);
 
 		vis.yAxis = d3.axisLeft()
@@ -89,6 +90,11 @@ constructor(parentElement, data) {
 				.attr("y", 10)
 				.attr("class", "tooltip-text")
 				.style("opacity", 0);
+
+		vis.tooltip = d3.select("#stacked-area-chart")
+			.append("div")
+			.attr("class", "tooltip")
+			.attr("id", "stackedAreaChartTooltip");
 
             vis.wrangleData();
 
@@ -129,6 +135,15 @@ console.log("display data is",vis.displayData);
 					.text(d.key)
 					.style("opacity", 1);
 				//console.log(d.key);
+				vis.tooltip
+					.style("opacity", 1)
+					.style("left", event.pageX + 20 + "px")
+					.style("top", event.pageY + "px")
+					.html(`
+                         <div style="border: thin solid grey; border-radius: 25px; background: #fff9e5; padding: 10px">
+                         <p style="font-size: 10pt"><b>Hashtag:</b> #${d.key}</p>
+                         </div>
+                        `)
 			})
 			.on("mouseout", (event)=>{
 				d3.select(".tooltip-text")
