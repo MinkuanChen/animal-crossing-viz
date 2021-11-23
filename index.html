@@ -67,19 +67,21 @@
             <div class="container">
                 <!--density graph goes here, ID is density (or change to liking)-->
                 <div class="row mb-4 mb-lg-5 align-items-center" id="density">
-                    <div id="slider"></div>
-                    <div id="bar">
-                        <p id="count" style="font-size: 16px;"></p>
-                    </div>
-                    <div id="densityDiv"></div>
                     <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
                             <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
                             <p class="text-black">Here, we can look at the number of tweets that were sent out in 5 minute increments. We can see that overnight,
-                            there were many tweets sent out. </p>
+                                there were many tweets sent out. </p>
                         </div>
                     </div>
+
+                    <div id="slider"></div>
+                    <div id="bar">
+                        <p id="count" style="font-size: 16px;"></p>
+                    </div>
+                    <div id="densityDiv"></div>
+
                 </div>
 
                 <!--hashtag graph goes here, ID is hashtags (or change to liking)-->
@@ -96,7 +98,7 @@
                     </div>
                 </div>
                 <!--word graph goes here, ID is word (or change to liking)-->
-                <div class="container-fluid" style="border: thin solid grey; border-radius: 5px">
+                <div class="container-fluid">
                     <div class="row justify-content-center" style="height: 8vh">
                         <div class="align-self-center">
                             <h1>Top 100 Words Seen in the Tweets</h1>
@@ -111,6 +113,21 @@
 
                 <div class="row">
                      <br/>
+                </div>
+
+                <!--  break to explain more-->
+                <div id="explanationBreak" class="text-container">
+                    <div class="container">
+                        <div class="row">
+                            <h3>Explaining the community</h3>
+                            <p style="font-size:20px;">
+                                When examining the community, it is important to not only understand when things are being said
+                                or how popular any one statement may be. It is important to look at the community as a whole. To
+                                do this, we tapped into the emoji use of the community to get a sense of what else is being used
+                                to communicate around the time of the big update. (add insights)
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <!--emoji graph goes here, ID is emoji (or change to liking)-->
                 <div class="row" id="emoji">
@@ -153,20 +170,7 @@
                         retweeted or most-favorited. We can even tell which platform these tweets came from.</p>
                 </div>
 
-            <!--  break to explain more-->
-                <div id="explanationBreak" class="text-container">
-                    <div class="container">
-                        <div class="row">
-                            <h3>Explaining the community</h3>
-                            <p style="font-size:20px;">
-                                When examining the community, it is important to not only understand when things are being said
-                                or how popular any one statement may be. It is important to look at the community as a whole. To
-                                do this, we tapped into the emoji use of the community to get a sense of what else is being used
-                                to communicate around the time of the big update. (add insights)
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
                 <div class="container px-4 px-lg-5">
@@ -187,7 +191,7 @@
                     <div class="row" style="height:100%">
 
                         <div class="align-self-center" style="height:100vh">
-                            <div id="swarm-plot" style="height:100%"></div>
+                            <div id="swarm-plot" style="height:100%; width: 100%"></div>
                         </div>
                     </div>
 

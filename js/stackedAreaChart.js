@@ -26,7 +26,7 @@ constructor(parentElement, data) {
 	initVis(){
 		let vis = this;
 
-		vis.margin = {top: 40, right: 40, bottom: 40, left: 40};
+		vis.margin = {top: 40, right: 40, bottom: 40, left: 80};
 
 		vis.width = $('#' + vis.parentElement).width() - vis.margin.left - vis.margin.right;
 		vis.height = $('#' + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
@@ -47,11 +47,14 @@ constructor(parentElement, data) {
 			.range([0, vis.width])
 			.domain(d3.extent(vis.data, d=> parseDate(d.date)));
 
+		console.log("domain is",vis.x.domain());
+
 		vis.y = d3.scaleLinear()
 			.range([vis.height, 25]);
 
 		vis.xAxis = d3.axisBottom()
-			.scale(vis.x);
+			.scale(vis.x)
+			.tickFormat(formatDate);
 
 		vis.yAxis = d3.axisLeft()
 			.scale(vis.y);
@@ -70,7 +73,7 @@ constructor(parentElement, data) {
 
 
             vis.area = d3.area()
-				.curve(d3.curveCardinal)
+				.curve(d3.curveBasis)
 				.x(d=>{
 					return vis.x(parseDate(d.data.date))})
 				.y0(d=> {
@@ -102,7 +105,7 @@ constructor(parentElement, data) {
 
 	updateVis(){
 		let vis = this;
-
+console.log("display data is",vis.displayData);
 		vis.y.domain([0, d3.max(vis.displayData, function(d) {
             return d3.max(d, function(e) {
                 return e[1];
@@ -134,7 +137,8 @@ constructor(parentElement, data) {
 
 		categories.exit().remove();
 
-		vis.svg.select(".x-axis").call(vis.xAxis);
+		vis.svg.select(".x-axis")
+			.call(vis.xAxis);
 		vis.svg.select(".y-axis").call(vis.yAxis);
 	}
 }

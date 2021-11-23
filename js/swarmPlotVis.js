@@ -37,7 +37,7 @@ class SwarmPlotVis {
         vis.yScale = d3
             .scaleLinear()
             .domain(d3.extent(vis.data.map((d) => Math.sqrt(+d["tweet_retweet_count"]))))
-            .range([vis.height - 100, 100]);
+            .range([vis.height-100, 100]);
 
         vis.color = d3.scaleOrdinal().domain(tweetCreatedDate).range(['#a4d4a2', '#ff7c69', '#f1bdc3', '#7cc9c3', '#f5c24c', '#68b893', '#ef758a']);
 
@@ -45,18 +45,16 @@ class SwarmPlotVis {
 
         vis.tweetLikesDomain = vis.tweetLikesDomain.map((d) => Math.sqrt(d));
 
-        vis.size = d3.scaleLinear().domain(vis.tweetLikesDomain).range([2, 9]);
+        vis.size = d3.scaleLinear().domain(vis.tweetLikesDomain).range([1, 16]);
 
-        vis.svg.append("g")
+        vis.svg
             .call(d3.axisBottom(vis.xScale))
             .attr("transform", "translate(0," + vis.height-20 + ")");
 
         vis.svg.append("text")
-            .attr("transform",
-                "translate(" + (vis.width/2) + " ," +
-                (vis.height + 20) + ")")
             .style("text-anchor", "middle")
-            .text("Tweet Created Date");
+            .text("Tweet Created Date")
+            .attr("transform", "translate(" + (vis.width/2) + " ," + (vis.height + 20) + ")");
 
         vis.tooltip = d3.select("#swarm-plot")
             .append("div")
@@ -91,15 +89,16 @@ class SwarmPlotVis {
         tweetCreatedDate.sort();
         console.log(tweetCreatedDate);
 
-        vis.dotsSearched = vis.svg.selectAll(".circ")
+        vis.dots = vis.svg.selectAll(".circ")
             .data(vis.filteredData)
 
-            vis.dotsSearched
+            vis.dotsSearched = vis.dots
             .enter()
             .append("circle")
             .attr("class", "circ")
-            .merge(vis.dotsSearched)
-            .attr("stroke", "black")
+            .attr("stroke", "black");
+
+            vis.dots.merge(vis.dotsSearched)
             .attr("fill", (d) => vis.color(d.tweet_created_date))
             .attr("r", (d) => vis.size(Math.sqrt(d["tweet_favorite_count"])))
             .attr("cx", (d) => vis.xScale(d.tweet_created_date))
@@ -134,7 +133,7 @@ class SwarmPlotVis {
                     .html(``);
             });
 
-        vis.dotsSearched.exit().remove();
+        vis.dots.exit().remove();
 
         let simulation = d3.forceSimulation(vis.filteredData)
 
