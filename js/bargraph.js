@@ -10,40 +10,48 @@ class Bargraph {
     bg_initVis() {
         let vis = this;
         // Define dimensions of vis... need to make margins more responsive
-        var margin = { top: 30, right: 50, bottom: 30, left: 50 },
-            width  = 550 - margin.left - margin.right,
-            height = 250 - margin.top  - margin.bottom;
+        /* var margin = { top: 30, right: 50, bottom: 30, left: 50 },
+             width  = 550 - margin.left - margin.right,
+             height = 250 - margin.top  - margin.bottom;*/
 
-        /*  vis.margin = {top: 40, right: 40, bottom: 60, left: 40};
-          vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-          vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;*/
+
+        vis.margin = {top: 40, right: 40, bottom: 40, left: 80};
+        vis.width = $('#' + vis.parentElement).width() - vis.margin.left - vis.margin.right;
+        vis.height = $('#' + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
         // svg drawing area
         var svg = d3.select("#bargraph")
             .append("svg")
-            .attr("width",  width  + margin.left + margin.right)
-            .attr("height", height + margin.top  + margin.bottom)
+            .attr("width",  vis.width  + vis.margin.left + vis.margin.right)
+            .attr("height", vis.height + vis.margin.top  + vis.margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+        console.log(vis.graphData)
+
+        let selectedVar = "tweet_retweet_count" // "tweet_favorite_count"//
+
+        let tweetDomain = d3.extent(vis.graphData.map((d) => +d[selectedVar]));
+        console.log(tweetDomain[1])
 
         // Make x scale
-        var xScale = d3.scaleBand()
+        var xScale = d3.scaleLinear()
             .domain([0,9])
-            .range([0, (width)]);
+            .range([0, vis.width]);
         // Make x-axis and add to canvas
         var xAxis = d3.axisBottom()
             .scale(xScale);
 
         svg.append("g") //tick marks need to be moved to center later
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + vis.height + ")")
             .call(xAxis);
+
 
         // Make y scale, the domain will be defined on bar update
         var yScale = d3.scaleLinear()
-            .domain([0, vis.yMax])
-            .range([height, 0]);
+            .domain([0, tweetDomain[1]])
+            .range([vis.height, 0]);
         vis.yScale = yScale
         // Make y-axis and add to canvas
         var yAxis = d3.axisLeft()
@@ -52,28 +60,22 @@ class Bargraph {
             .attr("class", "y axis")
             .call(yAxis);
 
+
+        console.log(tweetDomain)
+
         console.log(vis.graphData)
-        // Create the u variable
-
-
-        let tweetLikesDomain = d3.extent(vis.graphData.map((d) => d["tweet_retweet_count"]));
-
-        console.log(tweetLikesDomain)
-
         var bars = svg.selectAll("rect").data(vis.graphData)
-
         bars
             .enter()
             .append("rect") // Add a new rect for each new elements
             .merge(bars) // get the already existing elements as well
             .transition() // and apply changes to all of them
             .duration(1000)
-            //.attr("x", (d, i) => 30 + 8*i)
-            .attr("x", function(d) { return xScale(d.tweetLikesDomain) ; })
-            .attr("y", height) //graphData value
-            .attr("width", (xScale.bandwidth()))
-            .attr("height", 0)
-            //.attr("height", function(d) { return height - yScale(d.tweetLikesDomain);}) //function (d) {return vis.height - yScale(d.graphData)})//how much data)
+            .attr("x", function(d,i) { return xScale(i)})
+            .attr("y", d => vis.height - yScale(+d[selectedVar])) //graphData value yScale(vis.graphData.map((d) => +d[selectedVar])))//
+            .attr("width",  10) //xScale.bandwidth()/10)
+            .attr("height", d => yScale(+d[selectedVar]))
+            //.attr("height", function(d) { return height - yScale(d.tweetDomain);}) //function (d) {return vis.height - yScale(d.graphData)})//how much data)
             .attr("fill", "#69b3a2")
 
         /*
@@ -93,7 +95,7 @@ class Bargraph {
         //vis.chart.exit().remove();
 
         vis.wrangleData();
-        vis.updateVis();
+        //vis.updateVis();
     };
 
     wrangleData() {
@@ -127,14 +129,14 @@ class Bargraph {
         //vis.updateVis();
     }
 
-    updateVis() {
+    /*updateVis() {
         let vis = this;
         //console.log(vis.retweets)
         console.log(vis.graphData)
         // Scales and axes
         //update domain
-        /* vis.x.domain(d3.extent(vis.displayData, function(d) {return d.date;}));
-         vis.y.domain(0(vis.displayData, function(d) {return d.value;}));*/
+        /!* vis.x.domain(d3.extent(vis.displayData, function(d) {return d.date;}));
+         vis.y.domain(0(vis.displayData, function(d) {return d.value;}));*!/
 
         // update axes
 
@@ -156,13 +158,13 @@ class Bargraph {
 
 
         // Update the Y axis
-        /*y.domain([0, d3.max(data, function(d) { return d.value }) ]);
-        yAxis.transition().duration(1000).call(d3.axisLeft(y));*/
+        /!*y.domain([0, d3.max(data, function(d) { return d.value }) ]);
+        yAxis.transition().duration(1000).call(d3.axisLeft(y));*!/
 
 
         // draw rectangles
 
-        /*vis.xCol2 = 650;
+        /!*vis.xCol2 = 650;
         vis.barY = d3.scaleBand()
             .range([vis.height, 0]);
 
@@ -266,9 +268,9 @@ class Bargraph {
             .attr("fill", (d) => {
                 return vis.color(d.Gross);
             });
-        rects.exit().remove();*/
+        rects.exit().remove();*!/
 
-        /*
+        /!*
                 vis.chart = d3.selectAll("#bargraph").data(vis.graphData);
 
                 vis.chart.enter().append("g")
@@ -282,16 +284,16 @@ class Bargraph {
                     .attr("height",50)
                     .attr("fill", "purple");
 
-                vis.chart.exit().remove();*/
+                vis.chart.exit().remove();*!/
         //draw labels
-        /*
+        /!*
                 var barLables = vis.svg.selectALl(".bar-label")
                     .data(vis.displayData);
 
-                barLabels.enter().append()*/
+                barLabels.enter().append()*!/
 
 
-        /*.on("mouseover", function (event, d) {
+        /!*.on("mouseover", function (event, d) {
             d3.select(this)
                 .attr("stroke", "black")
                 .attr("fill", "#fff9e5")
@@ -319,11 +321,10 @@ class Bargraph {
                     .style("left", 0)
                     .style("top", 0)
                     .html(``);
-            });*/
+            });*!/
 
         // Update the visualization
         //vis.wrangleData();
-    }
-
+    }*/
 
 }

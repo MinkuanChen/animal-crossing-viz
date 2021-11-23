@@ -184,3 +184,7 @@ select:disabled {
 #area-chart-wrapper {
     height: 70vh;
 }
+
+.character {
+    height:250px;
+}
