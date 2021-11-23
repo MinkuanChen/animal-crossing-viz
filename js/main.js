@@ -46,7 +46,7 @@ function initVisualizations(allDataArray) {
     for (i = 0; i < config.length; i++) {
         mytweetsource = new TweetSource("tweetsource", allDataArray[4], config[i]);
     }
-    myBargraph = new Bargraph("#bargraph", allDataArray[4])
+    //myBargraph = new Bargraph("#bargraph", allDataArray[4])
     mySwarmPlotVis = new SwarmPlotVis("swarm-plot", allDataArray[4]);
 }
 
