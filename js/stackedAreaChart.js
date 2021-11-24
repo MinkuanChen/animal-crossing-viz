@@ -147,7 +147,12 @@ console.log("display data is",vis.displayData);
 			})
 			.on("mouseout", (event)=>{
 				d3.select(".tooltip-text")
-				.style("opacity",0)
+				.style("opacity",0);
+				vis.tooltip
+					.style("opacity", 0)
+					.style("left", 0)
+					.style("top", 0)
+					.html(``);
 			});
 
 		categories.exit().remove();

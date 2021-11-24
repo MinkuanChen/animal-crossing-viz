@@ -10,11 +10,6 @@ class SwarmPlotVis {
 
     initVis() {
         let vis = this;
-        /*
-        vis.width = 1800;
-        vis.height = 500;
-
-         */
 
         vis.margin = {top: 40, right: 40, bottom: 40, left: 40};
 
@@ -69,15 +64,17 @@ class SwarmPlotVis {
 
         vis.filteredData = [];
 
-        if (userInputVal !=="") {
+        if (userInputVal ==="") {
+            vis.filteredData = vis.data;
+
+        } else if (userInputVal!==""){
             vis.data.forEach(row => {
                 if (row.tweet_text.includes(userInputVal)) {
                     vis.filteredData.push(row);
                 }
             });
-        } else if (userInputVal==""){
-            vis.filteredData = vis.data;
         }
+
         console.log(userInputVal);
         console.log("filtered data: ", vis.filteredData);
         vis.updateVis();
@@ -89,13 +86,13 @@ class SwarmPlotVis {
         tweetCreatedDate.sort();
         console.log(tweetCreatedDate);
 
-        vis.dots = vis.svg.selectAll(".circ")
+        vis.dots = vis.svg.selectAll(".swarm-bubble")
             .data(vis.filteredData)
 
             vis.dotsSearched = vis.dots
             .enter()
             .append("circle")
-            .attr("class", "circ")
+            .attr("class", "swarm-bubble")
             .attr("stroke", "black");
 
             vis.dots.merge(vis.dotsSearched)
@@ -133,13 +130,15 @@ class SwarmPlotVis {
                     .html(``);
             });
 
-        vis.dots.exit().remove();
+        vis.dots
+            .exit()
+            .remove();
 
         let simulation = d3.forceSimulation(vis.filteredData)
 
             .force("x", d3.forceX((d) => {
                 return vis.xScale(d.tweet_created_date);
-            }).strength(0.2))
+            }).strength(0.5))
 
             .force("y", d3.forceY((d) => {
                 return vis.yScale(d.tweet_retweet_count);
@@ -154,15 +153,19 @@ class SwarmPlotVis {
             .on("tick", tick);
 
         function tick() {
-            d3.selectAll(".circ")
-                .attr("cx", (d) => d.x)
-                .attr("cy", (d) => d.y);
+            d3.selectAll(".swarm-bubble")
+                .attr("cx", function(d) {return d.x})
+                .attr("cy", function(d) {return d.y});
         }
 
+
         vis.init_decay = setTimeout(function () {
-            console.log("start alpha decay");
             simulation.alphaDecay(0.1);
         }, 500);
 
+
     }
 }
+
+
+//References: https://github.com/d3/d3-force
