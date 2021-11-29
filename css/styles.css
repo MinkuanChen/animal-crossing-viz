@@ -124,7 +124,7 @@ button:focus:not(:focus-visible) {
 }
 
 .btn-primary:hover {
-    background-color: #ef758a
+    background-color: #ef758a;
 }
 
 button,
@@ -187,4 +187,9 @@ select:disabled {
 
 .character {
     height:250px;
+}
+
+div.tstooltip, div.bgtooltip {
+    position: absolute;
+    text-align: center;
 }

@@ -4,6 +4,7 @@ let myWordFreqVis;
 let mySwarmPlotVis;
 let myDensityVis;
 let mytweetsource = [];
+let tweetSelected = "";
 let myBargraph = [];
 let config = [
     {key: "tweet_source", title: "Tweet Source"},
@@ -46,7 +47,7 @@ function initVisualizations(allDataArray) {
     for (i = 0; i < config.length; i++) {
         mytweetsource = new TweetSource("tweetsource", allDataArray[4], config[i]);
     }
-    //myBargraph = new Bargraph("#bargraph", allDataArray[4])
+    myBargraph = new Bargraph("bargraph", allDataArray[4],tweetSelected)
     mySwarmPlotVis = new SwarmPlotVis("swarm-plot", allDataArray[4]);
 }
 
@@ -61,6 +62,20 @@ function inputReset(){
     mySwarmPlotVis.wrangleData();
 }
 
+function clearSelection() {
+    d3.selectAll(".tweet-sources")
+        .attr("fill", "black");
+    d3.select(".tstooltip")
+        .remove();
+    tweetSelected = "";
+    //d3.select(".tooltip").enter()
+    //redefine tooltip so that reappears?
+    updateBarVisualization();
+}
+
+function updateBarVisualization() {
+    myBargraph.wrangleData()
+}
 
 // let myBubbleChart;
 // let myAreaChart;

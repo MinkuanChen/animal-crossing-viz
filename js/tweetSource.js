@@ -25,7 +25,7 @@ class TweetSource {
 
         vis.tooltip = d3.select("#tweetsources")
             .append("div")
-            .attr("class", "tooltip")
+            .attr("class", "tstooltip")
             .attr("id", "tweetSourceTooltip");
 
 
@@ -42,9 +42,11 @@ class TweetSource {
             .style("font-size", "1.70em")
             .attr("class", "tweet-sources")
             .attr("fill", "black")
-            .on("mouseover", function (event, d) {
+            .on('click', function(event, d) {
+                d3.selectAll(".tweet-sources")
+                    .attr("fill", "black");
                 d3.select(this)
-                    .attr("fill", "#ef758a");
+                    .attr("fill", "#69b3a2");
                 vis.tooltip
                     .style("opacity", 1)
                     .style("left", event.pageX + 50 + "px")
@@ -54,16 +56,8 @@ class TweetSource {
                      <span style="font-size: 10pt"><b>Tweet source number:</b> ${d.value}</span>
                      </div>
                     `)
+                tweetSelected = this.innerHTML
+                updateBarVisualization(tweetSelected)
             })
-            .on("mouseout", function (event, d) {
-                d3.select(this)
-                    .attr("fill", "black"); //function(d) {return (d)});
-                vis.tooltip
-                    .style("opacity", 0)
-                    .style("left", 0)
-                    .style("top", 0)
-                    .html(``);
-            });
-            //.on("click", clicked);
     }
 }

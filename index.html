@@ -164,12 +164,17 @@
 
                 <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
                 <div class="row mb-4 mb-lg-5 align-items-top">
-                    <div class="col" style="vertical-align: top" id="tweetsources"> <h2>Top 10 Tweet Platform Sources</h2></div>
+                    <div class="col" style="vertical-align: top" id="tweetsources">
+                        <h2>Top 10 Tweet Platform Sources</h2>
+                        <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
+                                onclick="clearSelection()">Clear</button>
+                    </div>
+
                     <div class="col" style="vertical-align: top" id="bargraph"> <h2>Top 10</h2>
                         <form class="form-inline">
                             <div class="form-group">
                                 <label for="ranking-type">Filter by</label>
-                                <select class="form-control" id="ranking-type" onchange="updateVisualization()" style="width:200px">
+                                <select class="form-control" id="ranking-type" onchange="updateBarVisualization()" style="width:200px">
                                     <option value="retweets">Retweeted</option>
                                     <option value="favorites">Favorited</option>
                                 </select>
@@ -179,7 +184,6 @@
                     <p class="text-black">Here, we can hover over the top 10 platforms that were used by the community for tweeting. We can also see the top tweets by
                         retweeted or most-favorited. We can even tell which platform these tweets came from.</p>
                 </div>
-
 
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
