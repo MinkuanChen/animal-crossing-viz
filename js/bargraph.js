@@ -43,11 +43,11 @@ class Bargraph {
 
         //Append x and y Axis
         vis.svg.append("g") //tick marks need to be moved to center later
-            .attr("class", "x axis")
+            .attr("class", "x_axis")
             .attr("transform", "translate(0," + vis.height + ")")
             .call(vis.xAxis);
         vis.svg.append("g")
-            .attr("class", "y axis")
+            .attr("class", "y_axis")
             .call(vis.yAxis);
 
         vis.wrangleData();
@@ -99,9 +99,10 @@ class Bargraph {
 
     updateVis() {
         let vis = this;
-
+        console.log(vis.tweetYDomain[1])
         //update domain
-        vis.yScale.domain([0,vis.tweetYDomain[1]]);
+        vis.yScale
+            .domain([0,vis.tweetYDomain[1]]);
         //vis.xScale.domain([0,vis.tweetAmountXDomain);
 
         //draw bars
@@ -124,7 +125,7 @@ class Bargraph {
                 vis.tooltip
                     .style("opacity", 1)
                     .style("left", event.pageX + 25 + "px")
-                    .style("width", "300px")
+                    .style("width", "400px")
                     .style("heigth", "50px")
                     .style("top", event.pageY + "px")
                     .html(`
@@ -146,9 +147,11 @@ class Bargraph {
                     .style("top", 0)
                     .html(``);
             })
+            .transition()
+            .duration(2000)
         vis.bars.exit().remove();
 
         // update y axis
-        vis.svg.select("y axis").call(vis.yAxis)
+        vis.svg.select(".y_axis").call(vis.yAxis)
     }
 }
