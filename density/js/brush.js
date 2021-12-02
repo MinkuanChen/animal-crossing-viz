@@ -16,8 +16,7 @@ class Slider {
 		let vis = this
 		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
-		// vis.width = 1200 - vis.margin.left - vis.margin.right,
-		vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right,
+		vis.width = 1200 - vis.margin.left - vis.margin.right,
 		vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
 		vis.formatDateIntoYear = d3.timeFormat("%Y-%m-%d %H:%M:%S");
@@ -29,7 +28,7 @@ class Slider {
 		vis.graph = d3.select(vis.parentElement)
 			.append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", 300)
+			.attr("height", 300);
 
 		vis.x = d3.scaleTime()
 			.domain([vis.startDate, vis.endDate])
@@ -42,7 +41,7 @@ class Slider {
 		
 		vis.area = d3.area()
 			.x(function(d) {
-				return vis.x(d.date) })
+				return vis.x(d.date); })
 			.y0(vis.height-150)
 			.y1(function(d) { 
 				return vis.y(vis.height-360-d.volume) })
@@ -122,7 +121,7 @@ class Slider {
 			.domain(vis.sourceExtent)
 			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);
 
-		vis.barExtent = [0, 1000]
+		vis.barExtent = [0, 500]
 
 		vis.barColorScale = d3.scaleLinear()
 			.domain(vis.barExtent)
@@ -140,16 +139,7 @@ class Slider {
 			.attr("cx", function(d) { return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
-			.style("opacity", function(d){
-				if (vis.xScale(d.tweet_created_at) <= vis.width/3)
-					return vis.xScale(d.tweet_created_at)/(vis.width/3)
-				else if (vis.xScale(d.tweet_created_at) >= vis.width-(vis.width/3)){
-					return ((vis.width-vis.xScale(d.tweet_created_at))/(vis.width/3))
-				}
-				else{
-					return 1
-				}
-			})
+
 		// !!Now instantiate the bar graph
 		vis.bar = d3.select("#bar").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -212,6 +202,7 @@ class Slider {
 			// .transition()
 			// .duration(50)
 			.attr("fill", function(d){
+				// console.log(d.tweet_source, vis.colorScale(d.tweet_source))
 				return vis.colorScale(d.tweet_source)
 			})
 			.attr("r", 10)
@@ -219,16 +210,6 @@ class Slider {
 				return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
-			.style("opacity", function(d){
-				if (vis.xScale(d.tweet_created_at) <= vis.width/3)
-					return vis.xScale(d.tweet_created_at)/(vis.width/3)
-				else if (vis.xScale(d.tweet_created_at) >= vis.width-(vis.width/3)){
-					return ((vis.width-vis.xScale(d.tweet_created_at))/(vis.width/3))
-				}
-				else{
-					return 1
-				}
-			})
 
 		// !!Update bar
 		vis.barfluc = vis.bar.selectAll("rect")

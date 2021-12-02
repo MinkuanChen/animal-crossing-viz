@@ -11,7 +11,7 @@ let config = [
 ];
 
 
-// let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
+let parseDateDensity = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 let userInputVal = document.getElementById("user-input-keyword").value;
 
 // load data
@@ -22,11 +22,15 @@ Promise.all([
     d3.csv("data/tweet_text_word_frequency_not_stemmed_top100.csv"),
     d3.csv("data/animal_crossing_tweets_original_20211030_to_20211105_top1000.csv"),
     d3.csv("data/animal_crossing_tweets_original2_20211107.csv", (row) => {
-        let parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
 		row.tweet_id = +row.tweet_id
-		row.tweet_created_at = parseDate(row.tweet_created_at)
+		row.tweet_created_at = parseDateDensity(row.tweet_created_at)
 		return row
-	})
+	}),
+    d3.csv("data/volume_data.csv", (row) => {
+		row.volume = +row.volume
+		row.date = parseDateDensity(row.date)
+		return row
+	}),
 ]).then(function(data) {
     data[5].sort(function(a, b){
         return a.tweet_created_at - b.tweet_created_at
@@ -37,10 +41,7 @@ Promise.all([
 })
 
 function initVisualizations(allDataArray) {
-    let dateExtent = d3.extent(allDataArray[5], function(d){
-        return d.tweet_created_at
-    });
-    myDensityVis = new Slider("#slider", allDataArray[5], dateExtent);
+    myDensityVis = new Slider("#slider", allDataArray[5], allDataArray[6]);
     myBubbleChart = new EmojiBubble("emojibubble", allDataArray[0], allDataArray[1]);
     myAreaChart = new StackedAreaChart("stacked-area-chart", allDataArray[2].hashtags);
     myWordFreqVis = new WordFreqVis("word-frequency-bubble-chart", allDataArray[3]);
@@ -75,6 +76,12 @@ function clearSelection() {
 
 function updateBarVisualization() {
     myBargraph.wrangleData()
+}
+
+function brushed() {
+	let selectionRange = d3.brushSelection(d3.select(".brush").node());
+	let selectionDomain = selectionRange.map(myDensityVis.x.invert);
+	myDensityVis.wrangleData(selectionDomain);
 }
 
 // let myBubbleChart;

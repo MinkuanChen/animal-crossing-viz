@@ -25,16 +25,16 @@ body {
 	stroke-width: 8px;
 }
 
-.track-overlay {
+/* .track-overlay {
 	pointer-events: stroke;
 	stroke-width: 50px;
 	stroke: transparent;
 	cursor: crosshair;
-}
-
+} */
+/* 
 .handle {
 	fill: #fff;
 	stroke: #000;
 	stroke-opacity: 0.5;
 	stroke-width: 1.25px;
-}
+} */

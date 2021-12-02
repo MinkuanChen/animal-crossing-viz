@@ -193,3 +193,30 @@ div.tstooltip, div.bgtooltip {
     position: absolute;
     text-align: center;
 }
+
+body {
+	font-family:"avenir next", Arial, sans-serif;
+	font-size: 12px;
+	color: #696969;
+}
+
+.ticks {
+	font-size: 10px;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+	stroke-linecap: round;
+}
+
+.track {
+	stroke: #000;
+	stroke-opacity: 0.3;
+	stroke-width: 10px;
+}
+
+.track-inset {
+	stroke: #ddd;
+	stroke-width: 8px;
+}
