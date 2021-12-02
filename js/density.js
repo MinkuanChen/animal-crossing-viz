@@ -122,7 +122,7 @@ class Slider {
 			.domain(vis.sourceExtent)
 			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);
 
-		vis.barExtent = [0, 1000]
+		vis.barExtent = [5, 35]
 
 		vis.barColorScale = d3.scaleLinear()
 			.domain(vis.barExtent)
@@ -175,13 +175,16 @@ class Slider {
             .attr("y", 50)
 
 		// !! Instantiate Count
+		console.log(tmpData.length)
 		document.getElementById('count').innerText = "Number of tweets in time block: " + tmpData.length
+		document.getElementById('info').innerText = "Number of tweets per minute (as shown by the bar below): " + tmpData.length/2
 
 	}
 	wrangleData(selectionDomain){
 		let vis = this
 		vis.start = selectionDomain[0]
 		vis.end = selectionDomain[1]
+		vis.minutes = Math.round(((vis.end-vis.start) / 60000))
 		vis.filteredData = vis.displayData
 		vis.filteredData = vis.displayData.filter(function (d) {
 			// vis.newDateObj = new Date(start_time.getTime() + 1*60000)
@@ -235,19 +238,21 @@ class Slider {
 			.data(vis.filteredData)
 		
 		vis.barfluc.exit().remove()
+
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
 			.merge(vis.barfluc)
 			.attr("fill", function(d){
-				return vis.barColorScale(vis.filteredData.length)
+				return vis.barColorScale(vis.filteredData.length/vis.minutes)
 			})
-			.attr("width", vis.barScale(vis.filteredData.length))
+			.attr("width", vis.barScale(vis.filteredData.length/vis.minutes))
             .attr("height", 10)
             .attr("x", 50)
             .attr("y", 50)
 		// !! Update Count
-		let minutes = Math.round(((vis.end-vis.start % 86400000) % 3600000) / 60000)
-		document.getElementById('count').innerText = "Number of tweets in " + minutes + " minute time block: " + vis.filteredData.length
+		
+		document.getElementById('count').innerText = "Number of tweets in " + vis.minutes + " minute time block: " 
+		document.getElementById('info').innerText = "Number of tweets per minute (as shown by the bar below): " + Math.round(vis.filteredData.length/vis.minutes)
 	}
 
 }
