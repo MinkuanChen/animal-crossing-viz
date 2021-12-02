@@ -251,7 +251,7 @@ class Slider {
             .attr("y", 50)
 		// !! Update Count
 		
-		document.getElementById('count').innerText = "Number of tweets in " + vis.minutes + " minute time block: " 
+		document.getElementById('count').innerText = "Number of tweets in " + vis.minutes + " minute time block: " + vis.filteredData.length
 		document.getElementById('info').innerText = "Number of tweets per minute (as shown by the bar below): " + Math.round(vis.filteredData.length/vis.minutes)
 	}
 
