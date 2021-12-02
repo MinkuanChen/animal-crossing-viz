@@ -280,6 +280,8 @@ class EmojiBubble {
                     .attr('opacity', '.15')
                 d3.select(this)
                     .attr('opacity', '1')
+                    .attr('stroke-width', "4px")
+                    .attr('stroke', "#68b893")
                 for (let i = 0; i < vis.emojiRelationships[d.emoji].length; i++) {
                     d3.select("#e" + vis.emojiRelationships[d.emoji][i])
                         .attr('opacity', '1');
@@ -291,7 +293,8 @@ class EmojiBubble {
                     .html(`
                         <div style="color: white; opacity: 0.9; font-size: 10pt; border: #68b893; border-radius: 5px; background: #68b893; padding: 5px">
                             <h6> emoji: ${d.emoji}</h6>      
-                            <h6> count: ${d.count}</h6>                  
+                            <h6> count: ${d.count}</h6>  
+                            <h6> category: ${d.group}</h6>                  
                         </div>
                     `)
             })

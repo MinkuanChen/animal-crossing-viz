@@ -72,16 +72,16 @@
                         <div class="featured-text text-center text-lg-left">
                             <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
                             <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]-->
-                            <p class="text-black">Here, we can look at the number of tweets that were sent out in 5 minute increments. We can see that overnight,
-                                there were many tweets sent out. </p>
+                            <p class="text-black">Here, we can look at the number of tweets that were sent out in time increments of your choice. Set the time period by adjusting the brush, and slide it across time to see tweets coming and going! </p>
                         </div>
                     </div>
 
-                    <div id="slider"></div>
                     <div id="bar">
                         <p id="count" style="font-size: 16px;"></p>
+                        <p id="info" style="font-size: 16px;"></p>
                     </div>
                     <div id="densityDiv"></div>
+                    <div id="slider"></div>
 
                 </div>
 
@@ -132,28 +132,41 @@
                             <p style="font-size:20px;">
                                 When examining the community, it is important to not only understand when things are being said
                                 or how popular any one statement may be. It is important to look at the community as a whole. To
-                                do this, we tapped into the emoji use of the community to get a sense of what else is being used
-                                to communicate around the time of the big update. (add insights)
+                                do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
+                                around the time of the big update. Emojis can reveal a lot about the users, from getting an
+                                overall sentiment/mood gauge regarding the game to what things people are adding to their island. In particular,
+                                the Animal Crossing community seems to like to use emojis to reflect current events in the game as well as other
+                                available game features such as flowers, plants, crop growing, and food.
                             </p>
+                            <p class="text-black">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
+                                as the tweets encompass the day of Halloween. We also noticed that for some reason, out of the two red heart emojis,
+                                one heart emoji was strongly favored in terms of overall usage, yet was not frequently used in the same tweet as other emojis. Yet the
+                                red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
+                                was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
+                                food, and crop growing!--> We noticed that the coffee cup was a commonly used emoji, it seems that the community is very excited about Brewster's Cafe
+                                being added to the game through the November 4th update! Hover and click the buttons to explore more on your own!</p>
                         </div>
                     </div>
                 </div>
 
                 <!--emoji graph goes here, ID is emoji (or change to liking)-->
                 <div class="row" id="emoji">
-                    <div class="col-4">
+                    <div class="col">
                         <div class="text-center">
                             <div class="project-text text-center text-lg-left">
                                 <h4 class="text-black">What were the most frequently used emojis by AC Twitter?</h4>
-                                <button id="categorize">Categorize</button>
-                                <button id="merge">Merge</button>
+                               <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
+                                <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
                                 <p class="text-black">Click the Categorize button to see the emojis split into their respective categories and
-                                    get a sense for which emojis were most popular among their own type. You can merge them back as well to see
-                                    an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most!</p>
+                                    get a sense for which types of emojis were most popular. You can merge them back as well to see
+                                    an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
+                                    emoji to see how many times it was used over the week of November 4th as well as see what other emojis it was tweeted with!
+                                    Notice how the emojis that have not been used with the selected emoji will fade into the background.</p>
+                            </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col">
                         <div id="emojibubble" style="height: 90vh; width: 100%;"></div>
                     </div>
                 </div>

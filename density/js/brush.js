@@ -16,8 +16,7 @@ class Slider {
 		let vis = this
 		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
-		// vis.width = 1200 - vis.margin.left - vis.margin.right,
-		vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right,
+		vis.width = 1200 - vis.margin.left - vis.margin.right,
 		vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
 		vis.formatDateIntoYear = d3.timeFormat("%Y-%m-%d %H:%M:%S");
@@ -29,7 +28,7 @@ class Slider {
 		vis.graph = d3.select(vis.parentElement)
 			.append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", 300)
+			.attr("height", 300);
 
 		vis.x = d3.scaleTime()
 			.domain([vis.startDate, vis.endDate])
@@ -42,7 +41,7 @@ class Slider {
 		
 		vis.area = d3.area()
 			.x(function(d) {
-				return vis.x(d.date) })
+				return vis.x(d.date); })
 			.y0(vis.height-150)
 			.y1(function(d) { 
 				return vis.y(vis.height-360-d.volume) })
@@ -122,7 +121,7 @@ class Slider {
 			.domain(vis.sourceExtent)
 			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);
 
-		vis.barExtent = [5, 35]
+		vis.barExtent = [0, 500]
 
 		vis.barColorScale = d3.scaleLinear()
 			.domain(vis.barExtent)
@@ -140,16 +139,7 @@ class Slider {
 			.attr("cx", function(d) { return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
-			.style("opacity", function(d){
-				if (vis.xScale(d.tweet_created_at) <= vis.width/3)
-					return vis.xScale(d.tweet_created_at)/(vis.width/3)
-				else if (vis.xScale(d.tweet_created_at) >= vis.width-(vis.width/3)){
-					return ((vis.width-vis.xScale(d.tweet_created_at))/(vis.width/3))
-				}
-				else{
-					return 1
-				}
-			})
+
 		// !!Now instantiate the bar graph
 		vis.bar = d3.select("#bar").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -175,16 +165,13 @@ class Slider {
             .attr("y", 50)
 
 		// !! Instantiate Count
-		console.log(tmpData.length)
 		document.getElementById('count').innerText = "Number of tweets in time block: " + tmpData.length
-		document.getElementById('info').innerText = "Number of tweets per minute (as shown by the bar below): " + tmpData.length/2
 
 	}
 	wrangleData(selectionDomain){
 		let vis = this
 		vis.start = selectionDomain[0]
 		vis.end = selectionDomain[1]
-		vis.minutes = Math.round(((vis.end-vis.start) / 60000))
 		vis.filteredData = vis.displayData
 		vis.filteredData = vis.displayData.filter(function (d) {
 			// vis.newDateObj = new Date(start_time.getTime() + 1*60000)
@@ -215,6 +202,7 @@ class Slider {
 			// .transition()
 			// .duration(50)
 			.attr("fill", function(d){
+				// console.log(d.tweet_source, vis.colorScale(d.tweet_source))
 				return vis.colorScale(d.tweet_source)
 			})
 			.attr("r", 10)
@@ -222,37 +210,25 @@ class Slider {
 				return vis.xScale(d.tweet_created_at) })
 			.attr("cy", function(d) { return 150 })
 			.style("stroke", "black")
-			.style("opacity", function(d){
-				if (vis.xScale(d.tweet_created_at) <= vis.width/3)
-					return vis.xScale(d.tweet_created_at)/(vis.width/3)
-				else if (vis.xScale(d.tweet_created_at) >= vis.width-(vis.width/3)){
-					return ((vis.width-vis.xScale(d.tweet_created_at))/(vis.width/3))
-				}
-				else{
-					return 1
-				}
-			})
 
 		// !!Update bar
 		vis.barfluc = vis.bar.selectAll("rect")
 			.data(vis.filteredData)
 		
 		vis.barfluc.exit().remove()
-
 		vis.barfluc = vis.barfluc.enter()
 			.append("rect")
 			.merge(vis.barfluc)
 			.attr("fill", function(d){
-				return vis.barColorScale(vis.filteredData.length/vis.minutes)
+				return vis.barColorScale(vis.filteredData.length)
 			})
-			.attr("width", vis.barScale(vis.filteredData.length/vis.minutes))
+			.attr("width", vis.barScale(vis.filteredData.length))
             .attr("height", 10)
             .attr("x", 50)
             .attr("y", 50)
 		// !! Update Count
-		
-		document.getElementById('count').innerText = "Number of tweets in " + vis.minutes + " minute time block: " + vis.filteredData.length
-		document.getElementById('info').innerText = "Number of tweets per minute (as shown by the bar below): " + Math.round(vis.filteredData.length/vis.minutes)
+		let minutes = Math.round(((vis.end-vis.start % 86400000) % 3600000) / 60000)
+		document.getElementById('count').innerText = "Number of tweets in " + minutes + " minute time block: " + vis.filteredData.length
 	}
 
 }
