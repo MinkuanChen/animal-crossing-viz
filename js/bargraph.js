@@ -60,8 +60,12 @@ class Bargraph {
 
         var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
 
+        var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
+        console.log(vis.tweetSelectedArray)
         vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelected)
-        console.log(vis.tweetsBySourceArray)
+        //vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelectedArray)
+        //console.log(vis.tweetsBySourceArray)
+
 
         if (Array.isArray(vis.tweetsBySourceArray)) {
             vis.myDisplayData = vis.tweetsBySourceArray

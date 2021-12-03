@@ -4,6 +4,7 @@ let myWordFreqVis;
 let mySwarmPlotVis;
 let myDensityVis;
 let mytweetsource = [];
+let tweetSelectedArray = [];
 let tweetSelected = "";
 let myBargraph = [];
 let config = [
@@ -31,6 +32,7 @@ Promise.all([
 		row.date = parseDateDensity(row.date)
 		return row
 	}),
+    d3.csv("data/animal_crossing_tweets_og_20211030_to_20211105.csv"),
 ]).then(function(data) {
     data[5].sort(function(a, b){
         return a.tweet_created_at - b.tweet_created_at
@@ -46,9 +48,9 @@ function initVisualizations(allDataArray) {
     myAreaChart = new StackedAreaChart("stacked-area-chart", allDataArray[2].hashtags);
     myWordFreqVis = new WordFreqVis("word-frequency-bubble-chart", allDataArray[3]);
     for (i = 0; i < config.length; i++) {
-        mytweetsource = new TweetSource("tweetsource", allDataArray[4], config[i]);
+        mytweetsource = new TweetSource("tweetsource", allDataArray[7], config[i]);
     }
-    myBargraph = new Bargraph("bargraph", allDataArray[4],tweetSelected)
+    myBargraph = new Bargraph("bargraph", allDataArray[7],tweetSelected)
     mySwarmPlotVis = new SwarmPlotVis("swarm-plot", allDataArray[4]);
 }
 
@@ -71,6 +73,8 @@ function clearSelection() {
     tweetSelected = "";
     //d3.select(".tooltip").enter()
     //redefine tooltip so that reappears?
+    tweetSelectedArray = [];
+    mytweetsource.bg_sourceChart();
     updateBarVisualization();
 }
 
