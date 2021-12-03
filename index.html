@@ -8,242 +8,326 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles_dialogue.css" rel="stylesheet" />
         <link href="css/slider_style.css" rel="stylesheet" />
     </head>
 
     <body id="page-top">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#info">Data Sources and Methods</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="text-white text-uppercase"><i>Animal Crossing: New Horizons</i></h1>
-                        <h2 class="text-white mx-auto">2.0 Update</h2>
-                        <a class="btn btn-primary" href="#about">Get Started</a>
+        <section id="home" class="fullpage" style="padding-top: 3rem">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <div class="container px-4 px-lg-5">
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#info">Data Sources and Methods</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </header>
+            </nav>
+
+            <!-- Masthead-->
+            <header class="masthead">
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="text-white text-uppercase"><i>Animal Crossing: New Horizons</i></h1>
+                            <h2 class="text-white mx-auto">2.0 Update</h2>
+                            <a class="btn btn-primary" href="#about">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </section>
 
         <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">What are we looking at?</h2>
-                        <p class="text-white" style="font-size:25px;">
-                            Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
-                            seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
-                            Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
-                            community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
-
-                        </p>
-                        <p style="font-size:25px;">
-                            With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
-                            talking most about!
-                        </p>
+        <section class="fullpage">
+            <section class="about-section text-center" id="about" style="padding-top: 3rem">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <h2 class="text-white mb-4" style="padding-top: 2rem">What are we looking at?</h2>
+                            <p class="text-white" style="font-size:24px;">
+                                Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
+                                seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
+                                Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
+                                community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
+                            </p>
+                            <!--<div class="col-md-6 offset-md-4">
+                                    With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
+                                    talking most about!
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]-->
+                    </div>
+                   <!--<div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]
+                        </div>
+                        <div class="col-md-6 offset-md-3">
+                            <p style="font-size:25px;">
+                                With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
+                                talking most about!
+                            </p>
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#home">Back</a>
+                            <a class="btn btn-primary" href="#visualizations">Next</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </section>
 
         <!-- visualizations-->
         <section class="visualizations-section" id="visualizations">
             <div class="container">
-                <!--density graph goes here, ID is density (or change to liking)-->
-                <div class="row mb-4 mb-lg-5 align-items-center" id="density">
-                    <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
-                            <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]-->
-                            <p class="text-black">Here, we can look at the number of tweets that were sent out in time increments of your choice. Set the time period by adjusting the brush, and slide it across time to see tweets coming and going! </p>
+                <section class="fullpage" id="tom">
+                    <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
+                    <p>Text for intro to density, stacked, and word frequency...</p>
+                    <div class="col-2">
+                        <a class="btn btn-primary" href="#about">Back</a>
+                        <a class="btn btn-primary" href="#density">Next</a>
+                    </div>
+                </section>
+
+                <section class="fullpage">
+                    <!--density graph goes here, ID is density (or change to liking)-->
+                    <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 3rem">
+                        <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="featured-text text-center text-lg-left">
+                                <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
+                                <div class="col-2">
+                                    <a class="btn btn-primary" href="#tom">Back</a>
+                                    <a class="btn btn-primary" href="#stacked">Next</a>
+                                </div>
+                                <p class="text-black">Here, we can look at the number of tweets that were sent out in time increments of your choice. Set the time period by adjusting the brush, and slide it across time to see tweets coming and going! </p>
+                            </div>
+                        </div>
+
+                        <div id="bar">
+                            <p id="count" style="font-size: 16px;"></p>
+                            <p id="info" style="font-size: 16px;"></p>
+                        </div>
+                        <div id="densityDiv"></div>
+                        <div id="slider"></div>
+                    </div>
+                </section>
+
+                <section class="fullpage">
+                    <div class="row" id="stacked" style="padding-top: 3rem">
+                        <div class="col">
+                            <div class="text-center">
+                                <div class="project-text text-center text-lg-left">
+                                    <h4 class="text-black">Top 10 Hashtags In the Animal Crossing Tweets from 10/30 to 11/05</h4>
+                                    <p class="text-black">Here, we can look at the number of specific hashtags used over a five-day span leading up to the release.
+                                        It was interesting to see that there was a spike between Wednesday, November 3rd, and Thursday, November 4th, before a decline on the day of the supposed release.
+                                        Was everyone too busy playing to tweet?!</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <a class="btn btn-primary" href="#density">Back</a>
+                                    <a class="btn btn-primary" href="#words">Next</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div id="bar">
-                        <p id="count" style="font-size: 16px;"></p>
-                        <p id="info" style="font-size: 16px;"></p>
+                    <div class="col">
+                        <div id="stacked-area-chart" style="height: 90vh; width: 100%;"></div>
                     </div>
-                    <div id="densityDiv"></div>
-                    <div id="slider"></div>
-
-                </div>
-
-
-
-
-
-                <!--hashtag graph goes here, ID is hashtags (or change to liking)-->
-                <div class="row mb-4 mb-lg-5 align-items-center">
-                    <div class="align-self-center featured-text text-center text-lg-left" >
-                        <h1>Top 10 Hashtags In the Animal Crossing Tweets from 10/30 to 11/05</h1>
-                        <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
-                        <p class="text-black">Here, we can look at the number of specific hashtags used over a five-day span leading up to the release.
-                        It was interesting to see that there was a spike between Wednesday, November 3rd, and Thursday, November 4th, before a decline on the day of the supposed release.
-                        Was everyone too busy playing to tweet?!</p>
-                    </div>
-                </div>
-                <div class="row mb-4 mb-lg-5 align-items-center" id="area-chart-wrapper">
-                    <div class="col-xl-4 col-lg-5" id="stacked-area-chart">
-                    </div>
-                </div>
-                <!--word graph goes here, ID is word (or change to liking)-->
-                <div class="container-fluid">
-                    <div class="row justify-content-center" style="height: 8vh">
-                        <div class="align-self-center">
-                            <h1>Top 100 Words Seen in the Tweets</h1>
-                        </div>
-                    </div>
-                    <div class="row" style="height: 100%">
-                        <div class="align-self-center" style="height: 100vh">
-                            <div id="word-frequency-bubble-chart" style="height: 100%"></div>
-                        </div>
-                    </div>
-                </div>
+                </section>
 
                 <div class="row">
-                     <br/>
+                    <br/>
                 </div>
 
-                <img class="character" src="/img/characters/Blathers_NH.png" alt="Blathers"/> <!--<br>[<a href="#_f3">3</a>]-->
+                <section class="fullpage">
+                    <div class="row" id="words" style="padding-top: 3rem">
+                        <div class="col">
+                            <div class="text-center" style="padding-top: 2rem">
+                                <div class="project-text text-center text-lg-left">
+                                    <h4 class="text-black">Top 100 Words Seen in the Tweets</h4>
+                                    <a class="btn btn-primary" href="#stacked">Back</a>
+                                    <a class="btn btn-primary" href="#explanationBreak">Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div id="word-frequency-bubble-chart" style="height: 90vh; width: 100%;"></div>
+                        <div class="col-2">
+                        </div>
+                    </div>
+                </section>
 
 
                 <!--  break to explain more-->
-                <div id="explanationBreak" class="text-container">
-                    <div class="container">
-                        <div class="row">
-                            <h3>Explaining the community</h3>
-                            <p style="font-size:20px;">
-                                When examining the community, it is important to not only understand when things are being said
-                                or how popular any one statement may be. It is important to look at the community as a whole. To
-                                do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
-                                around the time of the big update. Emojis can reveal a lot about the users, from getting an
-                                overall sentiment/mood gauge regarding the game to what things people are adding to their island. In particular,
-                                the Animal Crossing community seems to like to use emojis to reflect current events in the game as well as other
-                                available game features such as flowers, plants, crop growing, and food.
-                            </p>
-                            <p class="text-black">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
-                                as the tweets encompass the day of Halloween. We also noticed that for some reason, out of the two red heart emojis,
-                                one heart emoji was strongly favored in terms of overall usage, yet was not frequently used in the same tweet as other emojis. Yet the
-                                red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
+                <section id="explanationBreak" class="fullpage" style="padding-top: 3rem">
+                    <img class="character" src="/img/characters/Blathers_NH.png" alt="Blathers"/> <!--<br>[<a href="#_f3">3</a>]-->
+                    <div class="text-container">
+                        <div class="container">
+                            <div class="row">
+                                <h3>Explaining the community</h3>
+                                <p style="font-size:20px;">
+                                    When examining the community, it is important to not only understand when things are being said
+                                    or how popular any one statement may be. It is important to look at the community as a whole. To
+                                    do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
+                                    around the time of the big update. Emojis can reveal a lot about the users, from getting an
+                                    overall sentiment/mood gauge regarding the game to what things people are adding to their island. In particular,
+                                    the Animal Crossing community seems to like to use emojis to reflect current events in the game as well as other
+                                    available game features such as flowers, plants, crop growing, and food.
+                                </p>
+                                <p class="text-black">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
+                                    as the tweets encompass the day of Halloween. We also noticed that for some reason, out of the two red heart emojis,
+                                    one heart emoji was strongly favored in terms of overall usage, yet was not frequently used in the same tweet as other emojis. Yet the
+                                    red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
                                 was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
                                 food, and crop growing!--> We noticed that the coffee cup was a commonly used emoji, it seems that the community is very excited about Brewster's Cafe
-                                being added to the game through the November 4th update! Hover and click the buttons to explore more on your own!</p>
+                                    being added to the game through the November 4th update! Hover and click the buttons to explore more on your own!</p>
+                            </div>
+                            <div class="col-2">
+                                <a class="btn btn-primary" href="#word-frequency-bubble-chart">Back</a>
+                                <a class="btn btn-primary" href="#emoji">Next</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!--emoji graph goes here, ID is emoji (or change to liking)-->
-                <div class="row" id="emoji">
-                    <div class="col">
-                        <div class="text-center">
-                            <div class="project-text text-center text-lg-left">
-                                <h4 class="text-black">What were the most frequently used emojis by AC Twitter?</h4>
-                               <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
-                                <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
-                                <p class="text-black">Click the Categorize button to see the emojis split into their respective categories and
-                                    get a sense for which types of emojis were most popular. You can merge them back as well to see
-                                    an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
-                                    emoji to see how many times it was used over the week of November 4th as well as see what other emojis it was tweeted with!
-                                    Notice how the emojis that have not been used with the selected emoji will fade into the background.</p>
-                            </div>
+                <section class="fullpage">
+                    <div class="row" id="emoji" style="padding-top: 3rem">
+                        <div class="col">
+                            <div class="text-center">
+                                <div class="project-text text-center text-lg-left">
+                                    <h4 class="text-black">What were the most frequently used emojis by AC Twitter?</h4>
+                                    <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
+                                    <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
+                                    <div class="col-2">
+                                        <a class="btn btn-primary" href="#explanationBreak">Back</a>
+                                        <a class="btn btn-primary" href="#bars">Next</a>
+                                    </div>
+                                    <p class="text-black">Click the Categorize button to see the emojis split into their respective categories and
+                                        get a sense for which types of emojis were most popular. You can merge them back as well to see
+                                        an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
+                                        emoji to see how many times it was used over the week of November 4th as well as see what other emojis it was tweeted with!
+                                        Notice how the emojis that have not been used with the selected emoji will fade into the background.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div id="emojibubble" style="height: 90vh; width: 100%;"></div>
+                        <!--<div class="col-2">
+                            <a class="btn btn-primary" href="#explanationBreak">Back</a>
+                            <a class="btn btn-primary" href="#bars">Next</a>
+                        </div>-->
                     </div>
-                </div>
+                </section>
 
                 <div class="row">
                     <br/>
                 </div>
 
                 <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
-                <div class="row mb-4 mb-lg-5 align-items-top">
-                    <div class="col" style="vertical-align: top" id="tweetsources">
-                        <h2>Top 10 Tweet Platform Sources</h2>
-                        <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
-                                onclick="clearSelection()">Clear</button>
-                    </div>
+                <section class="fullpage" id="bars">
+                    <div class="row mb-4 mb-lg-5 align-items-top">
+                        <div class="col" style="vertical-align: top; padding-top: 3rem" id="tweetsources">
+                            <h2>Top 10 Tweet Platform Sources</h2>
+                            <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
+                                    onclick="clearSelection()">Clear</button>
+                        </div>
 
-                    <div class="col" style="vertical-align: top" id="bargraph"> <h2>Top 10</h2>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label for="ranking-type">Filter by</label>
-                                <select class="form-control" id="ranking-type" onchange="updateBarVisualization()" style="width:200px">
-                                    <option value="retweets">Retweeted</option>
-                                    <option value="favorites">Favorited</option>
-                                </select>
-                            </div>
-                        </form>
+                        <div class="col" style="vertical-align: top; padding-top: 3rem" id="bargraph"> <h2>Top 10</h2>
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="ranking-type">Filter by</label>
+                                    <select class="form-control" id="ranking-type" onchange="updateBarVisualization()" style="width:200px">
+                                        <option value="retweets">Retweeted</option>
+                                        <option value="favorites">Favorited</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <p class="text-black">Here, we can hover over the top 10 platforms that were used by the community for tweeting. We can also see the top tweets by
+                            retweeted or most-favorited. We can even tell which platform these tweets came from.</p>
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#emoji">Back</a>
+                            <a class="btn btn-primary" href="#bee">Next</a>
+                        </div>
                     </div>
-                    <p class="text-black">Here, we can hover over the top 10 platforms that were used by the community for tweeting. We can also see the top tweets by
-                        retweeted or most-favorited. We can even tell which platform these tweets came from.</p>
-                </div>
+                </section>
 
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
-                <div class="container px-4 px-lg-5">
-                    <div class="row justify-content-center" style="height: 12vh">
-                        <div class="align-self-center">
-                            <h1>Top 1000 Retweeted Tweets By Date and Keyword</h1>
+                <section class="fullpage" id="bee" style="padding-top: 3rem">
+                    <div class="container px-4 px-lg-5">
+                        <div class="row justify-content-center" style="height: 12vh">
+                            <div class="align-self-center">
+                                <h1>Top 1000 Retweeted Tweets By Date and Keyword</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="align-self-center">
+                                <label for="keyword">Search for keywords and phrases in tweet texts (type in any keyword and hit enter - to return to all results, clear the input and hit enter):</label>
+                                <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
+                                <input type="button" value="Search" id="search-btn" onclick="inputChange()">
+                                <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
+                            </div>
+                        </div>
+                        <div class="row" style="height:100%">
+
+                            <div class="align-self-center" style="height:100vh">
+                                <div class="col-2">
+                                    <a class="btn btn-primary" href="#bars">Back</a>
+                                    <a class="btn btn-primary" href="#explanationBreak2">Next</a>
+                                </div>
+                                <div id="swarm-plot" style="height:100%; width: 100%"></div>
+                                <!--<div class="col-2">
+                                    <a class="btn btn-primary" href="#bars">Back</a>
+                                    <a class="btn btn-primary" href="#explanationBreak2">Next</a>
+                                </div>-->
+                            </div>
                         </div>
                     </div>
-                <div class="row">
-
-                    <div class="align-self-center">
-                        <label for="keyword">Search for keywords and phrases in tweet texts (type in any keyword and hit enter - to return to all results, clear the input and hit enter):</label>
-                        <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
-                        <input type="button" value="Search" id="search-btn" onclick="inputChange()">
-                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
-                    </div>
-                </div>
-                    <div class="row" style="height:100%">
-
-                        <div class="align-self-center" style="height:100vh">
-                            <div id="swarm-plot" style="height:100%; width: 100%"></div>
-                        </div>
-                    </div>
-
-                </div>
+                </section>
 
             <!--  break to explain more-->
-                <div id="explanationBreak2" class="text-container">
-                    <div class="container">
-                        <div class="row">
-                            <h3>What does the Twitter community for Animal Crossing look like</h3>
-                            <p style="font-size:20px;">
-                                As you can see, the <i>Animal Crossing</i> community is still very active on social media platforms. As you may have gleaned from some of the visualizations
-                                above. There seemed to be a lot of activity starting on November 3rd and November 4th, prior to the stated release date. Well that is because it dropped early!
-                                According to
-                                <a href="https://www.polygon.com/22763237/animal-crossing-new-horizons-2-0-update-everything-new-best-additions" target="_blank">Polygon</a>
-                                and many of the Twitter users as well, the release surprisingly came out about a day earlier than expected.
-                            </p>
+                <section id="explanationBreak2" class="fullpage" style="padding-top: 3rem">
+                    <div class="text-container">
+                        <div class="container">
+                            <div class="row">
+                                <h3>What does the Twitter community for Animal Crossing look like</h3>
+                                <p style="font-size:20px;">
+                                    As you can see, the <i>Animal Crossing</i> community is still very active on social media platforms. As you may have gleaned from some of the visualizations
+                                    above. There seemed to be a lot of activity starting on November 3rd and November 4th, prior to the stated release date. Well that is because it dropped early!
+                                    According to
+                                    <a href="https://www.polygon.com/22763237/animal-crossing-new-horizons-2-0-update-everything-new-best-additions" target="_blank">Polygon</a>
+                                    and many of the Twitter users as well, the release surprisingly came out about a day earlier than expected.
+                                </p>
+                                <div class="col-2">
+                                    <a class="btn btn-primary" href="#bee">Back</a>
+                                    <a class="btn btn-primary" href="#credit">Next</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
 
         <!-- Credit-->
-        <section class="credit-section" id="credit">
+        <section class="credit-section" class= "fullpage" id="credit" style="padding-top: 3rem">
             <div id="conclusion-sec" class="section">
                 <div class="container box">
                     <h3>Thank you!</h3>
@@ -281,13 +365,17 @@
                             <a href="https://www.linkedin.com/in/ryan-buehler-76769589" target="_blank"><span class="name">Ryan Buehler</span><br></a>
                             <span style="font-size:18px;">BA in Biology</span>
                         </div>
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#explanationBreak2">Back</a>
+                            <a class="btn btn-primary" href="#resources">Next</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Important information-->
-        <section class="info-section">
+        <section class="info-section" class="fullpage" id="resources" style="padding-top: 3rem">
             <div id="info" class="section">
                 <div class="container box box2">
                     <h3>Data Sources and Methods</h3>
@@ -310,22 +398,26 @@
                             Additional icons were found from <a href="https://thenounproject.com/" target="_blank">Noun Project</a>.
                             </p>
                         </div>
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#credit">Back</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Footer-->
+            <footer class="footer small text-center text-black">
+                <div class="container px-4 px-lg-5">
+                    <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
+                    <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
+                    <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
+                </div>
+            </footer>
         </section>
-        <!-- Footer-->
-        <footer class="footer small text-center text-black">
-            <div class="container px-4 px-lg-5">
-                <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
-                <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
-                <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
-            </div>
-        </footer>
 
 
         <!-- embedding JS libraries -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -337,6 +429,7 @@
 
         <!-- own js files -->
         <script src="js/main.js"></script>
+        <script src="js/dialogue.js"></script>
         <script src="js/density.js"></script>
         <script src="js/emojibubble.js"></script>
         <script src="js/stackedAreaChart.js"></script>
