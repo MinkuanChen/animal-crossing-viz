@@ -1,688 +1,803 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <title>Animal Crossing New Horizons 2.0 </title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/styles_dialogue.css" rel="stylesheet" />
-        <link href="css/slider_style.css" rel="stylesheet" />
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <title>Animal Crossing New Horizons 2.0 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/styles_dialogue.css" rel="stylesheet"/>
+    <link href="css/slider_style.css" rel="stylesheet"/>
+</head>
 
-    <body id="page-top">
+<body id="page-top">
 
-        <!-- Navigation-->
-        <section id="home" class="fullpage" style="padding-top: 3rem">
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-                <div class="container px-4 px-lg-5">
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#info">Data Sources and Methods</a></li>
-                        </ul>
+<!-- Navigation-->
+<section id="home" class="fullpage" style="padding-top: 3rem">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#info">Data Sources and Methods</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="text-white text-uppercase"><i>Animal Crossing: New Horizons</i></h1>
+                    <h2 class="text-white mx-auto">2.0 Update</h2>
+                    <a class="btn btn-primary" href="#about">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+<!-- About-->
+<section class="fullpage about-section text-center" id="about" style="padding-top: 3rem">
+    <div class="about-container">
+        <div class="row justify-content-center">
+            <div class="col" style="text-align: center;">
+                <h2 class="text-white mb-4" style="padding-top: 2rem">What are we looking at?</h2>
+                <p class="text-white" style="font-size:24px; padding-left: 20px; padding-right: 20px;">
+                    Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page,
+                    <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of
+                    2020, making it the year's
+                    seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold
+                    32.63 million units.
+                    Because of the timing of the release around the start of the pandemic, the game not only was popular
+                    in terms of sales, but it allowed for a very interactive
+                    community of people stuck in their homes to come together from all over the world and help each
+                    other out in building great islands.
+                </p>
+            </div>
+        </div>
+        <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/>
+        <!--<br>[<a href="#_f1">1</a>]-->
+        <div id="app">
+            <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+            <dialogue>
+                <span slot="character">Isabelle</span>
+                With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active
+                community was reinvigoratted and also explore what they were
+                talking most about!
+            </dialogue>
+        </div>
+        <div class="col">
+            <div class="about-buttons" style="padding-top: 0px;">
+                <a class="btn btn-primary" href="#home">Back</a>
+                <a class="btn btn-primary" href="#visualizations">Next</a>
+            </div>
+        </div>
+        <script type="text/x-template" id="dialogue">
+            <div class="dialogue">
+                <div class="dialogue-blobs">
+                    <div class="dialogue-blob-top"></div>
+                    <div class="dialogue-blob-bottom"></div>
+                    <dialogue-text>
+                        <slot></slot>
+                    </dialogue-text>
+                </div>
+                <div class="dialogue-character-wrap">
+                    <div class="dialogue-character">
+                        <slot name="character"></slot>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Masthead-->
-            <header class="masthead">
-                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                    <div class="d-flex justify-content-center">
-                        <div class="text-center">
-                            <h1 class="text-white text-uppercase"><i>Animal Crossing: New Horizons</i></h1>
-                            <h2 class="text-white mx-auto">2.0 Update</h2>
-                            <a class="btn btn-primary" href="#about">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </section>
-
-        <!-- About-->
-        <section class="fullpage about-section text-center" id="about" style="padding-top: 3rem">
-            <div class="about-container">
-                <div class="row justify-content-center">
-                    <div class="col" style="text-align: center;">
-                        <h2 class="text-white mb-4" style="padding-top: 2rem">What are we looking at?</h2>
-                        <p class="text-white" style="font-size:24px; padding-left: 20px; padding-right: 20px;">
-                            Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
-                            seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
-                            Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
-                            community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
-                        </p>
-                    </div>
-                </div>
-                <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/> <!--<br>[<a href="#_f1">1</a>]-->
-                <div id="app">
-                    <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                    <dialogue>
-                        <span slot="character">Isabelle</span>
-                        With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
-                        talking most about!
-                    </dialogue>
-                </div>
-                <div class="col">
-                    <div class="about-buttons" style="padding-top: 0px;">
-                        <a class="btn btn-primary" href="#home">Back</a>
-                        <a class="btn btn-primary" href="#visualizations">Next</a>
-                    </div>
-                </div>
-                <script type="text/x-template" id="dialogue">
-                    <div class="dialogue">
-                        <div class="dialogue-blobs">
-                            <div class="dialogue-blob-top"></div>
-                            <div class="dialogue-blob-bottom"></div>
-                            <dialogue-text>
-                                <slot></slot>
-                            </dialogue-text>
-                        </div>
-                        <div class="dialogue-character-wrap">
-                            <div class="dialogue-character">
-                                <slot name="character"></slot>
-                            </div>
-                        </div>
-                        <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
-                        </svg>
-
-                    </div>
-                </script>
-
-                <script type="text/x-template" id="dialogue-text">
-                    <div class="dialogue-text">
-                        {{displayedText}}
-                    </div>
-                </script>
-
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                        <filter id="old-goo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                            <feBlend in="SourceGraphic" in2="goo" />
-                        </filter>
-                        <filter id="fancy-goo">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                        </filter>
-                    </defs>
+                <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                          fill="#F1AE04"/>
                 </svg>
+
+            </div>
+        </script>
+
+        <script type="text/x-template" id="dialogue-text">
+            <div class="dialogue-text">
+                {{displayedText}}
+            </div>
+        </script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="old-goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                   result="goo"/>
+                    <feBlend in="SourceGraphic" in2="goo"/>
+                </filter>
+                <filter id="fancy-goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                   result="goo"/>
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+</section>
+
+<!-- visualizations-->
+<section class="visualizations-section" id="visualizations">
+    <div class="container">
+
+        <section class="fullpage">
+            <!--density graph goes here, ID is density (or change to liking)-->
+            <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 3rem">
+                <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4 class="text-black" style="padding-top: 15px;">Tweet Time Blocks Plot on the eve of November
+                            4th and 5th, 2021</h4>
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#about">Back</a>
+                            <a class="btn btn-primary" href="#explanationStackWord">Next</a>
+                        </div>
+                        <p class="text-black">Here, we can look at the number of tweets that were sent out in time
+                            increments of your choice. Set the time period by adjusting the brush, and slide it across
+                            time to see tweets coming and going! Each circle is a tweet, and each color is the source of
+                            that tweet!</p>
+                    </div>
+                </div>
+
+                <div id="bar">
+                    <p id="count" style="font-size: 16px;"></p>
+                    <p id="info" style="font-size: 16px;"></p>
+                </div>
+                <div id="densityDiv"></div>
+                <div id="slider"></div>
             </div>
         </section>
 
-        <!-- visualizations-->
-        <section class="visualizations-section" id="visualizations">
-            <div class="container">
-
-                <section class="fullpage">
-                    <!--density graph goes here, ID is density (or change to liking)-->
-                    <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 3rem">
-                        <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="featured-text text-center text-lg-left">
-                                <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
-                                <div class="col-2">
-                                    <a class="btn btn-primary" href="#about">Back</a>
-                                    <a class="btn btn-primary" href="#explanationStackWord">Next</a>
-                                </div>
-                                <p class="text-black">Here, we can look at the number of tweets that were sent out in time increments of your choice. Set the time period by adjusting the brush, and slide it across time to see tweets coming and going! Each circle is a tweet, and each color is the source of that tweet!</p>
-                            </div>
-                        </div>
-
-                        <div id="bar">
-                            <p id="count" style="font-size: 16px;"></p>
-                            <p id="info" style="font-size: 16px;"></p>
-                        </div>
-                        <div id="densityDiv"></div>
-                        <div id="slider"></div>
+        <section id="explanationStackWord" class="fullpage" style="padding-top: 4rem">
+            <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
+            <div id="app-tom" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                <dialogue>
+                    <span slot="character">Tom Nook</span>
+                    <!--
+                    Let's take a deeper look into the Animal Crossing community! When examining the community, it is
+                    important to not only understand when things are being said
+                    or how popular any one statement may be. It is important to look at the community as a whole.
+               -->
+                    Let's expand the timeline to the whole week from Halloween to the Animal Crossing New Horizons 2.0
+                    Update and look at the volume of conversations with the top 10 hashtags and top 100 keywords used by
+                    the community!
+                </dialogue>
+            </div>
+            <script type="text/x-template" id="dialogue-tom">
+                <div class="dialogue">
+                    <div class="dialogue-blobs">
+                        <div class="dialogue-blob-top"></div>
+                        <div class="dialogue-blob-bottom"></div>
+                        <dialogue-text>
+                            <slot></slot>
+                        </dialogue-text>
                     </div>
-                </section>
-                
-                                <section id="explanationStackWord" class="fullpage" style="padding-top: 4rem">
-                    <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
-                    <div id="app-tom" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
-                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                        <dialogue>
-                            <span slot="character">Tom Nook</span>
-                            Let's take a deeper look into the Animal Crossing community! When examining the community, it is important to not only understand when things are being said
-                            or how popular any one statement may be. It is important to look at the community as a whole.
-                        </dialogue>
+                    <div class="dialogue-character-wrap">
+                        <div class="dialogue-character">
+                            <slot name="character"></slot>
+                        </div>
                     </div>
-                    <script type="text/x-template" id="dialogue-tom">
-                        <div class="dialogue">
-                            <div class="dialogue-blobs">
-                                <div class="dialogue-blob-top"></div>
-                                <div class="dialogue-blob-bottom"></div>
-                                <dialogue-text>
-                                    <slot></slot>
-                                </dialogue-text>
-                            </div>
-                            <div class="dialogue-character-wrap">
-                                <div class="dialogue-character">
-                                    <slot name="character"></slot>
-                                </div>
-                            </div>
-                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
-                            </svg>
-
-                        </div>
-                    </script>
-
-                    <script type="text/x-template" id="dialogue-text-tom">
-                        <div class="dialogue-text">
-                            {{displayedText}}
-                        </div>
-                    </script>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                            <filter id="old-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                                <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                            <filter id="fancy-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                            </filter>
-                        </defs>
+                    <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                              fill="#F1AE04"/>
                     </svg>
-                    <div class="text-container" style="padding-top: 0px;">
-                        <div class="container" style="padding-top: 0px;">
-                            <div class="row">
-                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
-                                <p style="font-size:20px; padding: 1rem">
-                                    Additional Text here.
-                                </p>
-                            </div>
-                            <div class="col">
-                                <div class="explanation-buttons" style="padding-bottom: 2rem">
-                                    <a class="btn btn-primary" href="#density">Back</a>
-                                    <a class="btn btn-primary" href="#stacked">Next</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
-                <section class="fullpage">
-                    <div class="row" id="stacked" style="padding-top: 3rem">
-                        <div class="col">
-                            <div class="text-center">
-                                <div class="project-text text-center text-lg-left">
-                                    <h4 class="text-black">Top 10 Hashtags In the Animal Crossing Tweets from 10/30 to 11/05</h4>
-                                    <p class="text-black">Here, we can look at the number of specific hashtags used over a five-day span leading up to the release.
-                                        It was interesting to see that there was a spike between Wednesday, November 3rd, and Thursday, November 4th, before a decline on the day of the supposed release.
-                                        Was everyone too busy playing to tweet?!</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2">
-                                    <a class="btn btn-primary" href="#density">Back</a>
-                                    <a class="btn btn-primary" href="#words">Next</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" style="height:70vh">
-                        <div id="stacked-area-chart" style="height: 100%; width: 100%;"></div>
-                    </div>
-                </section>
-
-                <div class="row">
-                    <br/>
                 </div>
+            </script>
 
-                <section class="fullpage">
-                    <div class="row" id="words" style="padding-top: 3rem">
+            <script type="text/x-template" id="dialogue-text-tom">
+                <div class="dialogue-text">
+                    {{displayedText}}
+                </div>
+            </script>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="old-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                       result="goo"/>
+                        <feBlend in="SourceGraphic" in2="goo"/>
+                    </filter>
+                    <filter id="fancy-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                       result="goo"/>
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
+            <div class="text-container" style="padding-top: 0px;">
+                <div class="container" style="padding-top: 0px;">
+                    <div class="row">
+                        <!--
+                        <p style="font-size:20px; padding: 1rem">
+                            Additional Text here.
+                        </p>
+-->
                         <div class="col">
-                            <div class="text-center" style="padding-top: 2rem">
-                                <div class="project-text text-center text-lg-left">
-                                    <h4 class="text-black">Top 100 Words Seen in the Tweets</h4>
-                                    <a class="btn btn-primary" href="#stacked">Back</a>
-                                    <a class="btn btn-primary" href="#explanationBreak">Next</a>
-                                </div>
+                            <div class="explanation-buttons" style="padding-bottom: 2rem">
+                                <a class="btn btn-primary" href="#density">Back</a>
+                                <a class="btn btn-primary" href="#stacked">Next</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col" style="height:90vh">
-                        <div id="word-frequency-bubble-chart" style="height: 100%; width: 100%;"></div>
-                    </div>
-                </section>
+                </div>
+            </div>
+        </section>
 
-
-                <!--  break to explain more-->
-                <section id="explanationBreak" class="fullpage" style="padding-top: 4rem">
-                    <img class="character" style="padding-top: 2rem" src="/img/characters/Blathers_NH.png" alt="Blathers"/> <!--<br>[<a href="#_f3">3</a>]-->
-                    <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
-                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                        <dialogue>
-                            <span slot="character">Blathers</span>
-                            Let's take a deeper look into the Animal Crossing community! When examining the community, it is important to not only understand when things are being said
-                            or how popular any one statement may be. It is important to look at the community as a whole.
-                        </dialogue>
-                    </div>
-                    <script type="text/x-template" id="dialogue-blathers">
-                        <div class="dialogue">
-                            <div class="dialogue-blobs">
-                                <div class="dialogue-blob-top"></div>
-                                <div class="dialogue-blob-bottom"></div>
-                                <dialogue-text>
-                                    <slot></slot>
-                                </dialogue-text>
-                            </div>
-                            <div class="dialogue-character-wrap">
-                                <div class="dialogue-character">
-                                    <slot name="character"></slot>
-                                </div>
-                            </div>
-                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
-                            </svg>
-
-                        </div>
-                    </script>
-
-                    <script type="text/x-template" id="dialogue-text-blathers">
-                        <div class="dialogue-text">
-                            {{displayedText}}
-                        </div>
-                    </script>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                            <filter id="old-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                                <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                            <filter id="fancy-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                            </filter>
-                        </defs>
-                    </svg>
-                    <div class="text-container" style="padding-top: 0px;">
-                        <div class="container" style="padding-top: 0px;">
-                            <div class="row">
-                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
-                                <p style="font-size:20px; padding: 1rem">
-                                    To do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
-                                    around the time of the big update. Emojis can reveal a lot about the users, from getting an
-                                    overall sentiment/mood gauge regarding the game to what things people are adding to their island. In particular,
-                                    the Animal Crossing community seems to like to use emojis to reflect current events in the game as well as other
-                                    available game features such as flowers, plants, crop growing, and food.
-                                </p>
-                                <p class="text-black" style="padding: 10px">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
-                                    as the tweets encompass the day of Halloween. We also noticed that for some reason, out of the two red heart emojis,
-                                    one heart emoji was strongly favored in terms of overall usage, yet was not frequently used in the same tweet as other emojis. Yet the
-                                    red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
-                                was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
-                                food, and crop growing!--> We noticed that the coffee cup was a commonly used emoji, it seems that the community is very excited about Brewster's Cafe
-                                    being added to the game through the November 4th update! Click the NEXT button to look through the emoji usage during the week and make your
-                                    own observations! Hover and click the buttons to explore more on your own!</p>
-                            </div>
-                            <div class="col">
-                                <div class="explanation-buttons" style="padding-bottom: 2rem">
-                                    <a class="btn btn-primary" href="#words">Back</a>
-                                    <a class="btn btn-primary" href="#emoji">Next</a>
-                                </div>
-                            </div>
+        <section class="fullpage">
+            <div class="row" id="stacked" style="padding-top: 3rem">
+                <div class="col">
+                    <div class="text-center">
+                        <div class="project-text text-center text-lg-left">
+                            <h4 class="text-black">Top 10 Hashtags In the Animal Crossing Tweets from 10/30 to
+                                11/05</h4>
+                            <p class="text-black">Here, we can look at the number of specific hashtags used over a
+                                five-day span leading up to the release. It was interesting to see that there was a
+                                spike between Wednesday, November 3rd, and
+                                Thursday, November 4th, before a decline on the day of the supposed release.
+                                Was everyone too busy playing to tweet?!</p>
                         </div>
                     </div>
-                </section>
-                
-                <!--emoji graph goes here, ID is emoji (or change to liking)-->
-                <section class="fullpage" id="emoji" style="padding-top: 2rem">
                     <div class="row">
                         <div class="col-2">
-                            <div class="text-center">
-                                <div class="project-text text-center text-lg-left">
-                                    <h4 class="text-black" style="padding-top: 15px;">What were the most frequently used emojis by AC Twitter?</h4>
-                                    <div id="app-modal">
-                                        <div v-if="showModal">
-                                            <transition name="modal">
-                                                <div class="modal-mask">
-                                                    <div class="modal-wrapper">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" @click="showModal=false">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                    <h4 class="modal-title">Instructions</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Click the Categorize button to see the emojis split into their respective categories and
-                                                                    get a sense for which types of emojis were most popular. You can merge them back as well to see
-                                                                    an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
-                                                                    emoji to see how many times it was used over the week of November 4th and to see what other emojis it was tweeted with!
-                                                                    Notice how the emojis that have not been used with the selected emoji will fade into the background.
-                                                                </div>
-                                                            </div>
+                            <a class="btn btn-primary" href="#explanationStackWord">Back</a>
+                            <a class="btn btn-primary" href="#words">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="height:70vh">
+                <div id="stacked-area-chart" style="height: 100%; width: 100%;"></div>
+            </div>
+        </section>
+
+        <div class="row">
+            <br/>
+        </div>
+
+        <section class="fullpage">
+            <div class="row" id="words" style="padding-top: 3rem">
+                <div class="col">
+                    <div class="text-center" style="padding-top: 2rem">
+                        <div class="project-text text-center text-lg-left">
+                            <h4 class="text-black" style="padding-top: 15px;">What are the most popular keywords among
+                                the Animal Crossing tweets?</h4>
+                            <p>Moving from hashtags to keywords, check out the bubble chart below for the top 100 most
+                                mentioned words in the Animal Crossing tweets from 10/30/2021 to 11/05/2021. The larger
+                                the size of the bubble, the more people used that word when tweeting about Animal
+                                Crossing during our dataset timeframe. </p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <a class="btn btn-primary" href="#stacked">Back</a>
+                            <a class="btn btn-primary" href="#explanationBreak">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="height:85vh">
+                <div id="word-frequency-bubble-chart" style="height: 100%; width: 100%;"></div>
+            </div>
+        </section>
+
+
+        <!--  break to explain more-->
+        <section id="explanationBreak" class="fullpage" style="padding-top: 4rem">
+            <img class="character" style="padding-top: 2rem" src="/img/characters/Blathers_NH.png" alt="Blathers"/>
+            <!--<br>[<a href="#_f3">3</a>]-->
+            <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                <dialogue>
+                    <span slot="character">Blathers</span>
+                    Let's take a deeper look into the Animal Crossing community! When examining the community, it is
+                    important to not only understand when things are being said
+                    or how popular any one statement may be. It is important to look at the community as a whole.
+                </dialogue>
+            </div>
+            <script type="text/x-template" id="dialogue-blathers">
+                <div class="dialogue">
+                    <div class="dialogue-blobs">
+                        <div class="dialogue-blob-top"></div>
+                        <div class="dialogue-blob-bottom"></div>
+                        <dialogue-text>
+                            <slot></slot>
+                        </dialogue-text>
+                    </div>
+                    <div class="dialogue-character-wrap">
+                        <div class="dialogue-character">
+                            <slot name="character"></slot>
+                        </div>
+                    </div>
+                    <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                              fill="#F1AE04"/>
+                    </svg>
+
+                </div>
+            </script>
+
+            <script type="text/x-template" id="dialogue-text-blathers">
+                <div class="dialogue-text">
+                    {{displayedText}}
+                </div>
+            </script>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="old-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                       result="goo"/>
+                        <feBlend in="SourceGraphic" in2="goo"/>
+                    </filter>
+                    <filter id="fancy-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                       result="goo"/>
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
+            <div class="text-container" style="padding-top: 0px;">
+                <div class="container" style="padding-top: 0px;">
+                    <div class="row">
+                        <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
+                        <p style="font-size:20px; padding: 1rem">
+                            To do this, we tapped into the emoji use of the community to get a sense of what else is
+                            being communicated
+                            around the time of the big update. Emojis can reveal a lot about the users, from getting an
+                            overall sentiment/mood gauge regarding the game to what things people are adding to their
+                            island. In particular,
+                            the Animal Crossing community seems to like to use emojis to reflect current events in the
+                            game as well as other
+                            available game features such as flowers, plants, crop growing, and food.
+                        </p>
+                        <p class="text-black" style="padding: 10px">Our team observed that the jack-o-lantern emoji was
+                            used most frequently, which aligns with our expectations
+                            as the tweets encompass the day of Halloween. We also noticed that for some reason, out of
+                            the two red heart emojis,
+                            one heart emoji was strongly favored in terms of overall usage, yet was not frequently used
+                            in the same tweet as other emojis. Yet the
+                            red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
+                                was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
+                                food, and crop growing!--> We noticed that the coffee cup was a commonly used emoji, it
+                            seems that the community is very excited about Brewster's Cafe
+                            being added to the game through the November 4th update! Click the NEXT button to look
+                            through the emoji usage during the week and make your
+                            own observations! Hover and click the buttons to explore more on your own!</p>
+                    </div>
+                    <div class="col">
+                        <div class="explanation-buttons" style="padding-bottom: 2rem">
+                            <a class="btn btn-primary" href="#words">Back</a>
+                            <a class="btn btn-primary" href="#emoji">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--emoji graph goes here, ID is emoji (or change to liking)-->
+        <section class="fullpage" id="emoji" style="padding-top: 2rem">
+            <div class="row">
+                <div class="col-2">
+                    <div class="text-center">
+                        <div class="project-text text-center text-lg-left">
+                            <h4 class="text-black" style="padding-top: 15px;">What were the most frequently used emojis
+                                by AC Twitter?</h4>
+                            <div id="app-modal">
+                                <div v-if="showModal">
+                                    <transition name="modal">
+                                        <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close"
+                                                                    @click="showModal=false">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            <h4 class="modal-title">Instructions</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Click the Categorize button to see the emojis split into
+                                                            their respective categories and
+                                                            get a sense for which types of emojis were most popular. You
+                                                            can merge them back as well to see
+                                                            an overall comparison of what emojis the <i>Animal
+                                                            Crossing</i> community liked to use the most! Hover over
+                                                            each
+                                                            emoji to see how many times it was used over the week of
+                                                            November 4th and to see what other emojis it was tweeted
+                                                            with!
+                                                            Notice how the emojis that have not been used with the
+                                                            selected emoji will fade into the background.
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </transition>
+                                            </div>
                                         </div>
-                                        <button id="show-modal" @click="showModal = true" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Instructions</button>
-                                        <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
-                                        <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
-                                    </div>
+                                    </transition>
                                 </div>
+                                <button id="show-modal" @click="showModal = true"
+                                        style="background-color: #68b893; color: white; border-radius: 8px; border: none">
+                                    Instructions
+                                </button>
+                                <button id="categorize"
+                                        style="background-color: #68b893; color: white; border-radius: 8px; border: none">
+                                    Categorize
+                                </button>
+                                <button id="merge"
+                                        style="background-color: #68b893; color: white; border-radius: 8px; border: none">
+                                    Merge
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-10" style="padding: 0px;">
-                            <div id="emojibubble" style="height: 80vh; width: 100%;"></div>
-                        </div>
-                        <div class="col d-flex justify-content-center" style="padding-top: 0px; padding-bottom: 2rem">
-                            <div class="emoji-buttons" style="padding-bottom: 2rem;">
-                                <a class="btn btn-primary" href="#explanationBreak">Back</a>
-                                <a class="btn btn-primary" href="#bars">Next</a>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10" style="padding: 0px;">
+                    <div id="emojibubble" style="height: 80vh; width: 100%;"></div>
+                </div>
+                <div class="col d-flex justify-content-center" style="padding-top: 0px; padding-bottom: 2rem">
+                    <div class="emoji-buttons" style="padding-bottom: 2rem;">
+                        <a class="btn btn-primary" href="#explanationBreak">Back</a>
+                        <a class="btn btn-primary" href="#bars">Next</a>
                     </div>
-                </section>
+                </div>
+            </div>
+        </section>
 
-                <div class="row">
-                    <br/>
+        <div class="row">
+            <br/>
+        </div>
+
+        <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
+        <section class="fullpage" id="bars">
+            <div class="row mb-4 mb-lg-5 align-items-top">
+                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh"
+                     id="tweetsources">
+                    <h2>Top 5 Tweet Platform Sources</h2>
+                    <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
+                            onclick="clearSelection()">Clear
+                    </button>
                 </div>
 
-                <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
-                <section class="fullpage" id="bars">
-                    <div class="row mb-4 mb-lg-5 align-items-top">
-                        <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh" id="tweetsources">
-                            <h2>Top 5 Tweet Platform Sources</h2>
-                            <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
-                                    onclick="clearSelection()">Clear</button>
+                <div class="col" style="vertical-align: top; padding-top: 3rem" id="bargraph">
+                    <h4 class="text-black" style="padding-top: 15px;">Top Tweets By Filter</h4>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="ranking-type">Filter by</label>
+                            <select class="form-control" id="ranking-type" onchange="updateBarVisualization()"
+                                    style="width:200px">
+                                <option value="retweets">Amount Retweeted</option>
+                                <option value="favorites">Amount Favorited</option>
+                            </select>
                         </div>
+                    </form>
+                </div>
+                <p class="text-black">Here, we can view the top 5 platforms that were used by the community for
+                    tweeting. We can also see the top ranked tweets by
+                    amounts of retweets or favorites. We can even combine these two items to tell which platform these
+                    tweets came from. As evident, the largest
+                    platform the community communicated from came from none other than the Nintendo Switch itself. This
+                    would seem to indicate that most users that
+                    posted about the game were posting from the device while playing the game and were either sharing
+                    clips, pictures, or even just commenting on
+                    the game in real time. </p>
+                <div class="col-2">
+                    <a class="btn btn-primary" href="#emoji">Back</a>
+                    <a class="btn btn-primary" href="#explanationForBeeswarm">Next</a>
+                </div>
+            </div>
+        </section>
 
-                        <div class="col" style="vertical-align: top; padding-top: 3rem" id="bargraph"> <h2>Top Tweets By Filter</h2>
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="ranking-type">Filter by</label>
-                                    <select class="form-control" id="ranking-type" onchange="updateBarVisualization()" style="width:200px">
-                                        <option value="retweets">Amount Retweeted</option>
-                                        <option value="favorites">Amount Favorited</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <p class="text-black">Here, we can view the top 5 platforms that were used by the community for tweeting. We can also see the top ranked tweets by
-                            amounts of retweets or favorites. We can even combine these two items to tell which platform these tweets came from. As evident, the largest
-                            platform the community communicated from came from none other than the Nintendo Switch itself. This would seem to indicate that most users that
-                            posted about the game were posting from the device while playing the game and were either sharing clips, pictures, or even just commenting on
-                            the game in real time. </p>
-                        <div class="col-2">
-                            <a class="btn btn-primary" href="#emoji">Back</a>
-                            <a class="btn btn-primary" href="#explanationForBeeswarm">Next</a>
+        <!--Sasha talking!-->
+        <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
+            <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/>
+            <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
+            <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                <dialogue>
+                    <span slot="character">Sasha</span>
+                    Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search any word or phrases
+                    in the visualization below. Why don't you try searching for my name to see if you can find me!
+                </dialogue>
+            </div>
+            <script type="text/x-template" id="dialogue-sasha">
+                <div class="dialogue">
+                    <div class="dialogue-blobs">
+                        <div class="dialogue-blob-top"></div>
+                        <div class="dialogue-blob-bottom"></div>
+                        <dialogue-text>
+                            <slot></slot>
+                        </dialogue-text>
+                    </div>
+                    <div class="dialogue-character-wrap">
+                        <div class="dialogue-character">
+                            <slot name="character"></slot>
                         </div>
                     </div>
-                </section>
-
-                <!--Sasha talking!-->
-                <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
-                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
-                    <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
-                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                        <dialogue>
-                            <span slot="character">Sasha</span>
-                            Hi! I'm Sasha, a new character in the game. Why don't you try searching for me in the visualization below
-                            to see if you can find me!
-                        </dialogue>
-                    </div>
-                    <script type="text/x-template" id="dialogue-sasha">
-                        <div class="dialogue">
-                            <div class="dialogue-blobs">
-                                <div class="dialogue-blob-top"></div>
-                                <div class="dialogue-blob-bottom"></div>
-                                <dialogue-text>
-                                    <slot></slot>
-                                </dialogue-text>
-                            </div>
-                            <div class="dialogue-character-wrap">
-                                <div class="dialogue-character">
-                                    <slot name="character"></slot>
-                                </div>
-                            </div>
-                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
-                            </svg>
-
-                        </div>
-                    </script>
-                                       <script type="text/x-template" id="dialogue-text-sasha">
-                        <div class="dialogue-text">
-                            {{displayedText}}
-                        </div>
-                    </script>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                            <filter id="old-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                                <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                            <filter id="fancy-goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                            </filter>
-                        </defs>
+                    <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                              fill="#F1AE04"/>
                     </svg>
-                    <div class="text-container" style="padding-top: 0px;">
-                        <div class="container" style="padding-top: 0px;">
-                            <div class="row">
-                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
-                                <p style="font-size:20px; padding: 1rem">
-                                    Add relevant text here!
-                                </p>
-                            </div>
-                            <div class="col">
-                                <div class="explanation-buttons" style="padding-bottom: 2rem">
-                                    <a class="btn btn-primary" href="#emoji">Back</a>
-                                    <a class="btn btn-primary" href="#bee">Next</a>
-                                </div>
-                            </div>
+
+                </div>
+            </script>
+            <script type="text/x-template" id="dialogue-text-sasha">
+                <div class="dialogue-text">
+                    {{displayedText}}
+                </div>
+            </script>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="old-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                       result="goo"/>
+                        <feBlend in="SourceGraphic" in2="goo"/>
+                    </filter>
+                    <filter id="fancy-goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                       result="goo"/>
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
+            <div class="text-container" style="padding-top: 0px;">
+                <div class="container" style="padding-top: 0px;">
+                    <div class="row">
+                        <p>
+                            Now it's time for some exploration and fun - try searching for a keyword or a keyphrase that
+                            you're interested in learning more about in the
+                            search bar to filter for tweets that contain your search in their content. You can always
+                            hit the reset button to go back to the initial results and start over.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div class="explanation-buttons" style="padding-bottom: 2rem">
+                            <a class="btn btn-primary" href="#emoji">Back</a>
+                            <a class="btn btn-primary" href="#bee">Next</a>
                         </div>
                     </div>
-                </section>
-
-                <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
-                <section class="fullpage" id="bee" style="padding-top: 3rem">
-                    <div class="container px-4 px-lg-5">
-                        <div class="row justify-content-center" style="height: 12vh">
-                            <div class="align-self-center">
-                                <h1>Top 1000 Retweeted Tweets By Date and Keyword</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="align-self-center">
-                                <label for="keyword">Search for keywords and phrases in tweet texts (type in any keyword and hit enter - to return to all results, clear the input and hit enter):</label>
-                                <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
-                                <input type="button" value="Search" id="search-btn" onclick="inputChange()">
-                                <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
-                            </div>
-                        </div>
-                        <div class="row" style="height:100%">
-
-                            <div class="align-self-center" style="height:90vh">
-                                <div class="col-2">
-                                    <a class="btn btn-primary" href="#explanationForBeeswarm">Back</a>
-                                    <a class="btn btn-primary" href="#explanationBreak2">Next</a>
-                                </div>
-                                <div id="swarm-plot" style="height:100%; width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            <!--  break to explain more-->
-                <section id="explanationBreak2" class="fullpage" style="padding-top: 3rem">
-                    <div class="text-container">
-                        <div class="container">
-                            <div class="row">
-                                <div>
-                                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> <!--<br>[<a href="#_f4">4</a>]-->
-                                </div>
-                                <h3>What does the Twitter community for Animal Crossing look like</h3>
-                                <p style="font-size:20px;">
-                                    As you can see, the <i>Animal Crossing</i> community is still very active on social media platforms. As you may have gleaned from some of the visualizations
-                                    above. There seemed to be a lot of activity starting on November 3rd and November 4th, prior to the stated release date. Well that is because it dropped early!
-                                    According to
-                                    <a href="https://www.polygon.com/22763237/animal-crossing-new-horizons-2-0-update-everything-new-best-additions" target="_blank">Polygon</a>
-                                    and many of the Twitter users as well, the release surprisingly came out about a day earlier than expected.
-                                </p>
-                                <div class="col-2">
-                                    <a class="btn btn-primary" href="#bee">Back</a>
-                                    <a class="btn btn-primary" href="#credit">Next</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
         </section>
 
-        <!-- Credit-->
-        <section class="credit-section" class= "fullpage" id="credit" style="padding-top: 3rem">
-            <div id="conclusion-sec" class="section">
-                <div class="container box">
-                    <h3>Thank you!</h3>
-                    <div class="row">
-                        <div class="col">
-                            <p>We hope you enjoyed our visualization of the twitter data exploring the Animal Crossing: New Horizons 2.0 update!
-                                If you have played this game we hope this allowed you to visualize the community of which you may be a part of.
-                                If you have not jumped into the world, it is a great time to give it a try!
-                                Additionally, our class explored the world of Tableau, and you better believe that the Animal Crossing community has too
-                                please take a look at some of these other extremely exciting
-                                <a href="https://public.tableau.com/search/all/%23animalcrossingnewhorizons" target="_blank"><span class="name"> visualizations</span></a>
-                                about in game items </p>
-                            <!--followed formatting ideas of prior winning projects from here to lower to give proper credit to Harvard/ team. Can edit -->
-                            <p>We are a group of undergraduate and graduate students at Harvard University, and our visualization project was for <a href="https://www.cs171.org/2021/">CS171:Visualization</a> class in Fall 2021.</p>
-                        </div>
+        <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
+        <section class="fullpage" id="bee" style="padding-top: 3rem">
+            <div class="container px-4 px-lg-5">
+                <div class="row justify-content-center" style="height: 12vh">
+                    <div class="align-self-center">
+                        <h4 class="text-black" style="padding-top: 15px;">What are the conversations by the Animal
+                            Crossing Twitter community during the week of Halloween and New Horizons 2.0 update?</h4>
                     </div>
-                    <div class="row">
-                        <div>
-                            <img class="character" src="/img/characters/K.K._Slider_NH.png" alt="K.K.Slider"/> <!--<br>[<a href="#_f5">5</a>]-->
-                        </div>
-                        <div class="col profile">
-                            <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
-                            <a href="https://www.linkedin.com/in/chelseachen95/en?trk=people-guest_people_search-card" target="_blank"><span class="name">Minkuan Chen</span><br></a>
-                            <span style="font-size:18px;">MA in Emerging Media Studies</span>
-                        </div>
-                        <div class="col profile">
-                            <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
-                            <a href="https://www.linkedin.com/in/louisa-ge" target="_blank"><span class="name">Louisa Ge</span><br></a>
-                            <span style="font-size:18px;">BFA in Fashion/Apparel Design</span>
-                        </div>
-                        <div class="col profile">
-                            <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
-                            <a href="https://www.linkedin.com/in/daniel-raymond-schwartz?trk=people-guest_people_search-card" target="_blank"><span class="name">Daniel Schwartz</span><br></a>
-                            <span style="font-size:18px;">Pursuing BA in Computer Science and Economics</span>
-                        </div>
-                        <div class="col profile">
-                            <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
-                            <a href="https://www.linkedin.com/in/ryan-buehler-76769589" target="_blank"><span class="name">Ryan Buehler</span><br></a>
-                            <span style="font-size:18px;">BA in Biology</span>
-                        </div>
+                </div>
+                <div class="row">
 
+                    <div class="align-self-center">
+                        <p>
+                            This swarm plot below shows the top 1000 retweeted Animal Tweets from 10/30/2021 to
+                            11/05/2021. Each cluster contains tweets from a day in that week, and each bubble represents
+                            a single tweet. The higher the bubble is, the more times that tweet is retweeted, and the
+                            larger the bubble is, the more likes that tweet has. When you hover over the bubble, you
+                            will see the actual content of the tweet and other details including the number of retweets
+                            and favorites/likes, the date and time when the tweet was created, and the source (device or
+                            platform) it was posted from.
+                        </p>
+                        <label for="keyword">Search for keywords and phrases in tweet texts (to return to all results,
+                            use the "Reset" button or clear the input and hit enter):</label>
+                        <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
+                        <input type="button" value="Search" id="search-btn" onclick="inputChange()">
+                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
+                    </div>
+                </div>
+                <div class="row" style="height:100%">
+
+                    <div class="align-self-center" style="height:80vh">
                         <div class="col-2">
-                            <a class="btn btn-primary" href="#explanationBreak2">Back</a>
-                            <a class="btn btn-primary" href="#resources">Next</a>
+                            <a class="btn btn-primary" href="#explanationForBeeswarm">Back</a>
+                            <a class="btn btn-primary" href="#explanationBreak2">Next</a>
                         </div>
+                        <div id="swarm-plot" style="height:100%; width: 100%"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Important information-->
-        <section class="info-section" class="fullpage" id="resources" style="padding-top: 3rem">
-            <div id="infoSection" class="section">
-                <div class="container box box2">
-                    <h3>Data Sources and Methods</h3>
-                    <div>
-                        <img class="character" src="/img/characters/Brewster_NH.png" alt="Brewster"/> <!--<br>[<a href="#_f6">6</a>]-->
-                    </div>
+        <!--  break to explain more-->
+        <section id="explanationBreak2" class="fullpage" style="padding-top: 3rem">
+            <div class="text-container">
+                <div class="container">
                     <div class="row">
-                        <div class="col" style="font-size:15px;">
-                            <p>
-                                All our source codes, data, data cleaning scripts, and images can be found in our <a href="https://github.com/MinkuanChen/animal-crossing-viz" target="_blank">GitHub repo</a>.
-                            <ul></ul>
-                            <b>Data</b>
-                            <ul>
-                                <li> section write up for data collection sources and appropriate links.
-                                </li>
-                            </ul>
-                            <b>Methods</b>
-                            <ul>
-                                <li> section write up for how we collected the data and how we processed it
-                                </li>
-                            </ul>
-                            <b>Images</b>: None of the images on this webpage are ours; the images were collected from Google image search, and respective source links are commented.
-                            Additional icons were found from <a href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki" target="_blank"> the Animal Crossing Wiki</a>.
-                            </p>
-                        </div>
+                        <h3>What does the Twitter community for Animal Crossing look like</h3>
+                        <p style="font-size:20px;">
+                            As you can see, the <i>Animal Crossing</i> community is still very active on social media
+                            platforms. As you may have gleaned from some of the visualizations
+                            above. There seemed to be a lot of activity starting on November 3rd and November 4th, prior
+                            to the stated release date. Well that is because it dropped early!
+                            According to
+                            <a href="https://www.polygon.com/22763237/animal-crossing-new-horizons-2-0-update-everything-new-best-additions"
+                               target="_blank">Polygon</a>
+                            and many of the Twitter users as well, the release surprisingly came out about a day earlier
+                            than expected.
+                        </p>
                         <div class="col-2">
-                            <a class="btn btn-primary" href="#credit">Back</a>
+                            <a class="btn btn-primary" href="#bee">Back</a>
+                            <a class="btn btn-primary" href="#credit">Next</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer-->
-            <footer class="footer small text-center text-black">
-                <div class="container px-4 px-lg-5">
-                    <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
-                    <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
-                    <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
-                    <p id="_f4">4. https://animalcrossing.fandom.com/wiki/Sasha</p>
-                    <p id="_f5">5. https://animalcrossing.fandom.com/wiki/K.K._Slider</p>
-                    <p id="_f6">6. https://animalcrossing.fandom.com/wiki/Brewster</p>
-                </div>
-            </footer>
         </section>
+    </div>
+</section>
+
+<!-- Credit-->
+<section class="credit-section" class="fullpage" id="credit" style="padding-top: 3rem">
+    <div id="conclusion-sec" class="section">
+        <div class="container box">
+            <h3>Thank you!</h3>
+            <div class="row">
+                <div class="col">
+                    <p>We hope you enjoyed our visualization of the twitter data exploring the Animal Crossing: New
+                        Horizons 2.0 update!
+                        If you have played this game we hope this allowed you to visualize the community of which you
+                        may be a part of.
+                        If you have not jumped into the world, it is a great time to give it a try!
+                        Additionally, our class explored the world of Tableau, and you better believe that the Animal
+                        Crossing community has too
+                        please take a look at some of these other extremely exciting
+                        <a href="https://public.tableau.com/search/all/%23animalcrossingnewhorizons"
+                           target="_blank"><span class="name"> visualizations</span></a>
+                        about in game items </p>
+                    <!--followed formatting ideas of prior winning projects from here to lower to give proper credit to Harvard/ team. Can edit -->
+                    <p>We are a group of undergraduate and graduate students at Harvard University, and our
+                        visualization project was for <a href="https://www.cs171.org/2021/">CS171:Visualization</a>
+                        class in Fall 2021.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <img class="character" src="/img/characters/K.K._Slider_NH.png" alt="K.K.Slider"/>
+                    <!--<br>[<a href="#_f5">5</a>]-->
+                </div>
+                <div class="col profile">
+                    <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
+                    <a href="https://www.linkedin.com/in/chelseachen95/en?trk=people-guest_people_search-card"
+                       target="_blank"><span class="name">Minkuan Chen</span><br></a>
+                    <span style="font-size:18px;">MA in Emerging Media Studies</span>
+                </div>
+                <div class="col profile">
+                    <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
+                    <a href="https://www.linkedin.com/in/louisa-ge" target="_blank"><span
+                            class="name">Louisa Ge</span><br></a>
+                    <span style="font-size:18px;">BFA in Fashion/Apparel Design</span>
+                </div>
+                <div class="col profile">
+                    <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
+                    <a href="https://www.linkedin.com/in/daniel-raymond-schwartz?trk=people-guest_people_search-card"
+                       target="_blank"><span class="name">Daniel Schwartz</span><br></a>
+                    <span style="font-size:18px;">Pursuing BA in Computer Science and Economics</span>
+                </div>
+                <div class="col profile">
+                    <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
+                    <a href="https://www.linkedin.com/in/ryan-buehler-76769589" target="_blank"><span class="name">Ryan Buehler</span><br></a>
+                    <span style="font-size:18px;">BA in Biology</span>
+                </div>
+
+                <div class="col-2">
+                    <a class="btn btn-primary" href="#explanationBreak2">Back</a>
+                    <a class="btn btn-primary" href="#resources">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Important information-->
+<section class="info-section" class="fullpage" id="resources" style="padding-top: 3rem">
+    <div id="infoSection" class="section">
+        <div class="container box box2">
+            <h3>Data Sources and Methods</h3>
+            <div>
+                <img class="character" src="/img/characters/Brewster_NH.png" alt="Brewster"/>
+                <!--<br>[<a href="#_f6">6</a>]-->
+            </div>
+            <div class="row">
+                <div class="col" style="font-size:15px;">
+                    <p>
+                        All our source codes, data, data cleaning scripts, and images can be found in our <a
+                            href="https://github.com/MinkuanChen/animal-crossing-viz" target="_blank">GitHub repo</a>.
+                    <ul></ul>
+                    <b>Data</b>
+                    <ul>
+                        <li> section write up for data collection sources and appropriate links.
+                        </li>
+                    </ul>
+                    <b>Methods</b>
+                    <ul>
+                        <li> section write up for how we collected the data and how we processed it
+                        </li>
+                    </ul>
+                    <b>Images</b>: None of the images on this webpage are ours; the images were collected from Google
+                    image search, and respective source links are commented.
+                    Additional icons were found from <a
+                        href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki" target="_blank"> the Animal
+                    Crossing Wiki</a>.
+                    </p>
+                </div>
+                <div class="col-2">
+                    <a class="btn btn-primary" href="#credit">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="footer small text-center text-black">
+        <div class="container px-4 px-lg-5">
+            <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
+            <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
+            <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
+            <p id="_f4">4. https://animalcrossing.fandom.com/wiki/Sasha</p>
+            <p id="_f5">5. https://animalcrossing.fandom.com/wiki/K.K._Slider</p>
+            <p id="_f6">6. https://animalcrossing.fandom.com/wiki/Brewster</p>
+        </div>
+    </footer>
+</section>
 
 
-        <!-- embedding JS libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!-- embedding JS libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-        <!--jQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- d3 -->
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script src="https://cdn.skypack.dev/d3-force@3"></script>
-        <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.skypack.dev/d3-force@3"></script>
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
-        <!-- own js files -->
-        <script src="js/main.js"></script>
-        <script src="js/dialogue.js"></script>
-        <script src="js/dialogue-tom.js"></script>
-        <script src="js/dialogue-blathers.js"></script>
-        <script src="js/dialogue-sasha.js"></script>
-        <script src="js/modal.js"></script>
-        <script src="js/density.js"></script>
-        <script src="js/emojibubble.js"></script>
-        <script src="js/stackedAreaChart.js"></script>
-        <script src="js/wordFreqVis.js"></script>
-        <script src="js/tweetSource.js"></script>
-        <script src="js/bargraph.js"></script>
-        <script src="js/swarmPlotVis.js"></script>
+<!-- own js files -->
+<script src="js/dialogue.js"></script>
+<script src="js/dialogue-tom.js"></script>
+<script src="js/dialogue-blathers.js"></script>
+<script src="js/dialogue-sasha.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/main.js"></script>
+<script src="js/density.js"></script>
+<script src="js/emojibubble.js"></script>
+<script src="js/stackedAreaChart.js"></script>
+<script src="js/wordFreqVis.js"></script>
+<script src="js/tweetSource.js"></script>
+<script src="js/bargraph.js"></script>
+<script src="js/swarmPlotVis.js"></script>
 
-    </body>
+</body>
 </html>
