@@ -45,46 +45,76 @@
         </section>
 
         <!-- About-->
-        <section class="fullpage">
-            <section class="about-section text-center" id="about" style="padding-top: 3rem">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col">
-                            <h2 class="text-white mb-4" style="padding-top: 2rem">What are we looking at?</h2>
-                            <p class="text-white" style="font-size:24px;">
-                                Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
-                                seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
-                                Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
-                                community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
-                            </p>
-                            <!--<div class="col-md-6 offset-md-4">
-                                    With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
-                                    talking most about!
-                            </div>-->
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]-->
-                    </div>
-                   <!--<div class="row justify-content-center">
-                        <div class="col-md-3">
-                            <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle"/> <!--<br>[<a href="#_f1">1</a>]
-                        </div>
-                        <div class="col-md-6 offset-md-3">
-                            <p style="font-size:25px;">
-                                With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
-                                talking most about!
-                            </p>
-                        </div>
-                    </div>-->
-                    <div class="row">
-                        <div class="col-2">
-                            <a class="btn btn-primary" href="#home">Back</a>
-                            <a class="btn btn-primary" href="#visualizations">Next</a>
-                        </div>
+        <section class="fullpage about-section text-center" id="about" style="padding-top: 3rem">
+            <div class="about-container">
+                <div class="row justify-content-center">
+                    <div class="col" style="text-align: center;">
+                        <h2 class="text-white mb-4" style="padding-top: 2rem">What are we looking at?</h2>
+                        <p class="text-white" style="font-size:24px; padding-left: 20px; padding-right: 20px;">
+                            Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page, <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of 2020, making it the year's
+                            seventh highest-grossing digital premium game worldwide. As of March 31, 2021, the game has sold 32.63 million units.
+                            Because of the timing of the release around the start of the pandemic, the game not only was popular in terms of sales, but it allowed for a very interactive
+                            community of people stuck in their homes to come together from all over the world and help each other out in building great islands.
+                        </p>
                     </div>
                 </div>
-            </section>
+                <img class="character" src="/img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/> <!--<br>[<a href="#_f1">1</a>]-->
+                <div id="app">
+                    <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                    <dialogue>
+                        <span slot="character">Isabelle</span>
+                        With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active community was reinvigoratted and also explore what they were
+                        talking most about!
+                    </dialogue>
+                </div>
+                <div class="col">
+                    <div class="about-buttons" style="padding-top: 0px;">
+                        <a class="btn btn-primary" href="#home">Back</a>
+                        <a class="btn btn-primary" href="#visualizations">Next</a>
+                    </div>
+                </div>
+                <script type="text/x-template" id="dialogue">
+                    <div class="dialogue">
+                        <div class="dialogue-blobs">
+                            <div class="dialogue-blob-top"></div>
+                            <div class="dialogue-blob-bottom"></div>
+                            <dialogue-text>
+                                <slot></slot>
+                            </dialogue-text>
+                        </div>
+                        <div class="dialogue-character-wrap">
+                            <div class="dialogue-character">
+                                <slot name="character"></slot>
+                            </div>
+                        </div>
+                        <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
+                        </svg>
+
+                    </div>
+                </script>
+
+                <script type="text/x-template" id="dialogue-text">
+                    <div class="dialogue-text">
+                        {{displayedText}}
+                    </div>
+                </script>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="old-goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                        <filter id="fancy-goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
         </section>
 
         <!-- visualizations-->
@@ -172,65 +202,137 @@
 
 
                 <!--  break to explain more-->
-                <section id="explanationBreak" class="fullpage" style="padding-top: 3rem">
-                    <img class="character" src="/img/characters/Blathers_NH.png" alt="Blathers"/> <!--<br>[<a href="#_f3">3</a>]-->
-                    <div class="text-container">
-                        <div class="container">
+                <section id="explanationBreak" class="fullpage" style="padding-top: 4rem">
+                    <img class="character" style="padding-top: 2rem" src="/img/characters/Blathers_NH.png" alt="Blathers"/> <!--<br>[<a href="#_f3">3</a>]-->
+                    <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                        <dialogue>
+                            <span slot="character">Blathers</span>
+                            Let's take a deeper look into the Animal Crossing community! When examining the community, it is important to not only understand when things are being said
+                            or how popular any one statement may be. It is important to look at the community as a whole.
+                        </dialogue>
+                    </div>
+                    <script type="text/x-template" id="dialogue-blathers">
+                        <div class="dialogue">
+                            <div class="dialogue-blobs">
+                                <div class="dialogue-blob-top"></div>
+                                <div class="dialogue-blob-bottom"></div>
+                                <dialogue-text>
+                                    <slot></slot>
+                                </dialogue-text>
+                            </div>
+                            <div class="dialogue-character-wrap">
+                                <div class="dialogue-character">
+                                    <slot name="character"></slot>
+                                </div>
+                            </div>
+                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
+                            </svg>
+
+                        </div>
+                    </script>
+
+                    <script type="text/x-template" id="dialogue-text-blathers">
+                        <div class="dialogue-text">
+                            {{displayedText}}
+                        </div>
+                    </script>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="old-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                            <filter id="fancy-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="text-container" style="padding-top: 0px;">
+                        <div class="container" style="padding-top: 0px;">
                             <div class="row">
-                                <h3>Explaining the community</h3>
-                                <p style="font-size:20px;">
-                                    When examining the community, it is important to not only understand when things are being said
-                                    or how popular any one statement may be. It is important to look at the community as a whole. To
-                                    do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
+                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
+                                <p style="font-size:20px; padding: 1rem">
+                                    To do this, we tapped into the emoji use of the community to get a sense of what else is being communicated
                                     around the time of the big update. Emojis can reveal a lot about the users, from getting an
                                     overall sentiment/mood gauge regarding the game to what things people are adding to their island. In particular,
                                     the Animal Crossing community seems to like to use emojis to reflect current events in the game as well as other
                                     available game features such as flowers, plants, crop growing, and food.
                                 </p>
-                                <p class="text-black">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
+                                <p class="text-black" style="padding: 10px">Our team observed that the jack-o-lantern emoji was used most frequently, which aligns with our expectations
                                     as the tweets encompass the day of Halloween. We also noticed that for some reason, out of the two red heart emojis,
                                     one heart emoji was strongly favored in terms of overall usage, yet was not frequently used in the same tweet as other emojis. Yet the
                                     red heart emoji used less frequently was often paired with other emojis. <!--Besides the expected categories like sentiment and hearts, it
                                 was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
                                 food, and crop growing!--> We noticed that the coffee cup was a commonly used emoji, it seems that the community is very excited about Brewster's Cafe
-                                    being added to the game through the November 4th update! Hover and click the buttons to explore more on your own!</p>
+                                    being added to the game through the November 4th update! Click the NEXT button to look through the emoji usage during the week and make your
+                                    own observations! Hover and click the buttons to explore more on your own!</p>
                             </div>
-                            <div class="col-2">
-                                <a class="btn btn-primary" href="#words">Back</a>
-                                <a class="btn btn-primary" href="#emoji">Next</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!--emoji graph goes here, ID is emoji (or change to liking)-->
-                <section class="fullpage">
-                    <div class="row" id="emoji" style="padding-top: 3rem">
-                        <div class="col">
-                            <div class="text-center">
-                                <div class="project-text text-center text-lg-left">
-                                    <h4 class="text-black">What were the most frequently used emojis by AC Twitter?</h4>
-                                    <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
-                                    <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
-                                    <div class="col-2">
-                                        <a class="btn btn-primary" href="#explanationBreak">Back</a>
-                                        <a class="btn btn-primary" href="#bars">Next</a>
-                                    </div>
-                                    <p class="text-black">Click the Categorize button to see the emojis split into their respective categories and
-                                        get a sense for which types of emojis were most popular. You can merge them back as well to see
-                                        an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
-                                        emoji to see how many times it was used over the week of November 4th as well as see what other emojis it was tweeted with!
-                                        Notice how the emojis that have not been used with the selected emoji will fade into the background.</p>
+                            <div class="col">
+                                <div class="explanation-buttons" style="padding-bottom: 2rem">
+                                    <a class="btn btn-primary" href="#words">Back</a>
+                                    <a class="btn btn-primary" href="#emoji">Next</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div id="emojibubble" style="height: 90vh; width: 100%;"></div>
-                        <!--<div class="col-2">
-                            <a class="btn btn-primary" href="#explanationBreak">Back</a>
-                            <a class="btn btn-primary" href="#bars">Next</a>
-                        </div>-->
+                </section>
+                <!--emoji graph goes here, ID is emoji (or change to liking)-->
+                <section class="fullpage" id="emoji" style="padding-top: 2rem">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="text-center">
+                                <div class="project-text text-center text-lg-left">
+                                    <h4 class="text-black" style="padding-top: 15px;">What were the most frequently used emojis by AC Twitter?</h4>
+                                    <div id="app-modal">
+                                        <div v-if="showModal">
+                                            <transition name="modal">
+                                                <div class="modal-mask">
+                                                    <div class="modal-wrapper">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" @click="showModal=false">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    <h4 class="modal-title">Instructions</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Click the Categorize button to see the emojis split into their respective categories and
+                                                                    get a sense for which types of emojis were most popular. You can merge them back as well to see
+                                                                    an overall comparison of what emojis the <i>Animal Crossing</i> community liked to use the most! Hover over each
+                                                                    emoji to see how many times it was used over the week of November 4th and to see what other emojis it was tweeted with!
+                                                                    Notice how the emojis that have not been used with the selected emoji will fade into the background.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </transition>
+                                        </div>
+                                        <button id="show-modal" @click="showModal = true" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Instructions</button>
+                                        <button id="categorize" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Categorize</button>
+                                        <button id="merge" style="background-color: #68b893; color: white; border-radius: 8px; border: none">Merge</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-10" style="padding: 0px;">
+                            <div id="emojibubble" style="height: 80vh; width: 100%;"></div>
+                        </div>
+                        <div class="col d-flex justify-content-center" style="padding-top: 0px; padding-bottom: 2rem">
+                            <div class="emoji-buttons" style="padding-bottom: 2rem;">
+                                <a class="btn btn-primary" href="#explanationBreak">Back</a>
+                                <a class="btn btn-primary" href="#bars">Next</a>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -440,6 +542,8 @@
         <!-- own js files -->
         <script src="js/main.js"></script>
         <script src="js/dialogue.js"></script>
+        <script src="js/dialogue-blathers.js"></script>
+        <script src="js/modal.js"></script>
         <script src="js/density.js"></script>
         <script src="js/emojibubble.js"></script>
         <script src="js/stackedAreaChart.js"></script>
