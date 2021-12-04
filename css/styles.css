@@ -18,6 +18,27 @@ body {
     row-gap: 10px;
 }
 
+.isabelle-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-betweeen;
+    row-gap: 10px;
+}
+
+.tom-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-betweeen;
+    row-gap: 10px;
+}
+
+.blathers-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-betweeen;
+    row-gap: 10px;
+}
+
 #explanationStackWord {
     display: flex;
     flex-wrap: wrap;
