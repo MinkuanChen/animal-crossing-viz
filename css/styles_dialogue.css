@@ -11,19 +11,26 @@ body {
 #app {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     padding-bottom: 3rem;
-    height: 100vh;
+    height: 50vh;
+}
+
+#app-blathers {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    height: 50vh;
 }
 
 .dialogue {
     position: relative;
     display: flex;
     max-height: 50%;
-    min-height: 300px;
-    min-width: 1024px;
-    width: 60%;
+    min-height: 200px; /*300*/
+    min-width: 683px; /*1024*/
+    width: 40%; /*60*/
 }
+
 .dialogue-blobs {
     position: relative;
     width: 100%;
@@ -64,7 +71,7 @@ body {
     margin-right: auto;
     padding: 0.5rem 2rem;
     font-family: "Varela Round", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #482016;
     background-color: #dd8530;
     border-radius: 30% / 100% 100% 120% 120%;
@@ -74,12 +81,13 @@ body {
 .dialogue-text {
     position: absolute;
     width: 100%;
-    padding: 1em 1em 2em 1.5em;
+    padding: 2em 1.5em 3em 2em;
     font-family: "Hind", sans-serif;
-    font-size: 3rem;
+    font-size: 1.25rem;
     line-height: 1.5em;
     color: #807256;
 }
+
 .arrow {
     position: absolute;
     bottom: 0;
