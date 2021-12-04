@@ -128,10 +128,10 @@ class Bargraph {
                     .attr("fill", "#ef758a");
                 vis.tooltip
                     .style("opacity", 1)
-                    .style("left", event.pageX + 25 + "px")
-                    .style("width", "400px")
-                    .style("heigth", "50px")
-                    .style("top", event.pageY + "px")
+                    .style("left", event.pageX + -385 + "px")
+                    .style("width", "500px")
+                    .style("heigth", "10px")
+                    .style("top", event.pageY + 15 + "px")
                     .html(`
                          <div style="border: thin solid grey; border-radius: 5px; background: #8ecfca; padding: 20px">
                          <p style="font-size: 15pt">${d.tweet_text}</p>

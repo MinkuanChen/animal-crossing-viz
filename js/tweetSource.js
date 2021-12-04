@@ -43,9 +43,9 @@ class TweetSource {
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
         // prepare a color scale
-        /* vis.color = d3.scaleOrdinal()
-             .domain(["boss1", "boss2", "boss3"])
-             .range([ "#402D54", "#D18975", "#8FD175"])*/
+        vis.color = d3.scaleOrdinal()
+             //.domain(["Nintendo Switch Share", "Twitter for iPhone", "Twitter for Android","Twitter Web App","Twitter for iPad"])
+             .range(["#59b086", "#73b997" , "#7fb69d", "#8ba897","#a4d4a2"]); // comment out and change fill to one color when opacity is figured out
 
         vis.tweetDomain = d3.extent(topTenSources.map((d) => +d.value))
         console.log(vis.tweetDomain)
@@ -75,8 +75,8 @@ class TweetSource {
             .style("stroke", "black")
             .style("fill", "#69b3a2")
             //.attr("class", ".rect")
-            //.style("fill", function(d){ return color(d.parent.topTenSources.data.values.key)} )
-            //style("opacity", function(d){ return vis.opacity(d.value)})
+            .style("fill", function(d){ return vis.color(d.data.key)} )
+            .style("opacity", function(d){ return vis.opacity(d.data.key)})
             .on('click', function(event, d) {
                 d3.selectAll(".rect")
                     .attr("fill", "black");
@@ -86,16 +86,16 @@ class TweetSource {
                     .style("opacity", 1)
                     .style("left", event.pageX + -200 + "px")
                     .style("top", event.pageY + "px")
-                    .html(`
+                    /*.html(`
                      <div style="border: thin solid grey; border-radius: 5px; background: #8ecfca; padding: 5px; width: 200px">
                      <p style="font-size: 10pt"><b>Tweet source:</b> ${d.data.key}</p>
                      <span style="font-size: 10pt"><b>Tweet source number:</b> ${d.value}</span>
                      </div>
-                    `)
+                    `)*/
                 tweetSelected = d.data.key
                 //console.log(tweetSelected)
                 tweetSelectedArray.push(tweetSelected);
-                console.log(tweetSelectedArray)
+                //console.log(tweetSelectedArray)
                 updateBarVisualization(tweetSelectedArray);
             })
 

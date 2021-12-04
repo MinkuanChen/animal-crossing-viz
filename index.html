@@ -343,7 +343,7 @@
                 <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
                 <section class="fullpage" id="bars">
                     <div class="row mb-4 mb-lg-5 align-items-top">
-                        <div class="col" style="vertical-align: top; padding-top: 3rem; height:800px;width:100%" id="tweetsources">
+                        <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh" id="tweetsources">
                             <h2>Top 5 Tweet Platform Sources</h2>
                             <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
                                     onclick="clearSelection()">Clear</button>
@@ -360,8 +360,11 @@
                                 </div>
                             </form>
                         </div>
-                        <p class="text-black">Here, we can hover over the top 10 platforms that were used by the community for tweeting. We can also see the top tweets by
-                            retweeted or most-favorited. We can even tell which platform these tweets came from.</p>
+                        <p class="text-black">Here, we can view the top 5 platforms that were used by the community for tweeting. We can also see the top ranked tweets by
+                            amounts of retweets or favorites. We can even combine these two items to tell which platform these tweets came from. As evident, the largest
+                            platform the community communicated from came from none other than the Nintendo Switch itself. This would seem to indicate that most users that
+                            posted about the game were posting from the device while playing the game and were either sharing clips, pictures, or even just commenting on
+                            the game in real time. </p>
                         <div class="col-2">
                             <a class="btn btn-primary" href="#emoji">Back</a>
                             <a class="btn btn-primary" href="#bee">Next</a>
@@ -369,6 +372,78 @@
                     </div>
                 </section>
 
+                <!--Sasha talking!
+                <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
+                    <div class="text-container">
+                        <div class="container">
+                            <div class="row">
+                                <div>
+                                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> &lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;
+                                    <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                                        <dialogue>
+                                            <span slot="character">Sasha</span>
+                                            Hi! I'm Sasha, a new character in the game. Why don't you try searching for me in the visualization below
+                                            to see if you can find me!
+                                        </dialogue>
+                                    </div>
+                                    <script type="text/x-template" id="dialogue-blathers">
+                                        <div class="dialogue">
+                                            <div class="dialogue-blobs">
+                                                <div class="dialogue-blob-top"></div>
+                                                <div class="dialogue-blob-bottom"></div>
+                                                <dialogue-text>
+                                                    <slot></slot>
+                                                </dialogue-text>
+                                            </div>
+                                            <div class="dialogue-character-wrap">
+                                                <div class="dialogue-character">
+                                                    <slot name="character"></slot>
+                                                </div>
+                                            </div>
+                                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
+                                            </svg>
+
+                                        </div>
+                                    </script>
+
+                                    <script type="text/x-template" id="dialogue-text-blathers">
+                                        <div class="dialogue-text">
+                                            {{displayedText}}
+                                        </div>
+                                    </script>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <defs>
+                                            <filter id="old-goo">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                                <feBlend in="SourceGraphic" in2="goo" />
+                                            </filter>
+                                            <filter id="fancy-goo">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h3>Summation and hint to next page</h3>
+                                <p style="font-size:20px;">
+                                    So far, you have been able to look at the times when users were most active on twitter; the hashtages, words, and emojis used;
+                                    and you were able to see the top tweets and the platforms they came from. All of this helps inform us about the community.
+                                    In the next visualization, if you are curious about any topic related to Animal Crossing, feel free to explore it and see what
+                                    you can learn.
+                                </p>
+                                <div class="col-2">
+                                    <a class="btn btn-primary" href="#bee">Back</a>
+                                    <a class="btn btn-primary" href="#credit">Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
                 <section class="fullpage" id="bee" style="padding-top: 3rem">
@@ -410,7 +485,7 @@
                         <div class="container">
                             <div class="row">
                                 <div>
-                                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> <!--<br>[<a href="#_f2">2</a>]-->
+                                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> <!--<br>[<a href="#_f4">4</a>]-->
                                 </div>
                                 <h3>What does the Twitter community for Animal Crossing look like</h3>
                                 <p style="font-size:20px;">
@@ -451,7 +526,7 @@
                     </div>
                     <div class="row">
                         <div>
-                            <img class="character" src="/img/characters/K.K._Slider_NH.png" alt="K.K.Slider"/> <!--<br>[<a href="#_f2">2</a>]-->
+                            <img class="character" src="/img/characters/K.K._Slider_NH.png" alt="K.K.Slider"/> <!--<br>[<a href="#_f5">5</a>]-->
                         </div>
                         <div class="col profile">
                             <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
@@ -489,7 +564,7 @@
                 <div class="container box box2">
                     <h3>Data Sources and Methods</h3>
                     <div>
-                        <img class="character" src="/img/characters/Brewster_NH.png" alt="Brewster"/> <!--<br>[<a href="#_f2">2</a>]-->
+                        <img class="character" src="/img/characters/Brewster_NH.png" alt="Brewster"/> <!--<br>[<a href="#_f6">6</a>]-->
                     </div>
                     <div class="row">
                         <div class="col" style="font-size:15px;">
@@ -506,7 +581,7 @@
                                 <li> section write up for how we collected the data and how we processed it
                                 </li>
                             </ul>
-                            <b>Images</b>: None of the images on this webpage are ours; the images were collected from Google image search, and respective source links are commented in each image file.
+                            <b>Images</b>: None of the images on this webpage are ours; the images were collected from Google image search, and respective source links are commented.
                             Additional icons were found from <a href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki" target="_blank"> the Animal Crossing Wiki</a>.
                             </p>
                         </div>
@@ -522,6 +597,9 @@
                     <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
                     <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
                     <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
+                    <p id="_f4">4. https://animalcrossing.fandom.com/wiki/Sasha</p>
+                    <p id="_f5">5. https://animalcrossing.fandom.com/wiki/K.K._Slider</p>
+                    <p id="_f6">6. https://animalcrossing.fandom.com/wiki/Brewster</p>
                 </div>
             </footer>
         </section>
