@@ -120,14 +120,6 @@
         <!-- visualizations-->
         <section class="visualizations-section" id="visualizations">
             <div class="container">
-                <section class="fullpage" id="tom">
-                    <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
-                    <p>Text for intro to density, stacked, and word frequency...</p>
-                    <div class="col-2">
-                        <a class="btn btn-primary" href="#about">Back</a>
-                        <a class="btn btn-primary" href="#density">Next</a>
-                    </div>
-                </section>
 
                 <section class="fullpage">
                     <!--density graph goes here, ID is density (or change to liking)-->
@@ -137,8 +129,8 @@
                             <div class="featured-text text-center text-lg-left">
                                 <h1>Tweet Time Blocks Plot on the eve of November 4th and 5th, 2021</h1>
                                 <div class="col-2">
-                                    <a class="btn btn-primary" href="#tom">Back</a>
-                                    <a class="btn btn-primary" href="#stacked">Next</a>
+                                    <a class="btn btn-primary" href="#about">Back</a>
+                                    <a class="btn btn-primary" href="#explanationStackWord">Next</a>
                                 </div>
                                 <p class="text-black">Here, we can look at the number of tweets that were sent out in time increments of your choice. Set the time period by adjusting the brush, and slide it across time to see tweets coming and going! Each circle is a tweet, and each color is the source of that tweet!</p>
                             </div>
@@ -150,6 +142,75 @@
                         </div>
                         <div id="densityDiv"></div>
                         <div id="slider"></div>
+                    </div>
+                </section>
+                
+                                <section id="explanationStackWord" class="fullpage" style="padding-top: 4rem">
+                    <img class="character" src="/img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
+                    <div id="app-tom" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                        <dialogue>
+                            <span slot="character">Tom Nook</span>
+                            Let's take a deeper look into the Animal Crossing community! When examining the community, it is important to not only understand when things are being said
+                            or how popular any one statement may be. It is important to look at the community as a whole.
+                        </dialogue>
+                    </div>
+                    <script type="text/x-template" id="dialogue-tom">
+                        <div class="dialogue">
+                            <div class="dialogue-blobs">
+                                <div class="dialogue-blob-top"></div>
+                                <div class="dialogue-blob-bottom"></div>
+                                <dialogue-text>
+                                    <slot></slot>
+                                </dialogue-text>
+                            </div>
+                            <div class="dialogue-character-wrap">
+                                <div class="dialogue-character">
+                                    <slot name="character"></slot>
+                                </div>
+                            </div>
+                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
+                            </svg>
+
+                        </div>
+                    </script>
+
+                    <script type="text/x-template" id="dialogue-text-tom">
+                        <div class="dialogue-text">
+                            {{displayedText}}
+                        </div>
+                    </script>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="old-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                            <filter id="fancy-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="text-container" style="padding-top: 0px;">
+                        <div class="container" style="padding-top: 0px;">
+                            <div class="row">
+                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
+                                <p style="font-size:20px; padding: 1rem">
+                                    Additional Text here.
+                                </p>
+                            </div>
+                            <div class="col">
+                                <div class="explanation-buttons" style="padding-bottom: 2rem">
+                                    <a class="btn btn-primary" href="#density">Back</a>
+                                    <a class="btn btn-primary" href="#stacked">Next</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -280,6 +341,7 @@
                         </div>
                     </div>
                 </section>
+                
                 <!--emoji graph goes here, ID is emoji (or change to liking)-->
                 <section class="fullpage" id="emoji" style="padding-top: 2rem">
                     <div class="row">
@@ -365,83 +427,79 @@
                             the game in real time. </p>
                         <div class="col-2">
                             <a class="btn btn-primary" href="#emoji">Back</a>
-                            <a class="btn btn-primary" href="#bee">Next</a>
+                            <a class="btn btn-primary" href="#explanationForBeeswarm">Next</a>
                         </div>
                     </div>
                 </section>
 
-                <!--Sasha talking!
+                <!--Sasha talking!-->
                 <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
-                    <div class="text-container">
-                        <div class="container">
-                            <div class="row">
-                                <div>
-                                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> &lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;
-                                    <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
-                                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                                        <dialogue>
-                                            <span slot="character">Sasha</span>
-                                            Hi! I'm Sasha, a new character in the game. Why don't you try searching for me in the visualization below
-                                            to see if you can find me!
-                                        </dialogue>
-                                    </div>
-                                    <script type="text/x-template" id="dialogue-blathers">
-                                        <div class="dialogue">
-                                            <div class="dialogue-blobs">
-                                                <div class="dialogue-blob-top"></div>
-                                                <div class="dialogue-blob-bottom"></div>
-                                                <dialogue-text>
-                                                    <slot></slot>
-                                                </dialogue-text>
-                                            </div>
-                                            <div class="dialogue-character-wrap">
-                                                <div class="dialogue-character">
-                                                    <slot name="character"></slot>
-                                                </div>
-                                            </div>
-                                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
-                                            </svg>
-
-                                        </div>
-                                    </script>
-
-                                    <script type="text/x-template" id="dialogue-text-blathers">
-                                        <div class="dialogue-text">
-                                            {{displayedText}}
-                                        </div>
-                                    </script>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                        <defs>
-                                            <filter id="old-goo">
-                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                                                <feBlend in="SourceGraphic" in2="goo" />
-                                            </filter>
-                                            <filter id="fancy-goo">
-                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                                            </filter>
-                                        </defs>
-                                    </svg>
+                    <img class="character" src="/img/characters/Sasha_NH.png" alt="Sasha"/> <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
+                    <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                        <dialogue>
+                            <span slot="character">Sasha</span>
+                            Hi! I'm Sasha, a new character in the game. Why don't you try searching for me in the visualization below
+                            to see if you can find me!
+                        </dialogue>
+                    </div>
+                    <script type="text/x-template" id="dialogue-sasha">
+                        <div class="dialogue">
+                            <div class="dialogue-blobs">
+                                <div class="dialogue-blob-top"></div>
+                                <div class="dialogue-blob-bottom"></div>
+                                <dialogue-text>
+                                    <slot></slot>
+                                </dialogue-text>
+                            </div>
+                            <div class="dialogue-character-wrap">
+                                <div class="dialogue-character">
+                                    <slot name="character"></slot>
                                 </div>
-                                <h3>Summation and hint to next page</h3>
-                                <p style="font-size:20px;">
-                                    So far, you have been able to look at the times when users were most active on twitter; the hashtages, words, and emojis used;
-                                    and you were able to see the top tweets and the platforms they came from. All of this helps inform us about the community.
-                                    In the next visualization, if you are curious about any topic related to Animal Crossing, feel free to explore it and see what
-                                    you can learn.
+                            </div>
+                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z" fill="#F1AE04"/>
+                            </svg>
+
+                        </div>
+                    </script>
+                                       <script type="text/x-template" id="dialogue-text-sasha">
+                        <div class="dialogue-text">
+                            {{displayedText}}
+                        </div>
+                    </script>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="old-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                            <filter id="fancy-goo">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="text-container" style="padding-top: 0px;">
+                        <div class="container" style="padding-top: 0px;">
+                            <div class="row">
+                                <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
+                                <p style="font-size:20px; padding: 1rem">
+                                    Add relevant text here!
                                 </p>
-                                <div class="col-2">
-                                    <a class="btn btn-primary" href="#bee">Back</a>
-                                    <a class="btn btn-primary" href="#credit">Next</a>
+                            </div>
+                            <div class="col">
+                                <div class="explanation-buttons" style="padding-bottom: 2rem">
+                                    <a class="btn btn-primary" href="#emoji">Back</a>
+                                    <a class="btn btn-primary" href="#bee">Next</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>-->
+                </section>
 
                 <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
                 <section class="fullpage" id="bee" style="padding-top: 3rem">
@@ -464,7 +522,7 @@
 
                             <div class="align-self-center" style="height:90vh">
                                 <div class="col-2">
-                                    <a class="btn btn-primary" href="#bars">Back</a>
+                                    <a class="btn btn-primary" href="#explanationForBeeswarm">Back</a>
                                     <a class="btn btn-primary" href="#explanationBreak2">Next</a>
                                 </div>
                                 <div id="swarm-plot" style="height:100%; width: 100%"></div>
@@ -614,7 +672,9 @@
         <!-- own js files -->
         <script src="js/main.js"></script>
         <script src="js/dialogue.js"></script>
+        <script src="js/dialogue-tom.js"></script>
         <script src="js/dialogue-blathers.js"></script>
+        <script src="js/dialogue-sasha.js"></script>
         <script src="js/modal.js"></script>
         <script src="js/density.js"></script>
         <script src="js/emojibubble.js"></script>
