@@ -125,7 +125,7 @@ class Slider {
 
 		vis.barColorScale = d3.scaleLinear()
 			.domain(vis.barExtent)
-			.range(["blue", "red"])
+			.range(["yellow", "red"])
 			 
 		vis.circles = vis.svg.selectAll("circle")
 			.data(vis.displayData)
@@ -163,6 +163,46 @@ class Slider {
             .attr("height", 10)
             .attr("x", 50)
             .attr("y", 50)
+
+		// !! Now instantiate legend
+		vis.legend = vis.svg.append("g")
+		.attr('transform', "translate("+vis.width+",40) translate(-230,0)")
+
+		vis.legend.selectAll(".rect")
+			.data(['Nintendo Switch Share','Twitter for iPhone', 'Twitter Web App', 'Twitter Web App', 'Twitter for iPad', 'TweetDeck'])
+			.enter()
+			.append("rect")
+			.attr("width", 60)
+			.attr("height", 20)
+			.attr("x", function(d, i) {
+				return i * 150-800;
+			})
+			.attr("y", 0)
+			.attr("fill", function(d){
+				return vis.colorScale(d)
+			})
+
+		vis.legend.append("text")
+			.attr("x", -800)
+			.attr("y", 40)
+			.text("Nintendo Switch Share")
+		vis.legend.append("text")
+			.attr("x", -100)
+			.attr("y", 40)
+			.text("Twitter for iPhone")
+		vis.legend.append("text")
+			.attr("x", 0)
+			.attr("y", 40)
+			.text("Twitter Web App")
+		vis.legend.append("text")
+			.attr("x", 100)
+			.attr("y", 40)
+			.text("Twitter for iPad")
+		vis.legend.append("text")
+			.attr("x", 200)
+			.attr("y", 40)
+			.text("TweetDeck")
+
 
 		// !! Instantiate Count
 		document.getElementById('count').innerText = "Number of tweets in time block: " + tmpData.length
@@ -202,7 +242,7 @@ class Slider {
 			// .transition()
 			// .duration(50)
 			.attr("fill", function(d){
-				// console.log(d.tweet_source, vis.colorScale(d.tweet_source))
+				console.log(d.tweet_source, vis.colorScale(d.tweet_source))
 				return vis.colorScale(d.tweet_source)
 			})
 			.attr("r", 10)

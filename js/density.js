@@ -16,7 +16,6 @@ class Slider {
 		let vis = this
 		vis.margin = {top: 40, right: 40, bottom: 60, left: 60};
 
-		// vis.width = 1200 - vis.margin.left - vis.margin.right,
 		vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right,
 		vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
@@ -47,25 +46,11 @@ class Slider {
 			.y1(function(d) { 
 				return vis.y(vis.height-360-d.volume) })
 
-
-		// vis.brush.append("path")
-		// 	.datum(vis.volume_data)
-		// 	.attr("fill", "none")
-		// 	.attr("stroke", "steelblue")
-		// 	.attr("stroke-width", 1.5)
-		// 	.attr("d", d3.line()
-		// 		.x(function(d) { return vis.x(d.date) })
-		// 		.y(function(d) { return vis.y(d.volume) })
-		// 		// .curve(d3.curveMonotoneX)
-		// 	)
-
-		// vis.area.curve(d3.curveLinear)
-
 		vis.graph.append("path")
 			.datum(function(){
 				return vis.volume_data 
 			} )
-			.attr("fill", "#ccc")
+			.attr("fill", "#8ecfca")
 			.attr("d", vis.area);
 
 		// Initialize brush component
@@ -120,9 +105,9 @@ class Slider {
 		
 		vis.colorScale = d3.scaleOrdinal()
 			.domain(vis.sourceExtent)
-			.range(["red", "blue", "green", "yellow", "orange", "purple", "pink"]);
+			.range(['#68b893', '#ef758a', '#8ecfca', '#ff7c69', '#a4d4a2', '#febdc3', '#017c74']);
 
-		vis.barExtent = [5, 35]
+		vis.barExtent = [9, 25]
 
 		vis.barColorScale = d3.scaleLinear()
 			.domain(vis.barExtent)
@@ -174,6 +159,45 @@ class Slider {
             .attr("x", 50)
             .attr("y", 50)
 
+		// !! Now instantiate legend
+		vis.legend = vis.svg.append("g")
+		.attr('transform', "translate("+vis.width+",40) translate(-230,0)")
+
+		vis.legend.selectAll(".rect")
+			.data(['Nintendo Switch Share', 'Twitter for iPhone', 'Twitter Web App', 'Twitter for iPad', 'TweetDeck'])
+			.enter()
+			.append("rect")
+			.attr("width", 20)
+			.attr("height", 20)
+			.attr("x", function(d, i) {
+				return i * 150-910;
+			})
+			.attr("y", 0)
+			.attr("fill", function(d){
+				return vis.colorScale(d)
+			})
+
+		vis.legend.append("text")
+			.attr("x", -965)
+			.attr("y", 40)
+			.text("Nintendo Switch Share")
+		vis.legend.append("text")
+			.attr("x", -810)
+			.attr("y", 40)
+			.text("Twitter for iPhone")
+		vis.legend.append("text")
+			.attr("x", -660)
+			.attr("y", 40)
+			.text("Twitter Web App")
+		vis.legend.append("text")
+			.attr("x", -500)
+			.attr("y", 40)
+			.text("Twitter for iPad")
+		vis.legend.append("text")
+			.attr("x", -340)
+			.attr("y", 40)
+			.text("TweetDeck")
+
 		// !! Instantiate Count
 		console.log(tmpData.length)
 		document.getElementById('count').innerText = "Number of tweets in time block: " + tmpData.length
@@ -190,7 +214,8 @@ class Slider {
 			// vis.newDateObj = new Date(start_time.getTime() + 1*60000)
 			return d.tweet_created_at >= vis.start && d.tweet_created_at <= vis.end;
 		});
-		vis.updateVis()
+
+	vis.updateVis()
 	}
 
 	updateVis(){
