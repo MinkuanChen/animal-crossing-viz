@@ -36,7 +36,7 @@ const app = new Vue({
     el: "#app",
     mounted() {
         setTimeout(() => {
-            this.$refs.audio.play();
+            //this.$refs.audio.play();
         }, 2000);
     }
 });
