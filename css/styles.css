@@ -154,13 +154,36 @@ button:focus:not(:focus-visible) {
     outline: 0;
 }
 
+/* primary button */
 .btn-primary {
     color:white;
     background-color: #febdc3;
+    border-color: #ef758a;
+    border-radius: 10px;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active    {
+    background-color: #ef758a;
+    color: #FFF;
+    border-color: #febdc3;
 }
 
-.btn-primary:hover {
+.vizButton {
+    background-color: #68b893;
+    color: white;
+    height: 40px;
+    width: 80px;
+    font-size: medium;
+    border-radius: 8px;
+    border: none
+}
+.vizButton:hover,
+.vizButton:focus,
+.vizButton:active    {
     background-color: #ef758a;
+    color: #FFF;
+    border-color: #febdc3;
 }
 
 button,

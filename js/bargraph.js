@@ -60,12 +60,23 @@ class Bargraph {
 
         var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
 
-        var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
-        console.log(vis.tweetSelectedArray)
+        console.log(tweetSelectedArray)
+
+
+/*      var result = [];
+        tweetSelectedArray.forEach(function (a) {
+            //if (!this[a.key]) {
+                //this[a.key] = { key: a.key, value: [] };
+                result.push(this[a.value]);
+            //}
+            //this[a.key].value.push({ /!*key: a.date,*!/ value: a.value });
+        }, Object.create(null));
+            console.log(result)*/
+
         vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelected)
         //vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelectedArray)
-        //console.log(vis.tweetsBySourceArray)
-
+        console.log(vis.tweetsBySourceArray)
+        //do a forEach loop to then
 
         if (Array.isArray(vis.tweetsBySourceArray)) {
             vis.myDisplayData = vis.tweetsBySourceArray
@@ -103,7 +114,6 @@ class Bargraph {
 
     updateVis() {
         let vis = this;
-        console.log(vis.tweetYDomain[1])
         //update domain
         vis.yScale
             .domain([0,vis.tweetYDomain[1]]);

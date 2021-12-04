@@ -45,14 +45,14 @@ class TweetSource {
         // prepare a color scale
         vis.color = d3.scaleOrdinal()
              //.domain(["Nintendo Switch Share", "Twitter for iPhone", "Twitter for Android","Twitter Web App","Twitter for iPad"])
-             .range(["#59b086", "#73b997" , "#7fb69d", "#8ba897","#a4d4a2"]); // comment out and change fill to one color when opacity is figured out
+             .range(["#017c74"]); //"#73b997" , "#7fb69d", "#8ba897","#a4d4a2"]); // comment out and change fill to one color when opacity is figured out
 
         vis.tweetDomain = d3.extent(topTenSources.map((d) => +d.value))
         console.log(vis.tweetDomain)
         // And a opacity scale
-        vis.opacity = d3.scaleLinear()
+        vis.opacity = d3.scaleOrdinal()
             .domain([vis.tweetDomain])
-            .range([.5,1]);
+            .range([1,.8,.6,.4,.3,.2]);//.6,.7,.8,.9,1]);
 
         vis.treemapLayout = d3.treemap()
             .size([vis.width, vis.height])
@@ -75,7 +75,7 @@ class TweetSource {
             .style("stroke", "black")
             .style("fill", "#69b3a2")
             //.attr("class", ".rect")
-            .style("fill", function(d){ return vis.color(d.data.key)} )
+            .style("fill", function(d){ return vis.color(d.data.key)})
             .style("opacity", function(d){ return vis.opacity(d.data.key)})
             .on('click', function(event, d) {
                 d3.selectAll(".rect")
@@ -122,8 +122,9 @@ class TweetSource {
                 .style("top", 0)
                 .html(``);
         });*/
-
-        vis.svg
+        //add the text and value labels
+        d3.select("#tweetsources")
+            .select('g')
             .selectAll("text")
             .data(root.leaves())
             .enter()
@@ -135,13 +136,13 @@ class TweetSource {
             .attr("font-size", "13px")
             .attr("fill", "black");
 
-        // and to add the text labels
-        vis.svg
+        d3.select("#tweetsources")
+            .select('g')
             .selectAll("vals")
             .data(root.leaves())
             .enter()
             .append("text")
-            //.merge()
+            //.merge("text")
             .attr("x", function(d){ return d.x0+5})
             .attr("y", function(d){ return d.y0+35})
             .text(function(d){ return d.data.value })

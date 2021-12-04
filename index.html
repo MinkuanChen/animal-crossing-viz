@@ -22,9 +22,17 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#visualizations">Visualizations</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#visualizations" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visualizations</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#density">Density Chart</a></li>
+                        <li><a class="dropdown-item" href="#stacked-area-chart">Stacked Area Chart</a></li>
+                        <li><a class="dropdown-item" href="#words">Top 100 Words</a></li>
+                        <li><a class="dropdown-item" href="#emojibubble">Emoji Chart</a></li>
+                        <li><a class="dropdown-item" href="#bars">Top Tweets</a></li>
+                        <li><a class="dropdown-item" href="#bee">Item Search</a></li>
+                    </ul></li>
                     <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#info">Data Sources and Methods</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Data Sources and Methods</a></li>
                 </ul>
             </div>
         </div>
@@ -474,16 +482,15 @@
         <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
         <section class="fullpage" id="bars">
             <div class="row mb-4 mb-lg-5 align-items-top">
-                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh"
-                     id="tweetsources">
-                    <h2>Top 5 Tweet Platform Sources</h2>
-                    <button type="button" class="btn btn-primary" id="clear" style="vertical-align: top"
+                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh" id="tweetsources">
+                    <h4 class="text-black">Top 5 Tweet Platform Sources</h4>
+                    <button type="button" class="vizButton" id="clear" style="vertical-align: top"
                             onclick="clearSelection()">Clear
                     </button>
                 </div>
 
                 <div class="col" style="vertical-align: top; padding-top: 3rem" id="bargraph">
-                    <h4 class="text-black" style="padding-top: 15px;">Top Tweets By Filter</h4>
+                    <h4 class="text-black">Top Tweets By Filter</h4>
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="ranking-type">Filter by</label>
