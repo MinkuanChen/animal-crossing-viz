@@ -9,7 +9,7 @@ class Bargraph {
     bg_initVis() {
         let vis = this;
 
-        vis.margin = {top: 40, right: 40, bottom: 40, left: 80};
+        vis.margin = {top: 10, right: 40, bottom: 40, left: 80};
         vis.width = $('#' + vis.parentElement).width() - vis.margin.left - vis.margin.right;
         vis.height = $('#' + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
