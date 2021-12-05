@@ -67,10 +67,16 @@ class Bargraph {
                 return element !== undefined;
             });
         }
+        var distinctArray = (value, index, self) => {
+            return self.indexOf(value) === index;
+        }
+
+        var distinctArray = finalArray.filter(distinctArray);
+
         if (finalArray.length == []) {
             vis.myDisplayData = vis.displayData
         } else {
-            vis.myDisplayData = finalArray
+            vis.myDisplayData = distinctArray
         }
         console.log(vis.myDisplayData)
         let yMax = 0;
@@ -120,17 +126,17 @@ class Bargraph {
                     .attr("fill", "#ef758a");
                 vis.tooltip
                     .style("opacity", 1)
-                    .style("left", event.pageX + -385 + "px")
-                    .style("width", "500px")
-                    .style("heigth", "10px")
+                    .style("left", event.pageX + -485 + "px")
+                    .style("width", "600px")
+                    //.style("height", "10px")
                     .style("top", event.pageY + 15 + "px")
                     .html(`
-                         <div style="border: thin solid grey; border-radius: 5px; background: #8ecfca; padding: 20px">
-                         <p style="font-size: 15pt">${d.tweet_text}</p>
-                         <p style="font-size: 10pt"><b>Number of retweets:</b> ${d.tweet_retweet_count}</p>
-                         <p style="font-size: 10pt"><b>Number of favorites:</b> ${d.tweet_favorite_count}</p>
-                         <p style="font-size: 10pt"><b>Created at:</b> ${d.tweet_created_at}</p>
-                         <p style="font-size: 10pt"><b>Tweet source:</b> ${d.tweet_source}</p>
+                         <div style="border: thin solid grey; border-radius: 5px; background: #8ecfca; padding: 5px">
+                         <p style="font-size: 12pt">${d.tweet_text}</p>
+                         <p style="font-size: 9pt"><b>Number of retweets:</b> ${d.tweet_retweet_count}</p>
+                         <p style="font-size: 9pt"><b>Number of favorites:</b> ${d.tweet_favorite_count}</p>
+                         <p style="font-size: 9pt"><b>Created at:</b> ${d.tweet_created_at}</p>
+                         <p style="font-size: 9pt"><b>Tweet source:</b> ${d.tweet_source}</p>
                          </div>
                         `)
             })
