@@ -98,7 +98,7 @@ class TweetSource {
             .attr("x", function(d){ return d.x0+5})
             .attr("y", function(d){ return d.y0+20})
             .text(function(d){ return d.data.key})
-            .attr("font-size", "13px")
+            .attr("font-size", "10px")
             .attr("fill", "black");
 
         d3.select("#tweetsources")
@@ -110,7 +110,7 @@ class TweetSource {
             .attr("x", function(d){ return d.x0+5})
             .attr("y", function(d){ return d.y0+35})
             .text(function(d){ return d.data.value })
-            .attr("font-size", "11px")
+            .attr("font-size", "9px")
             .attr("fill", "black");
     }
 }

@@ -78,7 +78,7 @@
             <div class="isabelle-container" style="padding-left: 4vw; padding-bottom: 1rem; height: 35vh">
                 <img class="character" src="img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/>
                 <!--<br>[<a href="#_f1">1</a>]-->
-                <div id="app">
+                <div id="app" style="padding-top: 3rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
                     <dialogue>
                         <span slot="character">Isabelle</span>
                         With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly
@@ -113,7 +113,7 @@
         </div>
         <div class="row justify-content-center" style="height: 50px; padding-left: 2vw">
             <div class="col">
-                <div class="about-buttons" style="height: 50px; padding-top: 9rem;">
+                <div class="about-buttons col-2" style="height: 50px; padding-top: 9rem;">
                     <a class="btn btn-primary" href="#home">Back</a>
                     <a class="btn btn-primary" href="#visualizations">Next</a>
                 </div>
@@ -537,7 +537,7 @@
         <!--Sasha talking!-->
                 <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
             <div class="row justify-content-center">
-                <div class="sasha-container" style="padding-top: 30vh; padding-left: 10vw; padding-right: 10vw;">
+                <div class="sasha-container" style="padding-top: 8vh; padding-left: 10vw; padding-right: 10vw;">
                     <img class="character" src="img/characters/Sasha_NH.png" alt="Sasha"/>
                     <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
                     <div id="app-sasha" style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
@@ -613,11 +613,10 @@
                 <div class="row">
 
                     <div class="align-self-center">
-                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (to return to all results,
-                            use the "Reset" button or clear the input and hit enter):</label>
+                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (use the "Reset" button to return to all results):</label>
                         <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
-                        <input type="button" value="Search" id="search-btn" onclick="inputChange()">
-                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()">
+                        <input type="button" value="Search" id="search-btn" onclick="inputChange()" class="vizButton">
+                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()" class="vizButton">
                     </div>
                 </div>
                 <div class="row" style="height:100%">
@@ -677,7 +676,7 @@
     <div id="conclusion-sec" class="section">
         <div class="container box" style="height: 100vh">
             <div>
-                <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider" style="height: 30vh; padding-top: 3rem; padding-left: 75vw;"/>
+                <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider" style="height: 30vh; padding-top: 1rem; padding-left: 75vw;"/>
                 <!--<br>[<a href="#_f5">5</a>]-->
             </div>
             <h3>Thank you!</h3>
