@@ -12,7 +12,7 @@ class WordFreqVis {
     initVis() {
         let vis = this;
 
-        vis.margin = {top: 40, right: 40, bottom: 40, left: 40};
+        vis.margin = {top: 10, right: 40, bottom: 10, left: 40};
 
         vis.width = $('#' + vis.parentElement).width() - vis.margin.left - vis.margin.right;
         vis.height = $('#' + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
@@ -46,7 +46,7 @@ class WordFreqVis {
 
             vis.radiusScale = d3.scaleSqrt()
                 .domain([0, vis.maxSize])
-                .range([0, 80])
+                .range([0, 50])
 
             vis.myNodes = rawData.map(d => ({
                 ...d,
@@ -121,7 +121,7 @@ class WordFreqVis {
             .append('text')
             .attr('dy', '.3em')
             .style('text-anchor', 'middle')
-            .style('font-size', 15)
+            .style('font-size', 8)
             .text(d => d.word)
 
         vis.simulation.nodes(vis.nodes)
@@ -130,4 +130,8 @@ class WordFreqVis {
     }
 }
 
-//References: https://github.com/d3/d3-force
+/*
+References and Inspiration:
+https://github.com/d3/d3-force
+https://bl.ocks.org/ctufts/f38ef0187f98c537d791d24fda4a6ef9
+ */
