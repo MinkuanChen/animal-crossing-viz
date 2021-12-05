@@ -22,6 +22,13 @@ body {
     height: 50vh;
 }
 
+#app-kkslider {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    height: 50vh;
+}
+
 .dialogue {
     position: relative;
     display: flex;
