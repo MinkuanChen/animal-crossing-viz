@@ -46,6 +46,13 @@ body {
     row-gap: 10px;
 }
 
+.kkslider-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    row-gap: 10px;
+}
+
 #explanationStackWord {
     display: flex;
     flex-wrap: wrap;
