@@ -33,7 +33,6 @@ class Bargraph {
             .rangeRound([0, vis.width]);
         vis.xAxis = d3.axisBottom()
             .tickFormat("")
-            //.tickValues([])
             .scale(vis.xScale);
         vis.yScale = d3.scaleLinear()
             //.domain([0,vis.tweetYDomain[1]]) // need to figure out how to load data in from beginning
@@ -55,33 +54,24 @@ class Bargraph {
 
     wrangleData() {
         let vis = this;
-
-        console.log(tweetSelected)
-
         var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
-
-        console.log(tweetSelectedArray)
-
-
-/*      var result = [];
-        tweetSelectedArray.forEach(function (a) {
-            //if (!this[a.key]) {
-                //this[a.key] = { key: a.key, value: [] };
-                result.push(this[a.value]);
-            //}
-            //this[a.key].value.push({ /!*key: a.date,*!/ value: a.value });
-        }, Object.create(null));
-            console.log(result)*/
-
         vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelected)
-        //vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelectedArray)
         console.log(vis.tweetsBySourceArray)
-        //do a forEach loop to then
-
-        if (Array.isArray(vis.tweetsBySourceArray)) {
-            vis.myDisplayData = vis.tweetsBySourceArray
+        if (vis.tweetsBySourceArray == undefined) {
+            var finalArray = [];
+            mergedArray=[];
+            console.log(finalArray)
         } else {
+            mergedArray.push(vis.tweetsBySourceArray)
+            finalArray = [].concat.apply([], mergedArray);
+            finalArray = finalArray.filter(function( element ) {
+                return element !== undefined;
+            });
+        }
+        if (finalArray.length == []) {
             vis.myDisplayData = vis.displayData
+        } else {
+            vis.myDisplayData = finalArray
         }
 
         let yMax = 0;
@@ -126,13 +116,6 @@ class Bargraph {
             .enter()
             .append("rect")
             .merge(vis.bars)
-            //.transition()
-            //.duration(1000)
-            .attr("x", function(d,i) { return (vis.xScale(i)+5)})
-            .attr("y", function(d) {return vis.yScale(+d[vis.selectedVar])})
-            .attr("width", (vis.xScale.bandwidth()-10))
-            .attr("height", d => vis.height - vis.yScale(+d[vis.selectedVar]))
-            .attr("fill", "#69b3a2")
             .on("mouseover", function (event, d) {
                 d3.select(this)
                     .attr("fill", "#ef758a");
@@ -162,10 +145,15 @@ class Bargraph {
                     .html(``);
             })
             .transition()
-            .duration(2000)
+            .duration(800)
+            .attr("x", function(d,i) { return (vis.xScale(i)+5)})
+            .attr("y", function(d) {return vis.yScale(+d[vis.selectedVar])})
+            .attr("width", (vis.xScale.bandwidth()-10))
+            .attr("height", d => vis.height - vis.yScale(+d[vis.selectedVar]))
+            .attr("fill", "#69b3a2")
         vis.bars.exit().remove();
 
         // update y axis
-        vis.svg.select(".y_axis").call(vis.yAxis)
+        vis.svg.select(".y_axis").transition().duration(800).call(vis.yAxis)
     }
 }

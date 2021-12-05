@@ -5,6 +5,7 @@ let mySwarmPlotVis;
 let myDensityVis;
 let mytweetsource = [];
 let tweetSelectedArray = [];
+let mergedArray = [];
 let tweetSelected = "";
 let myBargraph = [];
 let config = [
