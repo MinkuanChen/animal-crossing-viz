@@ -528,71 +528,58 @@
         </section>
 
         <!--Sasha talking!-->
-        <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
-            <img class="character" src="img/characters/Sasha_NH.png" alt="Sasha"/>
-            <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
-            <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
-                <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
-                <dialogue>
-                    <span slot="character">Sasha</span>
-                    Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets that
-                    contain a certain keyword or phrase
-                    in the visualization below. Why don't you try searching for my name to see what the Animal Crossing
-                    community is talking about me!
-                </dialogue>
-            </div>
-            <script type="text/x-template" id="dialogue-sasha">
-                <div class="dialogue">
-                    <div class="dialogue-blobs">
-                        <div class="dialogue-blob-top"></div>
-                        <div class="dialogue-blob-bottom"></div>
-                        <dialogue-text>
-                            <slot></slot>
-                        </dialogue-text>
+                <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
+            <div class="row justify-content-center">
+                <div class="sasha-container" style="padding-top: 30vh; padding-left: 10vw; padding-right: 10vw;">
+                    <img class="character" src="img/characters/Sasha_NH.png" alt="Sasha"/>
+                    <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
+                    <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                        <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
+                        <dialogue>
+                            <span slot="character">Sasha</span>
+                            Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets that
+                            contain a certain keyword or phrase
+                            in the visualization below. Why don't you try searching for my name to see what the Animal Crossing
+                            community is talking about me!
+                        </dialogue>
                     </div>
-                    <div class="dialogue-character-wrap">
-                        <div class="dialogue-character">
-                            <slot name="character"></slot>
+                    <script type="text/x-template" id="dialogue-sasha">
+                        <div class="dialogue">
+                            <div class="dialogue-blobs">
+                                <div class="dialogue-blob-top"></div>
+                                <div class="dialogue-blob-bottom"></div>
+                                <dialogue-text>
+                                    <slot></slot>
+                                </dialogue-text>
+                            </div>
+                            <div class="dialogue-character-wrap">
+                                <div class="dialogue-character">
+                                    <slot name="character"></slot>
+                                </div>
+                            </div>
+                            <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                                      fill="#F1AE04"/>
+                            </svg>
+
                         </div>
-                    </div>
-                    <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
-                              fill="#F1AE04"/>
-                    </svg>
+                    </script>
+                    <script type="text/x-template" id="dialogue-text-sasha">
+                        <div class="dialogue-text">
+                            {{displayedText}}
+                        </div>
+                    </script>
+                    <div class="text-container" style="padding-top: 0px;">
+                        <div class="container" style="padding-top: 0px;">
+                            <div class="row">
 
-                </div>
-            </script>
-            <script type="text/x-template" id="dialogue-text-sasha">
-                <div class="dialogue-text">
-                    {{displayedText}}
-                </div>
-            </script>
-
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                    <filter id="old-goo">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                                       result="goo"/>
-                        <feBlend in="SourceGraphic" in2="goo"/>
-                    </filter>
-                    <filter id="fancy-goo">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                                       result="goo"/>
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-                    </filter>
-                </defs>
-            </svg>
-            <div class="text-container" style="padding-top: 0px;">
-                <div class="container" style="padding-top: 0px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="explanation-buttons" style="padding-bottom: 2rem">
-                                <a class="btn btn-primary" href="#emoji">Back</a>
-                                <a class="btn btn-primary" href="#bee">Next</a>
+                                <div class="col">
+                                    <div class="explanation-buttons"  style="padding-bottom: 2rem; padding-left: 55vw;">
+                                        <a class="btn btn-primary" href="#emoji">Back</a>
+                                        <a class="btn btn-primary" href="#bee">Next</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
