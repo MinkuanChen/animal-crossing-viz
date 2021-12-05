@@ -61,7 +61,7 @@
         <div class="row justify-content-center">
             <div class="col" style="text-align: center;">
                 <h2 class="text-white mb-4" style="padding-top: 3rem">What are we looking at?</h2>
-                <p class="text-white" style="font-size:18px; padding-left: 20px; padding-right: 20px;">
+                <p class="text-white" style="font-size:20px; padding-left: 20px; padding-right: 20px;">
                     Per its <a href="https://en.wikipedia.org/wiki/Animal_Crossing" target="_blank">Wikipedia</a> page,
                     <i>Animal Crossing: New Horizons</i> grossed $654 million in global digital sales by the end of
                     2020, making it the year's
@@ -74,11 +74,11 @@
                 </p>
             </div>
         </div>
-        <div class="row justify-content-center" style="height: 35vh; width: 75vw; padding-left: 5vw">
-            <div class="isabelle-container" style="padding-left: 4vw; padding-bottom: 1rem; height: 35vh">
-                <img class="character" src="img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/>
+        <div class="row justify-content-center" style="height: 35vh; width: 70vw; padding-left: 5vw">
+            <div class="isabelle-container" style="padding-left: 4vw; padding-bottom: 1rem; height: 35vh;">
+                <img class="character" src="img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left" />
                 <!--<br>[<a href="#_f1">1</a>]-->
-                <div id="app" style="padding-top: 3rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
+                <div id="app" style="padding-left: 22vw; height: 10vh; width: 20vw;">
                     <dialogue>
                         <span slot="character">Isabelle</span>
                         With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly
@@ -113,7 +113,7 @@
         </div>
         <div class="row justify-content-center" style="height: 50px; padding-left: 2vw">
             <div class="col">
-                <div class="about-buttons col-2" style="height: 50px; padding-top: 9rem;">
+                <div class="about-buttons" style="height: 50px; padding-top: 9rem;">
                     <a class="btn btn-primary" href="#home">Back</a>
                     <a class="btn btn-primary" href="#visualizations">Next</a>
                 </div>
@@ -140,11 +140,13 @@
                                 4th and 5th, 2021</h4>
                         </div>
                         
-                        <p class="text-black" style="font-size: 16px;">Here, we can look at the number of tweets that were sent out in time
+                        <p class="text-black" style="font-size: 16px;">Here, we can look at the number of tweets that
+                            were sent out in time
                             increments of your choice. Set the time period by adjusting the brush, and slide it across
                             time to see tweets coming and going! Each circle is a tweet, and each color is the source of
                             that tweet!</p>
                     </div>
+                    
                     <div class="col" style="height: 18vh">
                         <div class="row" id="bar">
                             <p id="count" style="font-size: 16px;"></p>
@@ -154,6 +156,8 @@
                         <div class="row" id="slider"></div>
                     </div>
                 </div>
+
+
             </div>
         </section>
 
@@ -239,25 +243,35 @@
                 <div class="col">
                     <div class="text-center">
                         <div class="project-text text-center text-lg-left">
-                            <h4 class="text-black">What are the top 10 hashtags in the Animal Crossing Tweets from 10/30/2021 to
+                            <h4 class="text-black">What are the top 10 hashtags in the Animal Crossing Tweets from
+                                10/30/2021 to
                                 11/05/2021?</h4>
-                            <p class="text-black" style="font-size: 16px;">Here, we can look at the number of specific hashtags used over a
+                            <p class="text-black" style="font-size: 16px;">Here, we can look at the number of specific
+                                hashtags used over a
                                 five-day span leading up to the release. It was interesting to see that there was a
                                 spike between Wednesday, November 3rd, and
                                 Thursday, November 4th, before a decline on the day of the supposed release.
                                 Was everyone too busy playing to tweet?!</p>
                         </div>
                     </div>
+                    <!--
                     <div class="row">
                         <div class="col-2">
                             <a class="btn btn-primary" href="#explanationStackWord">Back</a>
                             <a class="btn btn-primary" href="#words">Next</a>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
             <div class="col" style="height:65vh">
                 <div id="stacked-area-chart" style="height: 100%; width: 100%;"></div>
+            </div>
+            <div class="col d-flex justify-content-center" style="padding-bottom: 2rem">
+                <div style="padding-bottom: 2rem;">
+                    <a class="btn btn-primary" href="#explanationStackWord">Back</a>
+                    <a class="btn btn-primary" href="#words">Next</a>
+                </div>
             </div>
         </section>
 
@@ -272,29 +286,38 @@
                         <div class="project-text text-center text-lg-left">
                             <h4 class="text-black">What are the most popular keywords among
                                 the Animal Crossing tweets?</h4>
-                            <p class="text-black" style="font-size: 16px;">Moving from hashtags to keywords, check out the bubble chart below for the top 100 most
+                            <p class="text-black" style="font-size: 16px;">Moving from hashtags to keywords, check out
+                                the bubble chart below for the top 100 most
                                 mentioned words in the Animal Crossing tweets from 10/30/2021 to 11/05/2021. The larger
                                 the size of the bubble, the more people used that word when tweeting about Animal
                                 Crossing during our dataset timeframe. </p>
 
                         </div>
                     </div>
+                    <!--
                     <div class="row">
                         <div class="col-2">
                             <a class="btn btn-primary" href="#stacked">Back</a>
                             <a class="btn btn-primary" href="#explanationBreak">Next</a>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
             <div class="col" style="height:60vh">
                 <div id="word-frequency-bubble-chart" style="height: 100%; width: 100%;"></div>
             </div>
+            <div class="col d-flex justify-content-center" style="padding-bottom: 2rem">
+                <div style="padding-bottom: 2rem;">
+                    <a class="btn btn-primary" href="#stacked">Back</a>
+                    <a class="btn btn-primary" href="#explanationBreak">Next</a>
+                </div>
+            </div>
         </section>
 
 
         <!--  break to explain more-->
-        <section id="explanationBreak" class="fullpage" style="padding-top: 3rem">
+        <section id="explanationBreak" class="fullpage" style="padding-top: 2rem">
             <div class="blathers-container" style="padding-left: 2vw; padding-right: 2vw;">
                 <img class="character" style="padding-top: 3rem; height: 35vh;" src="img/characters/Blathers_NH.png"
                      alt="Blathers"/>
@@ -356,7 +379,7 @@
                 <div class="text-container" style="height: 20vh; padding-top: 5vh;">
                     <div class="container">
                         <div class="row">
-                            <p style="font-size:20px; padding-top: 0vh;">
+                            <p class="text-black" style="font-size: 16px; padding-top: 0px;">
                                 To do this, we tapped into the emoji use of the community to get a sense of what else is
                                 being communicated
                                 around the time of the big update. Emojis can reveal a lot about the users, from getting
@@ -369,7 +392,7 @@
                                 game as well as other
                                 available game features such as flowers, plants, crop growing, and food.
                             </p>
-                            <p class="text-black" style="font-size: 16px; padding: 1vh; padding-top: 0px;">Our team
+                            <p class="text-black" style="font-size: 16px; padding-top: 0px;">Our team
                                 observed that the jack-o-lantern emoji was
                                 used most frequently. This aligns with our expectations
                                 as the tweets encompass the day of Halloween! When examining the relationships between
@@ -510,7 +533,8 @@
                         </div>
                     </form>
                 </div>
-                <p class="text-black" style="font-size: 16px;">Here, we can view the top 5 platforms that were used by the community for
+                <p class="text-black" style="font-size: 16px;">Here, we can view the top 5 platforms that were used by
+                    the community for
                     tweeting. We can also see the top ranked tweets by
                     amounts of retweets or favorites. We can even combine these two items to tell which platform these
                     tweets came from. As evident, the largest
@@ -527,17 +551,20 @@
         </section>
 
         <!--Sasha talking!-->
-                <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
+        <section id="explanationForBeeswarm" class="fullpage" style="padding-top: 3rem">
             <div class="row justify-content-center">
                 <div class="sasha-container" style="padding-top: 8vh; padding-left: 10vw; padding-right: 10vw;">
                     <img class="character" src="img/characters/Sasha_NH.png" alt="Sasha"/>
                     <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
-                    <div id="app-sasha" style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
+                    <div id="app-sasha"
+                         style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
                         <dialogue>
                             <span slot="character">Sasha</span>
-                            Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets that
+                            Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets
+                            that
                             contain a certain keyword or phrase
-                            in the visualization below. Why don't you try searching for my name to see what the Animal Crossing
+                            in the visualization below. Why don't you try searching for my name to see what the Animal
+                            Crossing
                             community is talking about me!
                         </dialogue>
                     </div>
@@ -572,16 +599,22 @@
                         <div class="container" style="padding-top: 0px;">
                             <div class="row">
                                 <p class="text-black" style="font-size: 16px;">
-                                    This next visualization shows the top 1000 retweeted Animal Tweets from 10/30/2021 to
-                                    11/05/2021. Each cluster contains tweets from a day in that week, and each bubble represents
-                                    a single tweet. The higher the bubble is, the more times that tweet is retweeted, and the
-                                    larger the bubble is, the more likes that tweet has. When you hover over the bubble, you
-                                    will see the actual content of the tweet and other details including the number of retweets
-                                    and favorites/likes, the date and time when the tweet was created, and the source (device or
+                                    This next visualization shows the top 1000 retweeted Animal Tweets from 10/30/2021
+                                    to
+                                    11/05/2021. Each cluster contains tweets from a day in that week, and each bubble
+                                    represents
+                                    a single tweet. The higher the bubble is, the more times that tweet is retweeted,
+                                    and the
+                                    larger the bubble is, the more likes that tweet has. When you hover over the bubble,
+                                    you
+                                    will see the actual content of the tweet and other details including the number of
+                                    retweets
+                                    and favorites/likes, the date and time when the tweet was created, and the source
+                                    (device or
                                     platform) it was posted from.
                                 </p>
                                 <div class="col">
-                                    <div class="explanation-buttons"  style="padding-bottom: 2rem; padding-left: 55vw;">
+                                    <div class="explanation-buttons" style="padding-bottom: 2rem; padding-left: 55vw;">
                                         <a class="btn btn-primary" href="#bars">Back</a>
                                         <a class="btn btn-primary" href="#bee">Next</a>
                                     </div>
@@ -605,7 +638,8 @@
                 <div class="row">
 
                     <div class="align-self-center">
-                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (use the "Reset" button to return to all results):</label>
+                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (use the "Reset"
+                            button to return to all results):</label>
                         <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
                         <input type="button" value="Search" id="search-btn" onclick="inputChange()" class="vizButton">
                         <input type="button" value="Reset" id="reset-btn" onclick="inputReset()" class="vizButton">
@@ -614,12 +648,23 @@
                 <div class="row" style="height:100%">
 
                     <div class="align-self-center" style="height:80vh">
+
                         <div class="col-2">
                             <a class="btn btn-primary" href="#explanationForBeeswarm">Back</a>
                             <a class="btn btn-primary" href="#explanationBreak2">Next</a>
                         </div>
+                        
                         <div id="swarm-plot" style="height:100%; width: 100%"></div>
+                        <!--
+                        <div class="col d-flex justify-content-center" style="padding-bottom: 2rem">
+                            <div style="padding-bottom: 2rem;">
+                                <a class="btn btn-primary" href="#explanationForBeeswarm">Back</a>
+                                <a class="btn btn-primary" href="#explanationBreak2">Next</a>
+                            </div>
+                        </div>
+                        -->
                     </div>
+
                 </div>
             </div>
         </section>
@@ -668,25 +713,29 @@
     <div id="conclusion-sec" class="section">
         <div class="container box" style="height: 100vh">
             <div>
-                <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider" style="height: 30vh; padding-top: 1rem; padding-left: 75vw;"/>
+                <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider"
+                     style="height: 30vh; padding-top: 1rem; padding-left: 75vw;"/>
                 <!--<br>[<a href="#_f5">5</a>]-->
             </div>
             <h3>Thank you!</h3>
             <div class="row">
                 <div class="col">
-                    <p class="text-black" style="font-size: 16px;">We hope you enjoyed our visualization of the twitter data exploring the Animal Crossing: New
+                    <p class="text-black" style="font-size: 16px;">We hope you enjoyed our visualization of the twitter
+                        data exploring the Animal Crossing: New
                         Horizons 2.0 update!
                         If you have played this game we hope this allowed you to visualize the community of which you
                         may be a part of.
                         If you have not jumped into the world, it is a great time to give it a try!
                         Additionally, our class explored the world of Tableau, and you better believe that the Animal
                         Crossing community has too!
-                        Please take a look at some of these other extremely exciting visualizations about in-game characters and items.
+                        Please take a look at some of these other extremely exciting visualizations about in-game
+                        characters and items.
                         <a href="https://public.tableau.com/search/all/%23animalcrossingnewhorizons"
                            target="_blank"><span class="name"> visualizations</span></a>
                         about in game items </p>
                     <!--followed formatting ideas of prior winning projects from here to lower to give proper credit to Harvard/ team. Can edit -->
-                    <p class="text-black" style="font-size: 16px;">We are a group of undergraduate and graduate students at Harvard University, and our
+                    <p class="text-black" style="font-size: 16px;">We are a group of undergraduate and graduate students
+                        at Harvard University, and our
                         visualization project was for <a href="https://www.cs171.org/2021/">CS171:Visualization</a>
                         class in Fall 2021.</p>
                 </div>
@@ -713,8 +762,9 @@
                     <span style="font-size:18px;">Pursuing BA in Computer Science and Economics</span>
                 </div>
                 <div class="col profile">
-                    <img class="character" style="height: 180px" src="img/characters/Marshal_NH.png" alt="Marshal"/><br><!--<br>[<a href="#_f5">10</a>]-->
-                   <!-- <img src="img/team%20photos/villager.jpg" height=180 width=180><br>-->
+                    <img class="character" style="height: 180px" src="img/characters/Marshal_NH.png" alt="Marshal"/><br>
+                    <!--<br>[<a href="#_f5">10</a>]-->
+                    <!-- <img src="img/team%20photos/villager.jpg" height=180 width=180><br>-->
                     <a href="https://www.linkedin.com/in/ryan-buehler-76769589" target="_blank"><span class="name">Ryan Buehler</span><br></a
                     <span style="font-size:18px;">BA in Biology</span>
                 </div>
@@ -744,7 +794,8 @@
                     <ul></ul>
                     <b>Data</b>
                     <ul>
-                        <li> Our data was all gathered from Twitter. We filtered and processed the data in order to provide
+                        <li> Our data was all gathered from Twitter. We filtered and processed the data in order to
+                            provide
                             you great visualizations.
                         </li>
                     </ul>
@@ -759,8 +810,9 @@
                         <li>None of the images on this webpage are ours; the images were collected from Google
                             image search, and respective source links are commented.
                             Additional icons were found from
-                            <a href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki" target="_blank"> the Animal
-                            Crossing Wiki</a>.
+                            <a href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki" target="_blank"> the
+                                Animal
+                                Crossing Wiki</a>.
                         </li>
                     </ul>
                     </p>
@@ -772,17 +824,17 @@
         </div>
     </div>
     <!-- Footer-->
-   <!-- <footer class="footer small text-center text-black">
-        <div class="container px-4 px-lg-5">
-            <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
-            <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
-            <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
-            <p id="_f4">4. https://animalcrossing.fandom.com/wiki/Sasha</p>
-            <p id="_f5">5. https://animalcrossing.fandom.com/wiki/K.K._Slider</p>
-            <p id="_f6">6. https://animalcrossing.fandom.com/wiki/Brewster</p>
-            <p id="_f10">10. https://animalcrossing.fandom.com/wiki/Marshal</p>
-        </div>
-    </footer>-->
+    <!-- <footer class="footer small text-center text-black">
+         <div class="container px-4 px-lg-5">
+             <p id="_f1">1. https://animalcrossing.fandom.com/wiki/Isabelle_(Super_Smash_Bros.)</p>
+             <p id="_f2">2. https://animalcrossing.fandom.com/wiki/Tom_Nook</p>
+             <p id="_f3">3. https://animalcrossing.fandom.com/wiki/Blathers</p>
+             <p id="_f4">4. https://animalcrossing.fandom.com/wiki/Sasha</p>
+             <p id="_f5">5. https://animalcrossing.fandom.com/wiki/K.K._Slider</p>
+             <p id="_f6">6. https://animalcrossing.fandom.com/wiki/Brewster</p>
+             <p id="_f10">10. https://animalcrossing.fandom.com/wiki/Marshal</p>
+         </div>
+     </footer>-->
 </section>
 
 
