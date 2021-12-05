@@ -353,7 +353,6 @@
                 <div class="text-container" style="height: 20vh; padding-top: 5vh;">
                     <div class="container">
                         <div class="row">
-                            <!--<h3>Let's take a deeper look into the Animal Crossing community!</h3>-->
                             <p style="font-size:20px; padding-top: 0vh;">
                                 To do this, we tapped into the emoji use of the community to get a sense of what else is
                                 being communicated
@@ -530,7 +529,7 @@
                 <div class="sasha-container" style="padding-top: 30vh; padding-left: 10vw; padding-right: 10vw;">
                     <img class="character" src="img/characters/Sasha_NH.png" alt="Sasha"/>
                     <!--&lt;!&ndash;<br>[<a href="#_f4">4</a>]&ndash;&gt;-->
-                    <div id="app-sasha" style="padding-top: 3rem; padding-left: 3rem; height: 100px; padding-bottom: 0px;">
+                    <div id="app-sasha" style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
                         <dialogue>
                             <span slot="character">Sasha</span>
                             Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets that
@@ -569,7 +568,15 @@
                     <div class="text-container" style="padding-top: 0px;">
                         <div class="container" style="padding-top: 0px;">
                             <div class="row">
-
+                                <p class="text-black" style="font-size: 16px;">
+                                    This next visualization shows the top 1000 retweeted Animal Tweets from 10/30/2021 to
+                                    11/05/2021. Each cluster contains tweets from a day in that week, and each bubble represents
+                                    a single tweet. The higher the bubble is, the more times that tweet is retweeted, and the
+                                    larger the bubble is, the more likes that tweet has. When you hover over the bubble, you
+                                    will see the actual content of the tweet and other details including the number of retweets
+                                    and favorites/likes, the date and time when the tweet was created, and the source (device or
+                                    platform) it was posted from.
+                                </p>
                                 <div class="col">
                                     <div class="explanation-buttons"  style="padding-bottom: 2rem; padding-left: 55vw;">
                                         <a class="btn btn-primary" href="#bars">Back</a>
@@ -595,15 +602,6 @@
                 <div class="row">
 
                     <div class="align-self-center">
-                        <p class="text-black" style="font-size: 16px;">
-                            This swarm plot below shows the top 1000 retweeted Animal Tweets from 10/30/2021 to
-                            11/05/2021. Each cluster contains tweets from a day in that week, and each bubble represents
-                            a single tweet. The higher the bubble is, the more times that tweet is retweeted, and the
-                            larger the bubble is, the more likes that tweet has. When you hover over the bubble, you
-                            will see the actual content of the tweet and other details including the number of retweets
-                            and favorites/likes, the date and time when the tweet was created, and the source (device or
-                            platform) it was posted from.
-                        </p>
                         <label for="user-input-keyword">Search for keywords and phrases in tweet texts (to return to all results,
                             use the "Reset" button or clear the input and hit enter):</label>
                         <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">

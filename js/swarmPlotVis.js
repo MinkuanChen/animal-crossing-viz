@@ -32,7 +32,7 @@ class SwarmPlotVis {
         vis.yScale = d3
             .scaleLinear()
             .domain(d3.extent(vis.data.map((d) => Math.sqrt(+d["tweet_retweet_count"]))))
-            .range([vis.height-100, 100]);
+            .range([vis.height-50, 50]);
 
         vis.color = d3.scaleOrdinal().domain(tweetCreatedDate).range(['#a4d4a2', '#ff7c69', '#f1bdc3', '#7cc9c3', '#f5c24c', '#68b893', '#ef758a']);
 
@@ -40,7 +40,7 @@ class SwarmPlotVis {
 
         vis.tweetLikesDomain = vis.tweetLikesDomain.map((d) => Math.sqrt(d));
 
-        vis.size = d3.scaleLinear().domain(vis.tweetLikesDomain).range([1, 16]);
+        vis.size = d3.scaleLinear().domain(vis.tweetLikesDomain).range([1, 13]);
 
         vis.svg
             .call(d3.axisBottom(vis.xScale))
