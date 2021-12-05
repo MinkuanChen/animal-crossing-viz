@@ -168,4 +168,8 @@ class SwarmPlotVis {
 }
 
 
-//References: https://github.com/d3/d3-force
+/*
+References and Inspiration:
+https://github.com/d3/d3-force
+https://www.chartfleau.com/tutorials/d3swarm
+ */

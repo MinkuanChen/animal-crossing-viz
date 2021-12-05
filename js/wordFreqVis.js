@@ -130,4 +130,8 @@ class WordFreqVis {
     }
 }
 
-//References: https://github.com/d3/d3-force
+/*
+References and Inspiration:
+https://github.com/d3/d3-force
+https://bl.ocks.org/ctufts/f38ef0187f98c537d791d24fda4a6ef9
+ */
