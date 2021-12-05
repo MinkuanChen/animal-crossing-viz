@@ -43,8 +43,7 @@ class SwarmPlotVis {
         vis.size = d3.scaleLinear().domain(vis.tweetLikesDomain).range([1, 13]);
 
         vis.svg
-            .call(d3.axisBottom(vis.xScale))
-            .attr("transform", "translate(0," + vis.height-20 + ")");
+            .call(d3.axisBottom(vis.xScale));
 
         vis.svg.append("text")
             .style("text-anchor", "middle")

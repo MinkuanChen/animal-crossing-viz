@@ -78,7 +78,7 @@
             <div class="isabelle-container" style="padding-left: 4vw; padding-bottom: 1rem; height: 35vh">
                 <img class="character" src="img/characters/Isabelle_SSBU.png" alt="Isabelle" align="left"/>
                 <!--<br>[<a href="#_f1">1</a>]-->
-                <div id="app">
+                <div id="app" style="padding-top: 3rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
                     <dialogue>
                         <span slot="character">Isabelle</span>
                         With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly
@@ -113,7 +113,7 @@
         </div>
         <div class="row justify-content-center" style="height: 50px; padding-left: 2vw">
             <div class="col">
-                <div class="about-buttons" style="height: 50px; padding-top: 9rem;">
+                <div class="about-buttons col-2" style="height: 50px; padding-top: 9rem;">
                     <a class="btn btn-primary" href="#home">Back</a>
                     <a class="btn btn-primary" href="#visualizations">Next</a>
                 </div>
@@ -253,7 +253,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col" style="height:60vh">
+            <div class="col" style="height:65vh">
                 <div id="stacked-area-chart" style="height: 100%; width: 100%;"></div>
             </div>
         </section>
@@ -602,11 +602,10 @@
                 <div class="row">
 
                     <div class="align-self-center">
-                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (to return to all results,
-                            use the "Reset" button or clear the input and hit enter):</label>
+                        <label for="user-input-keyword">Search for keywords and phrases in tweet texts (use the "Reset" button to return to all results):</label>
                         <input type="text" id="user-input-keyword" name="keyword" onchange="inputChange()">
-                        <input type="button" value="Search" id="search-btn" onclick="inputChange()">
-                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()" class="vizButton" style="vertical-align: top">
+                        <input type="button" value="Search" id="search-btn" onclick="inputChange()" class="vizButton">
+                        <input type="button" value="Reset" id="reset-btn" onclick="inputReset()" class="vizButton">
                     </div>
                 </div>
                 <div class="row" style="height:100%">
