@@ -22,15 +22,18 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#visualizations" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visualizations</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#density">Density Chart</a></li>
-                        <li><a class="dropdown-item" href="#stacked-area-chart">Stacked Area Chart</a></li>
-                        <li><a class="dropdown-item" href="#words">Top 100 Words</a></li>
-                        <li><a class="dropdown-item" href="#emojibubble">Emoji Chart</a></li>
-                        <li><a class="dropdown-item" href="#bars">Top Tweets</a></li>
-                        <li><a class="dropdown-item" href="#bee">Item Search</a></li>
-                    </ul></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#visualizations"
+                                                     id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                                     aria-expanded="false">Visualizations</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#density">Tweet Density</a></li>
+                            <li><a class="dropdown-item" href="#stacked">Top Hashtags</a></li>
+                            <li><a class="dropdown-item" href="#words">Top Words</a></li>
+                            <li><a class="dropdown-item" href="#emoji">Emojis</a></li>
+                            <li><a class="dropdown-item" href="#bars">Top Tweets</a></li>
+                            <li><a class="dropdown-item" href="#bee">Explore The Tweets!</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#credit">Credit</a></li>
                     <li class="nav-item"><a class="nav-link" href="#resources">Data Sources and Methods</a></li>
                 </ul>
@@ -79,7 +82,8 @@
                     <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
                     <dialogue>
                         <span slot="character">Isabelle</span>
-                        With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly active
+                        With the highly anticipated 2.0 update, we wanted to take a look to see if the already highly
+                        active
                         community was reinvigorated and also explore what they were
                         talking most about!
                     </dialogue>
@@ -124,7 +128,7 @@
     <div class="container">
 
         <section class="fullpage">
-            <!--density graph goes here, ID is density (or change to liking)-->
+            <!--density graph-->
             <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 3rem">
                 <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
                 <div class="col-xl-4 col-lg-5">
@@ -154,13 +158,16 @@
         <section id="explanationStackWord" class="fullpage" style="padding-top: 4rem">
             <div class="row justify-content-center">
                 <div class="tom-container" style="padding-top: 30vh; padding-left: 10vw; padding-right: 10vw">
-                    <img class="character" src="img/characters/Tom_Nook_NH.png" alt="Tom"/> <!--<br>[<a href="#_f2">2</a>]-->
+                    <img class="character" src="img/characters/Tom_Nook_NH.png" alt="Tom"/>
+                    <!--<br>[<a href="#_f2">2</a>]-->
                     <div id="app-tom" style="padding-left: 3rem; height: 100px; padding-bottom: 0px;">
                         <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
                         <dialogue>
                             <span slot="character">Tom Nook</span>
-                            Let's expand the timeline to the whole week from Halloween to the Animal Crossing New Horizons 2.0
-                            Update and look at the volume of conversations with the top 10 hashtags and top 100 keywords used by
+                            Let's expand the timeline to the whole week from Halloween to the Animal Crossing New
+                            Horizons 2.0
+                            Update and look at the volume of conversations with the top 10 hashtags and top 100 keywords
+                            used by
                             the community!
                         </dialogue>
                     </div>
@@ -212,11 +219,7 @@
                     <div class="text-container" style="padding-top: 0px;">
                         <div class="container" style="padding-top: 0px;">
                             <div class="row">
-                                <!--
-                                <p style="font-size:20px; padding: 1rem">
-                                    Additional Text here.
-                                </p>
-        -->
+
                                 <div class="col">
                                     <div class="explanation-buttons" style="padding-bottom: 2rem; padding-left: 55vw;">
                                         <a class="btn btn-primary" href="#density">Back</a>
@@ -292,9 +295,11 @@
         <!--  break to explain more-->
         <section id="explanationBreak" class="fullpage" style="padding-top: 3rem">
             <div class="blathers-container" style="padding-left: 2vw; padding-right: 2vw;">
-                <img class="character" style="padding-top: 3rem; height: 35vh;" src="img/characters/Blathers_NH.png" alt="Blathers"/>
+                <img class="character" style="padding-top: 3rem; height: 35vh;" src="img/characters/Blathers_NH.png"
+                     alt="Blathers"/>
                 <!--<br>[<a href="#_f3">3</a>]-->
-                <div id="app-blathers" style="padding-top: 3rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
+                <div id="app-blathers"
+                     style="padding-top: 3rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
                     <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
                     <dialogue>
                         <span slot="character">Blathers</span>
@@ -355,21 +360,28 @@
                             <p style="font-size:20px; padding-top: 0vh;">
                                 To do this, we tapped into the emoji use of the community to get a sense of what else is
                                 being communicated
-                                around the time of the big update. Emojis can reveal a lot about the users, from getting an
-                                overall sentiment/mood gauge regarding the game to what things people are adding to their
+                                around the time of the big update. Emojis can reveal a lot about the users, from getting
+                                an
+                                overall sentiment/mood gauge regarding the game to what things people are adding to
+                                their
                                 island. In particular,
-                                the Animal Crossing community seems to like to use emojis to reflect current events in the
+                                the Animal Crossing community seems to like to use emojis to reflect current events in
+                                the
                                 game as well as other
                                 available game features such as flowers, plants, crop growing, and food.
                             </p>
-                            <p class="text-black" style="font-size: 16px; padding: 1vh; padding-top: 0px;">Our team observed that the jack-o-lantern emoji was
+                            <p class="text-black" style="font-size: 16px; padding: 1vh; padding-top: 0px;">Our team
+                                observed that the jack-o-lantern emoji was
                                 used most frequently. This aligns with our expectations
-                                as the tweets encompass the day of Halloween! When examining the relationships between different emojis, we also noticed that
+                                as the tweets encompass the day of Halloween! When examining the relationships between
+                                different emojis, we also noticed that
                                 for some reason, out of the two available red heart emojis,
-                                one heart emoji was strongly favored in terms of overall usage, yet the other was used much more frequently
+                                one heart emoji was strongly favored in terms of overall usage, yet the other was used
+                                much more frequently
                                 in the same tweet as other emojis.<!--Besides the expected categories like sentiment and hearts, it
                                 was fun to see that common <i>Animal Crossing</i> activities and updated features were also represented in the emoji usage such as plants, flowers,
-                                food, and crop growing!--> We were also happy to see that the coffee cup was a commonly used emoji. It
+                                food, and crop growing!--> We were also happy to see that the coffee cup was a commonly
+                                used emoji. It
                                 seems like the community is very excited about Brewster's Cafe
                                 being added to the game through the November 4th update! Click the NEXT button to look
                                 through the emoji usage during the week and make your
@@ -386,7 +398,7 @@
             </div>
         </section>
 
-        <!--emoji graph goes here, ID is emoji (or change to liking)-->
+        <!--emoji graph-->
         <section class="fullpage" id="emoji" style="padding-top: 3rem">
             <!--<div class="row">-->
             <div class="row mb-4 mb-lg-5 align-items-top">
@@ -475,10 +487,11 @@
             <br/>
         </div>
 
-        <!--bargraph graph goes here, ID is bargraph (or change to liking)-->
+        <!--bar graph-->
         <section class="fullpage" id="bars">
             <div class="row mb-4 mb-lg-5 align-items-top">
-                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh" id="tweetsources">
+                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh"
+                     id="tweetsources">
                     <h4 class="text-black">Top 5 Tweet Platform Sources</h4>
                     <button type="button" class="vizButton" id="clear" style="vertical-align: top"
                             onclick="clearSelection()">Clear
@@ -522,8 +535,10 @@
                 <audio src="https://srv-file16.gofile.io/download/N0MPla/animalese.mp3" ref="audio"></audio>
                 <dialogue>
                     <span slot="character">Sasha</span>
-                    Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search any word or phrases
-                    in the visualization below. Why don't you try searching for my name to see if you can find me!
+                    Hi! I'm Sasha, a new character in the game from the 2.0 update. You can search for tweets that
+                    contain a certain keyword or phrase
+                    in the visualization below. Why don't you try searching for my name to see what the Animal Crossing
+                    community is talking about me!
                 </dialogue>
             </div>
             <script type="text/x-template" id="dialogue-sasha">
@@ -585,7 +600,7 @@
             </div>
         </section>
 
-        <!--swarm graph goes here, ID is beeswarm (or change to liking)-->
+        <!--swarm graph-->
         <section class="fullpage" id="bee" style="padding-top: 3rem">
             <div class="container px-4 px-lg-5">
                 <div class="row justify-content-center" style="height: 12vh">
@@ -644,10 +659,13 @@
                             than expected. Did you notice it in your explorations?
                         </p>
                         <p style="font-size: 20px;">
-                            By tracing the activity of the Animal Crossing community on Twitter, it seems apparent to our team that fans of
+                            By tracing the activity of the Animal Crossing community on Twitter, it seems apparent to
+                            our team that fans of
                             the game are both excited and very happy about the update! The update seems to
-                            have only increased excitement in the game and made the already active community more active on Twitter.
-                            The engagement fans have with each other about the game is extremely lively and overwhelmingly positive.
+                            have only increased excitement in the game and made the already active community more active
+                            on Twitter.
+                            The engagement fans have with each other about the game is extremely lively and
+                            overwhelmingly positive.
                             We challenge you to find a single tweet with negative sentiment. Our team thinks it's
                             a great time to pick up the game, start playing, and join the community!
                         </p>
