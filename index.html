@@ -128,7 +128,7 @@
 
         <section class="fullpage">
             <!--density graph-->
-            <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 3rem">
+            <div class="row mb-4 mb-lg-5 align-items-center" id="density" style="padding-top: 1rem">
                 <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
@@ -143,14 +143,17 @@
                             time to see tweets coming and going! Each circle is a tweet, and each color is the source of
                             that tweet!</p>
                     </div>
+                    <div  style="height: 18vh">
+                        <div id="bar">
+                            <p id="count" style="font-size: 16px;"></p>
+                            <p id="info" style="font-size: 16px;"></p>
+                        </div>
+                        <div style="height: 100%" id="densityDiv"></div>
+                        <div id="slider"></div>
+                    </div>
                 </div>
-
-                <div id="bar">
-                    <p id="count" style="font-size: 16px;"></p>
-                    <p id="info" style="font-size: 16px;"></p>
-                </div>
-                <div id="densityDiv"></div>
-                <div id="slider"></div>
+                
+                
             </div>
         </section>
 
@@ -703,7 +706,8 @@
                     <span style="font-size:18px;">BFA in Fashion/Apparel Design</span>
                 </div>
                 <div class="col profile">
-                    <img src="img/team%20photos/villager.jpg" height=180 width=180><br>
+                    <!-- <img src="img/team%20photos/villager.jpg" height=180 width=180><br> -->
+                    <img class="character" style="height: 180px" src="img/characters/raymond.png" alt="Raymond"/><br>
                     <a href="https://www.linkedin.com/in/daniel-raymond-schwartz?trk=people-guest_people_search-card"
                        target="_blank"><span class="name">Daniel Schwartz</span><br></a>
                     <span style="font-size:18px;">Pursuing BA in Computer Science and Economics</span>

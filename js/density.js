@@ -33,7 +33,6 @@ class Slider {
 		vis.x = d3.scaleTime()
 			.domain([vis.startDate, vis.endDate])
 			.range([0, vis.width])
-			// .clamp(true);
 
 		vis.y = d3.scaleLinear()
 			.domain([0, 30])
@@ -55,7 +54,7 @@ class Slider {
 
 		// Initialize brush component
 		vis.brush = d3.brushX()
-			.extent([[0, 0], [vis.width,vis.height-150]])
+			.extent([[0, 30], [vis.width,vis.height-150]])
 			.on("brush", brushed);
 
 		vis.graph.insert("g")
@@ -81,8 +80,9 @@ class Slider {
 		// !!Now instantiate the plot
 		vis.svg = d3.select("#densityDiv").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", 200)
+			.attr("height", 180)
 			.append("g")
+			.attr("x", -100)
 			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 
 		vis.parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S+00:00");
@@ -138,7 +138,7 @@ class Slider {
 		// !!Now instantiate the bar graph
 		vis.bar = d3.select("#bar").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", 100)
+			.attr("height", 50)
 			.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 			
@@ -156,8 +156,8 @@ class Slider {
 			})
 			.attr("width", vis.width/2)
             .attr("height", 10)
-            .attr("x", 50)
-            .attr("y", 50)
+            .attr("x", 20)
+            .attr("y", 0)
 
 		// !! Now instantiate legend
 		vis.legend = vis.svg.append("g")
