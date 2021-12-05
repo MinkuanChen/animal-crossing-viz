@@ -710,14 +710,48 @@
 
 <!-- Credit-->
 <section class="credit-section" class="fullpage" id="credit" style="padding-top: 3rem">
-    <div id="conclusion-sec" class="section">
+        <div id="conclusion-sec" class="section">
         <div class="container box" style="height: 100vh">
-            <div>
+            <div class="kkslider-container" style="padding-top: 8vh; padding-left: 10vw; padding-right: 10vw;">
                 <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider"
-                     style="height: 30vh; padding-top: 1rem; padding-left: 75vw;"/>
+                     style="height: 30vh; padding-top: 1rem;"/>
+                <div id="app-kkslider"
+                     style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
+                    <dialogue>
+                        <span slot="character">K. K. Slider</span>
+                        Thank you! We hope you enjoyed our visualizations exploring Twitter data correlated to the Animal
+                        Crossing: New Horizons 2.0 update!
+                    </dialogue>
+                </div>
+                <script type="text/x-template" id="dialogue-kkslider">
+                    <div class="dialogue">
+                        <div class="dialogue-blobs">
+                            <div class="dialogue-blob-top"></div>
+                            <div class="dialogue-blob-bottom"></div>
+                            <dialogue-text>
+                                <slot></slot>
+                            </dialogue-text>
+                        </div>
+                        <div class="dialogue-character-wrap">
+                            <div class="dialogue-character">
+                                <slot name="character"></slot>
+                            </div>
+                        </div>
+                        <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                                  fill="#F1AE04"/>
+                        </svg>
+
+                    </div>
+                </script>
+                <script type="text/x-template" id="dialogue-text-kkslider">
+                    <div class="dialogue-text">
+                        {{displayedText}}
+                    </div>
+                </script>
                 <!--<br>[<a href="#_f5">5</a>]-->
             </div>
-            <h3>Thank you!</h3>
             <div class="row">
                 <div class="col">
                     <p class="text-black" style="font-size: 16px;">We hope you enjoyed our visualization of the twitter
