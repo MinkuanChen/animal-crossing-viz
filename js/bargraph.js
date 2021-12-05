@@ -56,7 +56,6 @@ class Bargraph {
         let vis = this;
         var tweetsBySourceMap = d3.group(vis.displayData,d=>d.tweet_source);
         vis.tweetsBySourceArray= tweetsBySourceMap.get(tweetSelected)
-        console.log(vis.tweetsBySourceArray)
         if (vis.tweetsBySourceArray == undefined) {
             var finalArray = [];
             mergedArray=[];
@@ -73,7 +72,7 @@ class Bargraph {
         } else {
             vis.myDisplayData = finalArray
         }
-
+        console.log(vis.myDisplayData)
         let yMax = 0;
         var pick = d3.select("#ranking-type").property("value");
         //console.log(pick)
