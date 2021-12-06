@@ -22,13 +22,13 @@ import demoji
 import tweepy
 from tweepy import OAuthHandler
 
-# consumer_key = os.getenv("CONSUMER_KEY")
-# consumer_secret = os.getenv("CONSUMER_SECRET")
-# access_token = os.getenv("ACCESS_TOKEN")
-# access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
+consumer_key = os.getenv("CONSUMER_KEY")
+consumer_secret = os.getenv("CONSUMER_SECRET")
+access_token = os.getenv("ACCESS_TOKEN")
+access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
-auth = OAuthHandler('qVkFmymiSQhyyQDGsjZoovPHu', 'yR1E39wKW39Z034p76GFZZMWSbiRXwjDdcwJ9cYcycMOgTkUl2')
-auth.set_access_token('1338240711754440708-0uPDghwW4vWE8YWFxkCSvLZdHEFORs', '70iybeRC6UGmHYVxBcM2o7IYdQN7IAoV4RMLHV0Z1vWef')
+auth = OAuthHandler()
+auth.set_access_token()
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 search_words = "#AnimalCrossing"
