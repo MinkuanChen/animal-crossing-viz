@@ -54,7 +54,7 @@ class TweetSource {
             .paddingOuter(20);
 
         vis.treemapLayout(root);
-
+        //treemap format adapted from Mike Bostock. Published source noted at the bottom
         d3.select("#tweetsources")
             .select('g')
             .selectAll("rect")
