@@ -1,8 +1,8 @@
 # animal-crossing-viz
 
 ### Libraries used:
-_ D3.js
-_ Bootstrap
+* D3.js
+* Bootstrap
 _ Vue.js
 
 ### Code for final turn-in:
