@@ -27,4 +27,5 @@
 
 ### Non-obvious Features of Our Interface:
 * Due to the size of a number of our visualizations, we recommend that the interface should be used in full screen!
+* If the video in our screencast video link looks blurry, please download the video. We have had mixed results with the uploaded previewable video. It is available to be downloaded at the link.
 
