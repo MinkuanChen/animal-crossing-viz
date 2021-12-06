@@ -35,7 +35,7 @@ class TweetSource {
             .attr("width", vis.width + vis.margin.left + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
-            //.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
 
         // prepare a color scale
         vis.color = d3.scaleOrdinal()
@@ -77,12 +77,6 @@ class TweetSource {
                     .style("opacity", 1)
                     .style("left", event.pageX + -200 + "px")
                     .style("top", event.pageY + "px")
-                    /*.html(`
-                     <div style="border: thin solid grey; border-radius: 5px; background: #8ecfca; padding: 5px; width: 200px">
-                     <p style="font-size: 10pt"><b>Tweet source:</b> ${d.data.key}</p>
-                     <span style="font-size: 10pt"><b>Tweet source number:</b> ${d.value}</span>
-                     </div>
-                    `)*/
                 tweetSelected = d.data.key
                 tweetSelectedArray.push(tweetSelected);
                 updateBarVisualization(tweetSelectedArray);
@@ -114,3 +108,8 @@ class TweetSource {
             .attr("fill", "black");
     }
 }
+
+/*
+References and Inspiration:
+https://observablehq.com/@d3/treemap
+ */
