@@ -46,7 +46,7 @@ class WordFreqVis {
 
             vis.radiusScale = d3.scaleSqrt()
                 .domain([0, vis.maxSize])
-                .range([0, 50])
+                .range([0, 60])
 
             vis.myNodes = rawData.map(d => ({
                 ...d,
@@ -94,13 +94,14 @@ class WordFreqVis {
                 d3.select(this)
                     .attr("stroke", "black")
                     .attr("fill", "#017c74")
-                    .attr("stroke", "black")
+                    .attr("stroke", "black");
                 vis.tooltip
                     .style("opacity", 1)
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(`
                          <div style="border: thin solid grey; border-radius: 5px; background: #fff9e5; padding: 10px">
+                         <p style="font-size: 10pt"><b>Keyword:</b> ${d.word}</p>
                          <p style="font-size: 10pt"><b>Word count:</b> ${d.count}</p>
                          </div>
                         `)
@@ -108,7 +109,7 @@ class WordFreqVis {
             .on("mouseout", function (event, d) {
                 d3.select(this)
                     .attr('fill', "#88c9a1")
-                    .attr("stroke", "none")
+                    .attr("stroke", "none");
                 vis.tooltip
                     .style("opacity", 0)
                     .style("left", 0)
@@ -121,8 +122,8 @@ class WordFreqVis {
             .append('text')
             .attr('dy', '.3em')
             .style('text-anchor', 'middle')
-            .style('font-size', 8)
-            .text(d => d.word)
+            .style('font-size', 12)
+            .text(d => d.word);
 
         vis.simulation.nodes(vis.nodes)
             .on('tick', vis.ticked)
@@ -134,4 +135,5 @@ class WordFreqVis {
 References and Inspiration:
 https://github.com/d3/d3-force
 https://bl.ocks.org/ctufts/f38ef0187f98c537d791d24fda4a6ef9
+https://bl.ocks.org/officeofjane/a70f4b44013d06b9c0a973f163d8ab7a
  */
