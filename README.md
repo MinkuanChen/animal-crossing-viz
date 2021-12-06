@@ -13,6 +13,7 @@
 * index.html
 
 ### Credits and Attributions:
+* Animal Crossing Text Bubbles attributed to: https://codepen.io/andymerskin/pen/NWqQydM
 * Emoji Bubble Visualization supported by Jonathan Soma's tutorial: https://www.youtube.com/watch?v=lPr60pexvEM&t=1s
 * Modal for instructions in Emoji Bubble Visualization attributed to: https://jsfiddle.net/tunom37u/4/
 
