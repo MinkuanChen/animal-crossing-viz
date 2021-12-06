@@ -26,7 +26,7 @@ class TweetSource {
 
         // set the dimensions and margins of the graph
         vis.margin = {top: 30, right: 20, bottom: 40, left: 20};
-        vis.width = $("#tweetsources").width() + vis.margin.left + vis.margin.right;
+        vis.width = $("#tweetsources").width() - vis.margin.left - vis.margin.right;
         vis.height =$("#tweetsources").height() - vis.margin.top - vis.margin.bottom;
 
         // append the svg object to the body of the page
@@ -35,6 +35,7 @@ class TweetSource {
             .attr("width", vis.width + vis.margin.left + vis.margin.left)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
         // prepare a color scale
