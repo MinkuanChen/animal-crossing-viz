@@ -32,7 +32,7 @@ class TweetSource {
         // append the svg object to the body of the page
         vis.svg = d3.select("#tweetsources")
             .append("svg")
-            .attr("width", vis.width + vis.margin.left + vis.margin.left)
+            .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
