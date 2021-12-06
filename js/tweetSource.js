@@ -35,7 +35,7 @@ class TweetSource {
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
-        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+            .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
 
         // prepare a color scale
