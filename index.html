@@ -129,21 +129,24 @@
         <section class="fullpage">
             <!--density graph-->
             <div class="row mb-4 mb-lg-5 align-items-center" id="density">
-                <!-- <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="img/placeholders/density.jpg" alt="..." /></div> -->
-                <div class="col-xl-4 col-lg-5">
+                <div class="col-lg-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
-                        <h4 class="text-black">Tweet Time Blocks Plot on the eve of November
-                            4th and 5th, 2021</h4>
                         <div class="col-2">
                             <a class="btn btn-primary" href="#about">Back</a>
                             <a class="btn btn-primary" href="#explanationStackWord">Next</a>
                         </div>
+                        <div>
+                            <h4 class="text-black">What time blocks had the most AC tweet activity on the eve of November
+                                4th and 5th, 2021?</h4>
+                        </div>
+                        
                         <p class="text-black" style="font-size: 16px;">Here, we can look at the number of tweets that
                             were sent out in time
-                            increments of your choice. Set the time period by adjusting the brush, and slide it across
+                            increments of your choice. Set the time period by dragging your cursor along the graph, and slide the shaded area across
                             time to see tweets coming and going! Each circle is a tweet, and each color is the source of
                             that tweet!</p>
                     </div>
+                    
                     <div class="col" style="height: 18vh">
                         <div class="row" id="bar">
                             <p id="count" style="font-size: 16px;"></p>
@@ -509,7 +512,7 @@
         <!--bar graph-->
         <section class="fullpage" id="bars">
             <div class="row mb-4 mb-lg-5 align-items-top">
-                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 70vh ;width:100vh"
+                <div class="col" style="vertical-align: top; padding-top: 3rem; height: 60vh ;width:100vh"
                      id="tweetsources">
                     <h4 class="text-black">Top 5 Tweet Platform Sources</h4>
                     <button type="button" class="vizButton" id="clear" style="vertical-align: top"
@@ -523,7 +526,7 @@
                         <div class="form-group">
                             <label for="ranking-type">Filter by</label>
                             <select class="form-control" id="ranking-type" onchange="updateBarVisualization()"
-                                    style="width:200px">
+                                    style="width:200px;background-color:#fff9e5">
                                 <option value="retweets">Amount Retweeted</option>
                                 <option value="favorites">Amount Favorited</option>
                             </select>
@@ -707,14 +710,48 @@
 
 <!-- Credit-->
 <section class="credit-section" class="fullpage" id="credit" style="padding-top: 3rem">
-    <div id="conclusion-sec" class="section">
+        <div id="conclusion-sec" class="section">
         <div class="container box" style="height: 100vh">
-            <div>
+            <div class="kkslider-container" style="padding-top: 8vh; padding-left: 10vw; padding-right: 10vw;">
                 <img class="character" src="img/characters/K.K._Slider_NH.png" alt="K.K.Slider"
-                     style="height: 30vh; padding-top: 1rem; padding-left: 75vw;"/>
+                     style="height: 30vh; padding-top: 1rem;"/>
+                <div id="app-kkslider"
+                     style="padding-top: 2rem; padding-left: 3rem; height: 10vh; padding-bottom: 0vh;">
+                    <dialogue>
+                        <span slot="character">K. K. Slider</span>
+                        Thank you! We hope you enjoyed our visualizations exploring Twitter data correlated to the Animal
+                        Crossing: New Horizons 2.0 update!
+                    </dialogue>
+                </div>
+                <script type="text/x-template" id="dialogue-kkslider">
+                    <div class="dialogue">
+                        <div class="dialogue-blobs">
+                            <div class="dialogue-blob-top"></div>
+                            <div class="dialogue-blob-bottom"></div>
+                            <dialogue-text>
+                                <slot></slot>
+                            </dialogue-text>
+                        </div>
+                        <div class="dialogue-character-wrap">
+                            <div class="dialogue-character">
+                                <slot name="character"></slot>
+                            </div>
+                        </div>
+                        <svg class="arrow" width="45" height="25" viewBox="0 0 45 25" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5 25C18.0184 25 7.59473 12.6404 1.55317 4.96431C-0.122281 2.83559 1.72264 -0.179893 4.39835 0.243337C10.2831 1.17415 18.2164 2.28736 22.5 2.28736C26.7836 2.28736 34.7169 1.17415 40.6017 0.243339C43.2774 -0.17989 45.1223 2.83559 43.4468 4.96431C37.4053 12.6404 26.9816 25 22.5 25Z"
+                                  fill="#F1AE04"/>
+                        </svg>
+
+                    </div>
+                </script>
+                <script type="text/x-template" id="dialogue-text-kkslider">
+                    <div class="dialogue-text">
+                        {{displayedText}}
+                    </div>
+                </script>
                 <!--<br>[<a href="#_f5">5</a>]-->
             </div>
-            <h3>Thank you!</h3>
             <div class="row">
                 <div class="col">
                     <p class="text-black" style="font-size: 16px;">We hope you enjoyed our visualization of the twitter
@@ -854,6 +891,7 @@
 <script src="js/dialogue-tom.js"></script>
 <script src="js/dialogue-blathers.js"></script>
 <script src="js/dialogue-sasha.js"></script>
+<script src="js/dialogue-kkslider.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/main.js"></script>
 <script src="js/density.js"></script>

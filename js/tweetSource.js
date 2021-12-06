@@ -25,17 +25,17 @@ class TweetSource {
         const root = d3.hierarchy({values: topTenSources}, function(d) { return d.values; }).sum(function(d){ return d.value})
 
         // set the dimensions and margins of the graph
-        vis.margin = {top: 40, right: 10, bottom: 40, left: 10};
-        vis.width =$("#tweetsources").width() - vis.margin.left - vis.margin.right;
+        vis.margin = {top: 30, right: 20, bottom: 40, left: 20};
+        vis.width = $("#tweetsources").width() + vis.margin.left + vis.margin.right;
         vis.height =$("#tweetsources").height() - vis.margin.top - vis.margin.bottom;
 
         // append the svg object to the body of the page
         vis.svg = d3.select("#tweetsources")
             .append("svg")
-            .attr("width", vis.width + vis.margin.left + vis.margin.right)
+            .attr("width", vis.width + vis.margin.left + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+            //.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
         // prepare a color scale
         vis.color = d3.scaleOrdinal()

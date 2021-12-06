@@ -138,7 +138,7 @@ class Slider {
 		// !!Now instantiate the bar graph
 		vis.bar = d3.select("#bar").append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
-			.attr("height", 50)
+			.attr("height", 30)
 			.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + 0 + ")");
 			
@@ -272,8 +272,8 @@ class Slider {
 			})
 			.attr("width", vis.barScale(vis.filteredData.length/vis.minutes))
             .attr("height", 10)
-            .attr("x", 50)
-            .attr("y", 50)
+            .attr("x", 20)
+            .attr("y", 0)
 		// !! Update Count
 		
 		document.getElementById('count').innerText = "Number of tweets in " + vis.minutes + " minute time block: " + vis.filteredData.length
